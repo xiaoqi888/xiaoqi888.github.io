@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="1. 事件对象Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。什么时候会产生Event 对象呢?例如: 当用户单击某个元素的时候,我们给这个元素注册的事件就会触发,该事件的本质就是一个函数,而该函数的形参接收一个event对象.事件通常与函数结合使用，函数不会在事件发生前被执行！">
+<meta name="description" content="1. 事件对象Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。什么时候会产生Event 对象呢?">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解JavaScript—event（事件对象）">
 <meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/01/xq1/index.html">
 <meta property="og:site_name" content="黄小齐的前端博客">
-<meta property="og:description" content="1. 事件对象Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。什么时候会产生Event 对象呢?例如: 当用户单击某个元素的时候,我们给这个元素注册的事件就会触发,该事件的本质就是一个函数,而该函数的形参接收一个event对象.事件通常与函数结合使用，函数不会在事件发生前被执行！">
-<meta property="og:updated_time" content="2017-02-01T13:35:53.325Z">
+<meta property="og:description" content="1. 事件对象Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。什么时候会产生Event 对象呢?">
+<meta property="og:updated_time" content="2017-02-01T14:45:45.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript—event（事件对象）">
-<meta name="twitter:description" content="1. 事件对象Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。什么时候会产生Event 对象呢?例如: 当用户单击某个元素的时候,我们给这个元素注册的事件就会触发,该事件的本质就是一个函数,而该函数的形参接收一个event对象.事件通常与函数结合使用，函数不会在事件发生前被执行！">
+<meta name="twitter:description" content="1. 事件对象Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。什么时候会产生Event 对象呢?">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -292,7 +292,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="1-事件对象"><a href="#1-事件对象" class="headerlink" title="1. 事件对象"></a>1. 事件对象</h3><p>Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。<br>什么时候会产生Event 对象呢?<br>例如: 当用户单击某个元素的时候,我们给这个元素注册的事件就会触发,该事件的本质就是一个函数,而该函数的形参接收一个event对象.<br>事件通常与函数结合使用，函数不会在事件发生前被执行！<br><a id="more"></a></p>
+        <h3 id="1-事件对象"><a href="#1-事件对象" class="headerlink" title="1. 事件对象"></a>1. 事件对象</h3><p>Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。<br>什么时候会产生Event 对象呢?<br><a id="more"></a><br>例如: 当用户单击某个元素的时候,我们给这个元素注册的事件就会触发,该事件的本质就是一个函数,而该函数的形参接收一个event对象.<br>事件通常与函数结合使用，函数不会在事件发生前被执行！</p>
 <h3 id="2-事件流"><a href="#2-事件流" class="headerlink" title="2. 事件流"></a>2. 事件流</h3><h4 id="2-1-事件流发展史"><a href="#2-1-事件流发展史" class="headerlink" title="2.1 事件流发展史"></a>2.1 事件流发展史</h4><p>事件发展史,这位大神已经写好了,想去偷瞄两眼的请点击这里</p>
 <h4 id="2-2-冒泡"><a href="#2-2-冒泡" class="headerlink" title="2.2 冒泡"></a>2.2 冒泡</h4><p>什么是事件冒泡,<br>官方的定义就是从最特定的事件目标到最不特定的事件目标<br>意思就是说,假如用户单击了一个元素,该元素拥有一个click事件,那么同样的事件也将会被它的祖先触发,这个事件从该元素开始一直冒泡到DOM树的最上层,这一过程称为事件冒泡</p>
 <h4 id="2-3-捕获"><a href="#2-3-捕获" class="headerlink" title="2.3 捕获"></a>2.3 捕获</h4><p>什么是事件捕获<br>事件捕获和事件是相反的,也就是说,当用户触发了一个事件的时候,这个事件是从DOM树的最上层开始触发一直到捕获到事件源.</p>
@@ -324,7 +324,7 @@
         <p><span>本文标题:</span><a href="/2017/02/01/xq1/">深入理解JavaScript—event（事件对象）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
         <p><span>发布时间:</span>2017-02-01, 18:15:23</p>
-        <p><span>最后更新:</span>2017-02-01, 21:35:53</p>
+        <p><span>最后更新:</span>2017-02-01, 22:45:45</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/02/01/xq1/" title="深入理解JavaScript—event（事件对象）">http://www.xiaoqi888.cn/2017/02/01/xq1/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/01/xq1/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

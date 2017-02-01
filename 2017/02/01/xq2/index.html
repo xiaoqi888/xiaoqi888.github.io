@@ -14,16 +14,17 @@
 <meta name="author" content="xiaoqi" />
 
 
-    
-    
 
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="黄小齐的前端博客">
-<meta property="og:url" content="http://qdabc.cn/index.html">
+<meta name="description" content="获取某个月份的天数相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript日期类型的巧用">
+<meta property="og:url" content="http://qdabc.cn/2017/02/01/xq2/index.html">
 <meta property="og:site_name" content="黄小齐的前端博客">
+<meta property="og:description" content="获取某个月份的天数相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。">
+<meta property="og:updated_time" content="2017-02-01T13:50:06.467Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="黄小齐的前端博客">
+<meta name="twitter:title" content="Javascript日期类型的巧用">
+<meta name="twitter:description" content="获取某个月份的天数相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -51,13 +52,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>黄小齐的前端博客</title>
+<title>Javascript日期类型的巧用 | 黄小齐的前端博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,8 +65,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -261,9 +260,7 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-xq2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-xq2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2017/02/01/xq2/" class="article-date">
@@ -281,167 +278,119 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/01/xq2/">Javascript日期类型的巧用</a>
+    <h1 class="article-title" itemprop="name">
+      Javascript日期类型的巧用
     </h1>
   
 
       </header>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="获取某个月份的天数"><a href="#获取某个月份的天数" class="headerlink" title="获取某个月份的天数"></a>获取某个月份的天数</h3><p>相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2017/02/01/xq2/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-xq1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/01/xq1/" class="article-date">
-      <time datetime="2017-02-01T10:15:23.786Z" itemprop="datePublished">2017-02-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+      <div class="article-info article-info-post">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/01/xq1/">深入理解JavaScript—event（事件对象）</a>
-    </h1>
-  
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="1-事件对象"><a href="#1-事件对象" class="headerlink" title="1. 事件对象"></a>1. 事件对象</h3><p>Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。<br>什么时候会产生Event 对象呢?<br>例如: 当用户单击某个元素的时候,我们给这个元素注册的事件就会触发,该事件的本质就是一个函数,而该函数的形参接收一个event对象.<br>事件通常与函数结合使用，函数不会在事件发生前被执行！<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2017/02/01/xq1/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/01/24/hello-world/" class="article-date">
-      <time datetime="2017-01-24T03:27:50.436Z" itemprop="datePublished">2017-01-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/24/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<!-- ## Quick Start
-
-### Create a new post
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a><br> –&gt;</p>
--->
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+        <h3 id="获取某个月份的天数"><a href="#获取某个月份的天数" class="headerlink" title="获取某个月份的天数"></a>获取某个月份的天数</h3><p>相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var date = new Date(2013, 2, 0);</div><div class="line">date.getDate();  // 28### </div><div class="line">date = new Date(2012, 2, 0);</div><div class="line">date.getDate();  // 29</div></pre></td></tr></table></figure></p>
+<p>创建Date对象时可以传入三个参数，分别是年、月（0~11，0表示一月）、日，如果日的参数为0，那创建出来的对象表示的就是上个月的最后一天，如此就可以知道上个月有多少天了。</p>
+<p>同样的，我们也可以通过这个方法判断某年是否闰年：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function isLeapYear(year)&#123;</div><div class="line">    return new Date(year, 2, 0).getDate() === 29;</div><div class="line">&#125;</div><div class="line">isLeapYear(2012);  // true</div></pre></td></tr></table></figure></p>
+<h3 id="获取时区"><a href="#获取时区" class="headerlink" title="获取时区"></a>获取时区</h3><p>日期类型的 getTimezoneOffset() 方法可以获取格林威治时间和本地时间之间的时间差，以分钟为单位。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var date = new Date();</div><div class="line">var timezoneOffset = date.getTimezoneOffset(); // 中国（东八区）为-480</div><div class="line">-timezoneOffset / 60;  // 8</div></pre></td></tr></table></figure></p>
+<p>把获取到的时间差除以60，再取负值就是所在的时区了。</p>
+<p>除此以外，还有一个方法。调用日期类型的 toString() 后，可以得到一段固定格式的日期字符串：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new Date().toString(); // Sun Mar 10 2013 16:41:12 GMT+0800 (中国标准时间)</div></pre></td></tr></table></figure></p>
+<p>显而易见，GMT后面的+800就是我们要的时区了，只要通过正则表达式匹配一下就可以拿到该值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/GMT([+-]\d+)/.test( new Date().toString() );</div><div class="line">var timezone = RegExp.$1;  // +0800</div></pre></td></tr></table></figure></p>
+<p>不过此时的 timezone 变量是字符串，如果要转成数字类型，还要进行一些处理。</p>
+<h3 id="计算运行时间"><a href="#计算运行时间" class="headerlink" title="计算运行时间"></a>计算运行时间</h3><p>如何测量某段程序的执行时间呢？方法很简单，在执行前记录一次时间，执行后用当前时间减去执行前的时间，就得到结果了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var startTime = new Date();</div><div class="line">// some program</div><div class="line">console.log(new Date() - startTime);</div></pre></td></tr></table></figure></p>
+<p>这里无需手动把日期转换为数字，因为进行减法运算的时候自然会强制转换。这样算出来的结果是毫秒级的，精度不是很够，不过对浏览器端的Javascript来说，也没必要纠结于1毫秒以内的消耗了。</p>
+<h3 id="删除cookie"><a href="#删除cookie" class="headerlink" title="删除cookie"></a>删除cookie</h3><p>准确地说，我们没法直接通过Javascript删除cookie。要想把某个cookie从这个世界抹杀掉，唯一的办法就是让它过期，这样浏览器的内建机制就会把它自动干掉。</p>
+<p>而要让cookie过期，最直截了当的方法就是把它的过期时间设为最小值。Javascript里面能表示的最小日期就是1970年1月1日0时0点0分，通过 new Date(0) 就可以创建出这样一个日期对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var cookieName = &apos;name&apos;; // cookie名</div><div class="line">document.cookie = cookieName + &apos;=&apos; + &apos;; expires=&apos; + new Date(0).toUTCString();</div></pre></td></tr></table></figure></p>
 
       
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/02/01/xq2/">Javascript日期类型的巧用</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
+        <p><span>发布时间:</span>2017-02-01, 21:42:41</p>
+        <p><span>最后更新:</span>2017-02-01, 21:50:06</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/01/xq2/" title="Javascript日期类型的巧用">http://qdabc.cn/2017/02/01/xq2/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://qdabc.cn/2017/02/01/xq2/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/02/01/xq1/">
+                    深入理解JavaScript—event（事件对象）
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
 
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取某个月份的天数"><span class="toc-number">1.</span> <span class="toc-text">获取某个月份的天数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取时区"><span class="toc-number">2.</span> <span class="toc-text">获取时区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算运行时间"><span class="toc-number">3.</span> <span class="toc-text">计算运行时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除cookie"><span class="toc-number">4.</span> <span class="toc-text">删除cookie</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Javascript日期类型的巧用　| 黄小齐的前端博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -449,9 +398,33 @@
 
 
 
+    
 
-  
-  
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/02/01/xq1/" title="下一篇: 深入理解JavaScript—event（事件对象）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq2/">Javascript日期类型的巧用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq1/">深入理解JavaScript—event（事件对象）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/24/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

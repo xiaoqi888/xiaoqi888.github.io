@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://qdabc.cn/2017/02/01/ceshi1/index.html">
 <meta property="og:site_name" content="黄小齐的前端博客">
 <meta property="og:description" content="1. 事件对象Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。什么时候会产生Event 对象呢?例如: 当用户单击某个元素的时候,我们给这个元素注册的事件就会触发,该事件的本质就是一个函数,而该函数的形参接收一个event对象.事件通常与函数结合使用，函数不会在事件发生前被执行！">
-<meta property="og:updated_time" content="2017-02-01T12:51:21.680Z">
+<meta property="og:updated_time" content="2017-02-01T12:55:41.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JavaScript—event（事件对象）">
 <meta name="twitter:description" content="1. 事件对象Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。什么时候会产生Event 对象呢?例如: 当用户单击某个元素的时候,我们给这个元素注册的事件就会触发,该事件的本质就是一个函数,而该函数的形参接收一个event对象.事件通常与函数结合使用，函数不会在事件发生前被执行！">
@@ -138,13 +138,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -258,7 +258,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap"><article id="post-ceshi1" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -304,8 +304,7 @@
 <h4 id="2-5-事件流的写法以及实现方式"><a href="#2-5-事件流的写法以及实现方式" class="headerlink" title="2.5 事件流的写法以及实现方式"></a>2.5 事件流的写法以及实现方式</h4><p>标准实现方式使用关键词addEventListener,假如你想要给某一个元素添加事件,现在就可以这样写</p>
 <pre><code>element.addEventListener(eventType, fn, false) 
 </code></pre><p>dom对象.addEventListener(事件类型, 回调函数, 事件机制)这里的事件类型表示你要使用哪种事件类型比如click, 回调函数里面写着触发此事件你要做什么事情, 事件机制分为冒泡和捕获,如果为false表示事件冒泡,为true表示事件捕获<br>既然有标准的实现方式,那么肯定也存在着不和谐的写法,没办法谁让人家牛逼呢,俗话说的好啊两虎之争必有一伤,可伤了我们程序员了.这种不和谐的写法是<br>dom对象.attachEvent(eventType, fn)第一个参数表示事件类型,第二个是回调.这种写法兼容IE, IE没有实现事件捕获,因为在当时他比较厉害,以为没必要…………只是,,,,省略一千字, 现在微软的浏览器已经做得很好了… 只是调侃一下无其他意图..<br>以上的两种写法一种是兼容W3C标准的一种是老版IE的写法,怎么写兼容性写法呢?下面是注册事件和删除事件的Code</p>
-<p>// 注册事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if(dom.addEventListener) &#123;</div><div class="line">    dom.addEventListener(eventType, fn);</div><div class="line">&#125; else &#123;</div><div class="line">    if(dom.attachEvent) &#123;</div><div class="line">        dom.attachEvent(&apos;on&apos; + eventType, fn);</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>// 下面是删除事件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">if(dom.removeEventListener) &#123;</div><div class="line">    dom.removeEventListener(eventType, fn, false);</div><div class="line">&#125; else &#123;</div><div class="line">    if(dom.detachEvent) &#123;</div><div class="line">        dom.detachEvent(&quot;on&quot; + eventType, fn)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>// 注册事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">if(dom.addEventListener) &#123;</div><div class="line">    dom.addEventListener(eventType, fn);</div><div class="line">&#125; else &#123;</div><div class="line">    if(dom.attachEvent) &#123;</div><div class="line">        dom.attachEvent(&apos;on&apos; + eventType, fn);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line">// 下面是删除事件</div><div class="line">if(dom.removeEventListener) &#123;</div><div class="line">    dom.removeEventListener(eventType, fn, false);</div><div class="line">&#125; else &#123;</div><div class="line">    if(dom.detachEvent) &#123;</div><div class="line">        dom.detachEvent(&quot;on&quot; + eventType, fn)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>冒泡和捕获的一个小demo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">    &lt;title&gt;bubble event&lt;/title&gt;</div><div class="line">    &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">        body&#123;margin:0;&#125;</div><div class="line">        #one&#123;</div><div class="line">            width:500px;</div><div class="line">            height:500px;</div><div class="line">            background:rgb(255,0,0);</div><div class="line">            border: 1px solid transparent;</div><div class="line">        &#125;</div><div class="line">        #two&#123;</div><div class="line">            width:400px;</div><div class="line">            height:400px;</div><div class="line">            margin: 0 auto;</div><div class="line">            margin-top: 50px;</div><div class="line">            background:rgb(255,50,50);</div><div class="line">            border: 1px solid transparent;</div><div class="line">        &#125;</div><div class="line">        #three&#123;</div><div class="line">            width:300px;</div><div class="line">            height:300px;</div><div class="line">            margin: 0 auto;</div><div class="line">            margin-top: 50px;</div><div class="line">            background:rgb(255,100,100);</div><div class="line">            border: 1px solid transparent;</div><div class="line">        &#125;</div><div class="line">        #four&#123;</div><div class="line">            width:200px;</div><div class="line">            height:200px;</div><div class="line">            margin: 0 auto;</div><div class="line">            margin-top: 50px;</div><div class="line">            background:rgb(255,150,150);</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div id=&apos;one&apos;&gt;</div><div class="line">      &lt;div id=&apos;two&apos;&gt;</div><div class="line">        &lt;div id=&apos;three&apos;&gt;</div><div class="line">          &lt;div id=&apos;four&apos;&gt;</div><div class="line">          &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;script&gt;</div><div class="line">        var one = document.getElementById(&apos;one&apos;);</div><div class="line">        var two = document.getElementById(&apos;two&apos;);</div><div class="line">        var three = document.getElementById(&apos;three&apos;);</div><div class="line">        var four = document.getElementById(&apos;four&apos;);</div><div class="line"></div><div class="line">        var useCapture = false; //false为冒泡获取【目标元素先触发】    true为捕获获取【父级元素先触发】</div><div class="line">        one.addEventListener(&apos;click&apos;, function(event) &#123;</div><div class="line">            event || (event = window.event);</div><div class="line">            console.log(event);</div><div class="line">            console.log(&apos;one&apos;);</div><div class="line">        &#125;, useCapture);</div><div class="line">        two.addEventListener(&apos;click&apos;, function() &#123;</div><div class="line">            console.log(&apos;two&apos;);</div><div class="line">        &#125;, useCapture);</div><div class="line">        three.addEventListener(&apos;click&apos;, function() &#123;</div><div class="line">            console.log(&apos;three&apos;);</div><div class="line">        &#125;, useCapture);</div><div class="line">        four.addEventListener(&apos;click&apos;, function() &#123;</div><div class="line">            console.log(&apos;four&apos;);</div><div class="line">        &#125;, useCapture);     </div><div class="line"></div><div class="line">        /*</div><div class="line">        false</div><div class="line">        冒泡</div><div class="line">        点击four div</div><div class="line">        输出结果：four three two one        </div><div class="line"></div><div class="line">        true</div><div class="line">        捕获</div><div class="line">        点击four div</div><div class="line">        输出结果： one two three four</div><div class="line">        */</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
 <p>注意: 不管是微软的写法还是标准的写法,都支持给一个事件绑定多个函数.并且支持动态的添加和删除事件</p>
 <h3 id="3-关于event对象"><a href="#3-关于event对象" class="headerlink" title="3. 关于event对象"></a>3. 关于event对象</h3><p>在触发的事件的函数里面我们会接收到一个event对象,通过该对象我们需要的一些参数,比如说我们需要知道此事件作用到谁身上了,就可以通过event的属性target来获取到(IE暂且不谈),或者想阻止浏览器的默认行为可以通过方法preventDefault()来进行阻止.以下是event对象的一些属性和方法</p>
@@ -326,17 +325,17 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/01/ceshi1/">深入理解JavaScript—event（事件对象）</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
-        <p><span>发布时间:</span>2017-02-01, 18:15:23</p>
-        <p><span>最后更新:</span>2017-02-01, 20:51:21</p>
+        <p><span>Title:</span><a href="/2017/02/01/ceshi1/">深入理解JavaScript—event（事件对象）</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">xiaoqi</a></p>
+        <p><span>Created:</span>2017-02-01, 18:15:23</p>
+        <p><span>Updated:</span>2017-02-01, 20:55:41</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/01/ceshi1/" title="深入理解JavaScript—event（事件对象）">http://qdabc.cn/2017/02/01/ceshi1/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://qdabc.cn/2017/02/01/ceshi1/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/02/01/ceshi1/" title="深入理解JavaScript—event（事件对象）">http://qdabc.cn/2017/02/01/ceshi1/</a>
+            <span class="copy-path" data-clipboard-text="From http://qdabc.cn/2017/02/01/ceshi1/　　By xiaoqi" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
         </p>
     </div>
 
@@ -357,7 +356,7 @@
 </article>
 
     <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
+        <strong class="toc-title">Contents</strong>
         
             <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-事件对象"><span class="toc-number">1.</span> <span class="toc-text">1. 事件对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-事件流"><span class="toc-number">2.</span> <span class="toc-text">2. 事件流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-事件流发展史"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 事件流发展史</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-冒泡"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 冒泡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-捕获"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 捕获</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-事件流"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 事件流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-事件流的写法以及实现方式"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 事件流的写法以及实现方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-关于event对象"><span class="toc-number">3.</span> <span class="toc-text">3. 关于event对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Event对象的一些兼容性写法"><span class="toc-number">4.</span> <span class="toc-text">4. Event对象的一些兼容性写法</span></a></li></ol>
         
@@ -373,10 +372,10 @@
         }
     </style>
 
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
 
     <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
     </script>
 
 
@@ -415,13 +414,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/01/24/hello-world/" title="下一篇: Hello World">
+            <a href="/2017/01/24/hello-world/" title="Next: Hello World">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -444,14 +443,14 @@
                 2016-2017 xiaoqi
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -460,7 +459,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -493,9 +492,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window

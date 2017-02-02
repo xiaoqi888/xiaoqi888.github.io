@@ -139,13 +139,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -255,7 +255,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
   
@@ -288,8 +288,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;黄小齐前端博客-冒泡排序&lt;/title&gt;&lt;!--more--&gt;</div><div class="line">	&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">		#inputtext&#123;width: 200px;&#125;</div><div class="line">		#btn&#123;width: 50px;&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">	&lt;script src=&quot;JQuery/jquery-1.6.2.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">		$(document).ready(function()&#123;</div><div class="line">			$(&quot;#btn&quot;).click(function()&#123;</div><div class="line">				var str = $(&quot;#inputtext&quot;).val();</div><div class="line">				var arr  = str.split(&quot;,&quot;);</div><div class="line">				for (var i = 0; i &lt; arr.length-1; i++) &#123;</div><div class="line">					for (var j=i+1;j&lt;arr.length;j++)&#123;</div><div class="line">						if (arr[i]&gt;arr[j])</div><div class="line">						&#123;</div><div class="line">							var temp = arr[i];</div><div class="line">							arr[i] = arr[j];</div><div class="line">							arr[j] = temp;</div><div class="line">						&#125;</div><div class="line">					&#125;;</div><div class="line">				&#125;;</div><div class="line">			document.getElementById(&quot;outputtext&quot;).innerHTML = arr.toString();</div><div class="line">			&#125;);</div><div class="line">		&#125;);</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;input id=&quot;inputtext&quot; type=&quot;text&quot;&gt;&lt;/input&gt;</div><div class="line">	&lt;input id=&quot;btn&quot; type=&quot;button&quot; value=&quot;排序&quot;&gt;&lt;/input&gt;</div><div class="line">	&lt;p id=&quot;outputtext&quot;&gt;结果&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-
+              <p>代码如下<br>
+          
       
     </div>
     
@@ -298,6 +298,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a href="/2017/02/02/xq6/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -685,14 +689,14 @@
                 2016-2017 xiaoqi
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -701,7 +705,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -734,9 +738,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window

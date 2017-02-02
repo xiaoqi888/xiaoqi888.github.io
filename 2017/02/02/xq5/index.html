@@ -16,18 +16,18 @@
 
 
 <meta name="description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：var _ = {    $: function(id) { return document.getElementById(id); },    getCookie: function(key) { … },    setCookie: function(key, value) { … }
-};小A">
+};">
 <meta property="og:type" content="article">
 <meta property="og:title" content="了解模块化开发">
 <meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/02/xq5/index.html">
 <meta property="og:site_name" content="黄小齐的前端博客">
 <meta property="og:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：var _ = {    $: function(id) { return document.getElementById(id); },    getCookie: function(key) { … },    setCookie: function(key, value) { … }
-};小A">
-<meta property="og:updated_time" content="2017-02-02T12:53:16.706Z">
+};">
+<meta property="og:updated_time" content="2017-02-02T12:54:26.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="了解模块化开发">
 <meta name="twitter:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：var _ = {    $: function(id) { return document.getElementById(id); },    getCookie: function(key) { … },    setCookie: function(key, value) { … }
-};小A">
+};">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -296,7 +296,8 @@
       
           
         <h4 id="全局变量冲突"><a href="#全局变量冲突" class="headerlink" title="全局变量冲突"></a>全局变量冲突</h4><h2 id="根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base-js中："><a href="#根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base-js中：" class="headerlink" title="根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中："></a>根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：</h2><p>var _ = {<br>    $: function(id) { return document.getElementById(id); },<br>    getCookie: function(key) { … },<br>    setCookie: function(key, value) { … }</p>
-<h2 id=""><a href="#" class="headerlink" title="};"></a>};</h2><p>小A把这些函数都放在_对象内，以防过多的全局变量造成冲突。他告诉团队的其他成员，如果谁想使用这些函数，只要引入base.js就可以了。</p>
+<h2 id=""><a href="#" class="headerlink" title="};"></a>};</h2><a id="more"></a>
+<p>小A把这些函数都放在_对象内，以防过多的全局变量造成冲突。他告诉团队的其他成员，如果谁想使用这些函数，只要引入base.js就可以了。</p>
 <p>小C是小A的同事，他向小A反映：自己的页面引入了一个叫做underscore.js的类库，而且，这个类库也会占用<em>这个全局变量，这样一来就会跟base.js中的</em>冲突了。小A心想，underscore.js是第三方类库，估计不好改，但是base.js已经在很多页面铺开，不可能改。最后小A只好无奈地把underscore.js占用的全局变量改了。</p>
 <p>此时，小A发现，把函数都放在一个名字空间内，可以减少全局变量冲突的概率，却没有解决全局变量冲突这个问题。</p>
 <h4 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h4><p>随着业务的发展，小A又编写了一系列的函数库和UI组件，比方说标签切换组件tabs.js，此组件需调用base.js以及util.js中的函数。</p>
@@ -326,7 +327,7 @@
         <p><span>本文标题:</span><a href="/2017/02/02/xq5/">了解模块化开发</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
         <p><span>发布时间:</span>2017-02-02, 20:50:50</p>
-        <p><span>最后更新:</span>2017-02-02, 20:53:16</p>
+        <p><span>最后更新:</span>2017-02-02, 20:54:26</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/02/02/xq5/" title="了解模块化开发">http://www.xiaoqi888.cn/2017/02/02/xq5/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/02/xq5/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

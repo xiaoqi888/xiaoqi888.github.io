@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/01/xq2/index.html">
 <meta property="og:site_name" content="黄小齐的前端博客">
 <meta property="og:description" content="获取某个月份的天数相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。">
-<meta property="og:updated_time" content="2017-02-01T13:50:06.467Z">
+<meta property="og:updated_time" content="2017-02-02T03:47:07.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript日期类型的巧用">
 <meta name="twitter:description" content="获取某个月份的天数相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。">
@@ -292,17 +292,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="获取某个月份的天数"><a href="#获取某个月份的天数" class="headerlink" title="获取某个月份的天数"></a>获取某个月份的天数</h3><p>相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var date = new Date(2013, 2, 0);</div><div class="line">date.getDate();  // 28### </div><div class="line">date = new Date(2012, 2, 0);</div><div class="line">date.getDate();  // 29</div></pre></td></tr></table></figure></p>
+        <h4 id="获取某个月份的天数"><a href="#获取某个月份的天数" class="headerlink" title="获取某个月份的天数"></a>获取某个月份的天数</h4><p>相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var date = new Date(2013, 2, 0);</div><div class="line">date.getDate();  // 28### </div><div class="line">date = new Date(2012, 2, 0);</div><div class="line">date.getDate();  // 29</div></pre></td></tr></table></figure></p>
 <p>创建Date对象时可以传入三个参数，分别是年、月（0~11，0表示一月）、日，如果日的参数为0，那创建出来的对象表示的就是上个月的最后一天，如此就可以知道上个月有多少天了。</p>
 <p>同样的，我们也可以通过这个方法判断某年是否闰年：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function isLeapYear(year)&#123;</div><div class="line">    return new Date(year, 2, 0).getDate() === 29;</div><div class="line">&#125;</div><div class="line">isLeapYear(2012);  // true</div></pre></td></tr></table></figure></p>
-<h3 id="获取时区"><a href="#获取时区" class="headerlink" title="获取时区"></a>获取时区</h3><p>日期类型的 getTimezoneOffset() 方法可以获取格林威治时间和本地时间之间的时间差，以分钟为单位。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var date = new Date();</div><div class="line">var timezoneOffset = date.getTimezoneOffset(); // 中国（东八区）为-480</div><div class="line">-timezoneOffset / 60;  // 8</div></pre></td></tr></table></figure></p>
+<h4 id="获取时区"><a href="#获取时区" class="headerlink" title="获取时区"></a>获取时区</h4><p>日期类型的 getTimezoneOffset() 方法可以获取格林威治时间和本地时间之间的时间差，以分钟为单位。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var date = new Date();</div><div class="line">var timezoneOffset = date.getTimezoneOffset(); // 中国（东八区）为-480</div><div class="line">-timezoneOffset / 60;  // 8</div></pre></td></tr></table></figure></p>
 <p>把获取到的时间差除以60，再取负值就是所在的时区了。</p>
 <p>除此以外，还有一个方法。调用日期类型的 toString() 后，可以得到一段固定格式的日期字符串：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new Date().toString(); // Sun Mar 10 2013 16:41:12 GMT+0800 (中国标准时间)</div></pre></td></tr></table></figure></p>
 <p>显而易见，GMT后面的+800就是我们要的时区了，只要通过正则表达式匹配一下就可以拿到该值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/GMT([+-]\d+)/.test( new Date().toString() );</div><div class="line">var timezone = RegExp.$1;  // +0800</div></pre></td></tr></table></figure></p>
 <p>不过此时的 timezone 变量是字符串，如果要转成数字类型，还要进行一些处理。</p>
-<h3 id="计算运行时间"><a href="#计算运行时间" class="headerlink" title="计算运行时间"></a>计算运行时间</h3><p>如何测量某段程序的执行时间呢？方法很简单，在执行前记录一次时间，执行后用当前时间减去执行前的时间，就得到结果了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var startTime = new Date();</div><div class="line">// some program</div><div class="line">console.log(new Date() - startTime);</div></pre></td></tr></table></figure></p>
+<h4 id="计算运行时间"><a href="#计算运行时间" class="headerlink" title="计算运行时间"></a>计算运行时间</h4><p>如何测量某段程序的执行时间呢？方法很简单，在执行前记录一次时间，执行后用当前时间减去执行前的时间，就得到结果了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var startTime = new Date();</div><div class="line">// some program</div><div class="line">console.log(new Date() - startTime);</div></pre></td></tr></table></figure></p>
 <p>这里无需手动把日期转换为数字，因为进行减法运算的时候自然会强制转换。这样算出来的结果是毫秒级的，精度不是很够，不过对浏览器端的Javascript来说，也没必要纠结于1毫秒以内的消耗了。</p>
-<h3 id="删除cookie"><a href="#删除cookie" class="headerlink" title="删除cookie"></a>删除cookie</h3><p>准确地说，我们没法直接通过Javascript删除cookie。要想把某个cookie从这个世界抹杀掉，唯一的办法就是让它过期，这样浏览器的内建机制就会把它自动干掉。</p>
+<h4 id="删除cookie"><a href="#删除cookie" class="headerlink" title="删除cookie"></a>删除cookie</h4><p>准确地说，我们没法直接通过Javascript删除cookie。要想把某个cookie从这个世界抹杀掉，唯一的办法就是让它过期，这样浏览器的内建机制就会把它自动干掉。</p>
 <p>而要让cookie过期，最直截了当的方法就是把它的过期时间设为最小值。Javascript里面能表示的最小日期就是1970年1月1日0时0点0分，通过 new Date(0) 就可以创建出这样一个日期对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var cookieName = &apos;name&apos;; // cookie名</div><div class="line">document.cookie = cookieName + &apos;=&apos; + &apos;; expires=&apos; + new Date(0).toUTCString();</div></pre></td></tr></table></figure></p>
 
       
@@ -315,7 +315,7 @@
         <p><span>本文标题:</span><a href="/2017/02/01/xq2/">Javascript日期类型的巧用</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
         <p><span>发布时间:</span>2017-02-01, 21:42:41</p>
-        <p><span>最后更新:</span>2017-02-01, 21:50:06</p>
+        <p><span>最后更新:</span>2017-02-02, 11:47:07</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/02/01/xq2/" title="Javascript日期类型的巧用">http://www.xiaoqi888.cn/2017/02/01/xq2/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/01/xq2/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -351,7 +351,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取某个月份的天数"><span class="toc-number">1.</span> <span class="toc-text">获取某个月份的天数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取时区"><span class="toc-number">2.</span> <span class="toc-text">获取时区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算运行时间"><span class="toc-number">3.</span> <span class="toc-text">计算运行时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除cookie"><span class="toc-number">4.</span> <span class="toc-text">删除cookie</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取某个月份的天数"><span class="toc-number">1.</span> <span class="toc-text">获取某个月份的天数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取时区"><span class="toc-number">2.</span> <span class="toc-text">获取时区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#计算运行时间"><span class="toc-number">3.</span> <span class="toc-text">计算运行时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除cookie"><span class="toc-number">4.</span> <span class="toc-text">删除cookie</span></a></li></ol>
         
     </div>
     <style>

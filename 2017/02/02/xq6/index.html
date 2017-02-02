@@ -15,12 +15,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="黄小齐的前端博客">
-<meta property="og:url" content="http://www.xiaoqi888.cn/archives/2017/index.html">
+<meta name="description" content="代码如下1234567891011121314151617181920212223242526272829303132333435&amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot; xml:lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript实现冒泡排序">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/02/xq6/index.html">
 <meta property="og:site_name" content="黄小齐的前端博客">
+<meta property="og:description" content="代码如下1234567891011121314151617181920212223242526272829303132333435&amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot; xml:lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;">
+<meta property="og:updated_time" content="2017-02-02T13:05:13.261Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="黄小齐的前端博客">
+<meta name="twitter:title" content="JavaScript实现冒泡排序">
+<meta name="twitter:description" content="代码如下1234567891011121314151617181920212223242526272829303132333435&amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot; xml:lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2017 | 黄小齐的前端博客</title>
+<title>JavaScript实现冒泡排序 | 黄小齐的前端博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,8 +66,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -252,226 +256,160 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-xq6" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2017/02/02/xq6/" class="article-date">
+      <time datetime="2017-02-02T13:03:05.284Z" itemprop="datePublished">2017-02-02</time>
+</a>
+
+
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript实现冒泡排序
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/02/02/xq6/" class="archive-article-date">
-      <time datetime="2017-02-02T13:03:05.284Z" itemprop="datePublished">02-02</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/02/xq6/">JavaScript实现冒泡排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
+        <p>代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;黄小齐前端博客-冒泡排序&lt;/title&gt;</div><div class="line">	&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">		#inputtext&#123;width: 200px;&#125;</div><div class="line">		#btn&#123;width: 50px;&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">	&lt;script src=&quot;JQuery/jquery-1.6.2.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">		$(document).ready(function()&#123;</div><div class="line">			$(&quot;#btn&quot;).click(function()&#123;</div><div class="line">				var str = $(&quot;#inputtext&quot;).val();</div><div class="line">				var arr  = str.split(&quot;,&quot;);</div><div class="line">				for (var i = 0; i &lt; arr.length-1; i++) &#123;</div><div class="line">					for (var j=i+1;j&lt;arr.length;j++)&#123;</div><div class="line">						if (arr[i]&gt;arr[j])</div><div class="line">						&#123;</div><div class="line">							var temp = arr[i];</div><div class="line">							arr[i] = arr[j];</div><div class="line">							arr[j] = temp;</div><div class="line">						&#125;</div><div class="line">					&#125;;</div><div class="line">				&#125;;</div><div class="line">			document.getElementById(&quot;outputtext&quot;).innerHTML = arr.toString();</div><div class="line">			&#125;);</div><div class="line">		&#125;);</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;input id=&quot;inputtext&quot; type=&quot;text&quot;&gt;&lt;/input&gt;</div><div class="line">	&lt;input id=&quot;btn&quot; type=&quot;button&quot; value=&quot;排序&quot;&gt;&lt;/input&gt;</div><div class="line">	&lt;p id=&quot;outputtext&quot;&gt;结果&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/02/02/xq6/">JavaScript实现冒泡排序</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
+        <p><span>发布时间:</span>2017-02-02, 21:03:05</p>
+        <p><span>最后更新:</span>2017-02-02, 21:05:13</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/02/xq6/" title="JavaScript实现冒泡排序">http://www.xiaoqi888.cn/2017/02/02/xq6/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/02/xq6/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/02/02/xq5/">
+                    了解模块化开发
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/02/02/xq5/" class="archive-article-date">
-      <time datetime="2017-02-02T12:50:50.899Z" itemprop="datePublished">02-02</time>
-</a>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/02/xq5/">了解模块化开发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"JavaScript实现冒泡排序　| 黄小齐的前端博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
     
+
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/02/02/xq4/" class="archive-article-date">
-      <time datetime="2017-02-02T03:32:33.193Z" itemprop="datePublished">02-02</time>
-</a>
+</div>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/02/xq4/">CSS初始化代码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/02/02/xq3/" class="archive-article-date">
-      <time datetime="2017-02-02T03:08:35.206Z" itemprop="datePublished">02-02</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/02/xq3/">Git 常用命令大全</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/02/01/xq2/" class="archive-article-date">
-      <time datetime="2017-02-01T13:42:41.671Z" itemprop="datePublished">02-01</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/01/xq2/">Javascript日期类型的巧用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/02/01/xq1/" class="archive-article-date">
-      <time datetime="2017-02-01T10:15:23.786Z" itemprop="datePublished">02-01</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/01/xq1/">深入理解JavaScript—event（事件对象）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/24/hello-world/" class="archive-article-date">
-      <time datetime="2017-01-24T03:27:50.436Z" itemprop="datePublished">01-24</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/24/hello-world/">理解 Javascript回调函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/02/02/xq5/" title="下一篇: 了解模块化开发">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq6/">JavaScript实现冒泡排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq5/">了解模块化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq4/">CSS初始化代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq3/">Git 常用命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq2/">Javascript日期类型的巧用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq1/">深入理解JavaScript—event（事件对象）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/24/hello-world/">理解 Javascript回调函数</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

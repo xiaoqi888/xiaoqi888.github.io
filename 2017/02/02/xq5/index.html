@@ -15,19 +15,16 @@
 
 
 
-<meta name="description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：var _ = {    $: function(id) { return document.getElementById(id); },    getCookie: function(key) { … },    setCookie: function(key, value) { … }
-};">
+<meta name="description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：12345var _ = &amp;#123;	$: function(id) &amp;#123; return document.getElementById(id); &amp;#125;,	getCookie: function(key) &amp;#123; ... &amp;#125;,	setCookie: function">
 <meta property="og:type" content="article">
 <meta property="og:title" content="了解模块化开发">
 <meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/02/xq5/index.html">
 <meta property="og:site_name" content="黄小齐的前端博客">
-<meta property="og:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：var _ = {    $: function(id) { return document.getElementById(id); },    getCookie: function(key) { … },    setCookie: function(key, value) { … }
-};">
-<meta property="og:updated_time" content="2017-02-02T12:54:26.458Z">
+<meta property="og:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：12345var _ = &amp;#123;	$: function(id) &amp;#123; return document.getElementById(id); &amp;#125;,	getCookie: function(key) &amp;#123; ... &amp;#125;,	setCookie: function">
+<meta property="og:updated_time" content="2017-02-02T12:57:27.709Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="了解模块化开发">
-<meta name="twitter:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：var _ = {    $: function(id) { return document.getElementById(id); },    getCookie: function(key) { … },    setCookie: function(key, value) { … }
-};">
+<meta name="twitter:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：12345var _ = &amp;#123;	$: function(id) &amp;#123; return document.getElementById(id); &amp;#125;,	getCookie: function(key) &amp;#123; ... &amp;#125;,	setCookie: function">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -295,26 +292,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="全局变量冲突"><a href="#全局变量冲突" class="headerlink" title="全局变量冲突"></a>全局变量冲突</h4><h2 id="根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base-js中："><a href="#根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base-js中：" class="headerlink" title="根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中："></a>根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：</h2><p>var _ = {<br>    $: function(id) { return document.getElementById(id); },<br>    getCookie: function(key) { … },<br>    setCookie: function(key, value) { … }</p>
-<h2 id=""><a href="#" class="headerlink" title="};"></a>};</h2><a id="more"></a>
+        <h4 id="全局变量冲突"><a href="#全局变量冲突" class="headerlink" title="全局变量冲突"></a>全局变量冲突</h4><p>根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var _ = &#123;</div><div class="line">	$: function(id) &#123; return document.getElementById(id); &#125;,</div><div class="line">	getCookie: function(key) &#123; ... &#125;,</div><div class="line">	setCookie: function(key, value) &#123; ... &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>小A把这些函数都放在_对象内，以防过多的全局变量造成冲突。他告诉团队的其他成员，如果谁想使用这些函数，只要引入base.js就可以了。</p>
 <p>小C是小A的同事，他向小A反映：自己的页面引入了一个叫做underscore.js的类库，而且，这个类库也会占用<em>这个全局变量，这样一来就会跟base.js中的</em>冲突了。小A心想，underscore.js是第三方类库，估计不好改，但是base.js已经在很多页面铺开，不可能改。最后小A只好无奈地把underscore.js占用的全局变量改了。</p>
 <p>此时，小A发现，把函数都放在一个名字空间内，可以减少全局变量冲突的概率，却没有解决全局变量冲突这个问题。</p>
 <h4 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h4><p>随着业务的发展，小A又编写了一系列的函数库和UI组件，比方说标签切换组件tabs.js，此组件需调用base.js以及util.js中的函数。</p>
-<h2 id="有一天，新同事小D跟小A反映，自己已经在页面中引用了tabs-js，功能却不正常。小A一看就发现问题了，原来小D不知道tabs-js依赖于base-js以及util-js，他并没有添加这两个文件的引用。于是，他马上进行修改："><a href="#有一天，新同事小D跟小A反映，自己已经在页面中引用了tabs-js，功能却不正常。小A一看就发现问题了，原来小D不知道tabs-js依赖于base-js以及util-js，他并没有添加这两个文件的引用。于是，他马上进行修改：" class="headerlink" title="有一天，新同事小D跟小A反映，自己已经在页面中引用了tabs.js，功能却不正常。小A一看就发现问题了，原来小D不知道tabs.js依赖于base.js以及util.js，他并没有添加这两个文件的引用。于是，他马上进行修改："></a>有一天，新同事小D跟小A反映，自己已经在页面中引用了tabs.js，功能却不正常。小A一看就发现问题了，原来小D不知道tabs.js依赖于base.js以及util.js，他并没有添加这两个文件的引用。于是，他马上进行修改：</h2><p><script src="tabs.js"></script></p>
-<p><script src="base.js"></script></p>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><script src="util.js"></script></h2><p>然而，功能还是不正常，此时小A教训小D说：“都说是依赖，那被依赖方肯定要放在依赖方之前啊”。原来小D把base.js和util.js放到tabs.js之后了。</p>
+<p>有一天，新同事小D跟小A反映，自己已经在页面中引用了tabs.js，功能却不正常。小A一看就发现问题了，原来小D不知道tabs.js依赖于base.js以及util.js，他并没有添加这两个文件的引用。于是，他马上进行修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;tabs.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;base.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;util.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>然而，功能还是不正常，此时小A教训小D说：“都说是依赖，那被依赖方肯定要放在依赖方之前啊”。原来小D把base.js和util.js放到tabs.js之后了。</p>
 <p>小A心想，他是作者，自然知道组件的依赖情况，但是别人就难说了，特别是新人。</p>
 <p>过了一段时间，小A给标签切换组件增加了功能，为了实现这个功能，tabs.js还需要调用ui.js中的函数。这时，小A发现了一个严重的问题，他需要在所有调用了tabs.js的页面上增加ui.js的引用！！！</p>
 <p>又过了一段时间，小A优化了tabs.js，这个组件已经不再依赖于util.js，所以他在所有用到tabs.js的页面中移除了util.js的引用，以提高性能。他这一修改，出大事了，测试组MM告诉他，有些页面不正常了。小A一看，恍然大悟，原来某些页面的其他功能用到了util.js中的函数，他把这个文件的引用去掉导致出错了。为了保证功能正常，他又把代码恢复了。</p>
 <p>小A又想，有没有办法在修改依赖的同时不用逐一修改页面，也不影响其他功能呢？</p>
 <h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4><p>小A逛互联网的时候，无意中发现了一种新奇的模块化编码方式，可以把它之前遇到的问题全部解决。</p>
-<h2 id="在模块化编程方式下，每个文件都是一个模块。每个模块都由一个名为define的函数创建。例如，把base-js改造成一个模块后，代码会变成这样："><a href="#在模块化编程方式下，每个文件都是一个模块。每个模块都由一个名为define的函数创建。例如，把base-js改造成一个模块后，代码会变成这样：" class="headerlink" title="在模块化编程方式下，每个文件都是一个模块。每个模块都由一个名为define的函数创建。例如，把base.js改造成一个模块后，代码会变成这样："></a>在模块化编程方式下，每个文件都是一个模块。每个模块都由一个名为define的函数创建。例如，把base.js改造成一个模块后，代码会变成这样：</h2><p>define(function(require, exports, module) {<br>    exports.$ = function(id) { return document.getElementById(id); };<br>    exports.getCookie = function(key) { … };<br>    exports.setCookie = function(key, value) { … };</p>
-<h2 id="-2"><a href="#-2" class="headerlink" title="});"></a>});</h2><p>base.js向外提供的接口都被添加到exports这个对象。而exports是一个局部变量，整个模块的代码都没有占用半个全局变量。</p>
-<h2 id="那如何调用某个模块提供的接口呢？以tabs-js为例，它要依赖于base-js和util-js："><a href="#那如何调用某个模块提供的接口呢？以tabs-js为例，它要依赖于base-js和util-js：" class="headerlink" title="那如何调用某个模块提供的接口呢？以tabs.js为例，它要依赖于base.js和util.js："></a>那如何调用某个模块提供的接口呢？以tabs.js为例，它要依赖于base.js和util.js：</h2><p>define(function(require, exports, module) {<br>    var _ = require(‘base.js’), util = require(‘util.js’);<br>    var div<em>tabs = </em>.$(‘tabs’);<br>    // …. 其他代码</p>
-<h2 id="-3"><a href="#-3" class="headerlink" title="});"></a>});</h2><h2 id="一个模块可以通过局部函数require获取其他模块的接口。此时，变量和util都是局部变量，并且，变量名完全是受开发者控制的，如果你不喜欢，那也可以用base："><a href="#一个模块可以通过局部函数require获取其他模块的接口。此时，变量和util都是局部变量，并且，变量名完全是受开发者控制的，如果你不喜欢，那也可以用base：" class="headerlink" title="一个模块可以通过局部函数require获取其他模块的接口。此时，变量和util都是局部变量，并且，变量名完全是受开发者控制的，如果你不喜欢，那也可以用base："></a>一个模块可以通过局部函数require获取其他模块的接口。此时，变量<em>和util都是局部变量，并且，变量名完全是受开发者控制的，如果你不喜欢</em>，那也可以用base：</h2><p>define(function(require, exports, module) {<br>    var base = require(‘base.js’), util = require(‘util.js’);<br>    var div_tabs = base.$(‘tabs’);<br>    // …. 其他代码</p>
-<h2 id="-4"><a href="#-4" class="headerlink" title="});"></a>});</h2><h2 id="一旦要移除util-js、添加ui-js，那只要修改tabs-js就可以了："><a href="#一旦要移除util-js、添加ui-js，那只要修改tabs-js就可以了：" class="headerlink" title="一旦要移除util.js、添加ui.js，那只要修改tabs.js就可以了："></a>一旦要移除util.js、添加ui.js，那只要修改tabs.js就可以了：</h2><p>define(function(require, exports, module) {<br>    var base = require(‘base.js’), ui = require(‘ui.js’);<br>    var div_tabs = base.$(‘tabs’);<br>    // …. 其他代码</p>
-<h2 id="-5"><a href="#-5" class="headerlink" title="});"></a>});</h2><h4 id="加载器"><a href="#加载器" class="headerlink" title="加载器"></a>加载器</h4><p>由于缺乏浏览器的原生支持，如果我们要用模块化的方式编码，就必须借助于一个叫做加载器（loader）的东西。</p>
+<p>在模块化编程方式下，每个文件都是一个模块。每个模块都由一个名为define的函数创建。例如，把base.js改造成一个模块后，代码会变成这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">	exports.$ = function(id) &#123; return document.getElementById(id); &#125;;</div><div class="line">	exports.getCookie = function(key) &#123; ... &#125;;</div><div class="line">	exports.setCookie = function(key, value) &#123; ... &#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>base.js向外提供的接口都被添加到exports这个对象。而exports是一个局部变量，整个模块的代码都没有占用半个全局变量。</p>
+<p>那如何调用某个模块提供的接口呢？以tabs.js为例，它要依赖于base.js和util.js：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">	var _ = require(&apos;base.js&apos;), util = require(&apos;util.js&apos;);</div><div class="line">	var div_tabs = _.$(&apos;tabs&apos;);</div><div class="line">	// .... 其他代码</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>一个模块可以通过局部函数require获取其他模块的接口。此时，变量<em>和util都是局部变量，并且，变量名完全是受开发者控制的，如果你不喜欢</em>，那也可以用base：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">	var base = require(&apos;base.js&apos;), util = require(&apos;util.js&apos;);</div><div class="line">	var div_tabs = base.$(&apos;tabs&apos;);</div><div class="line">	// .... 其他代码</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>一旦要移除util.js、添加ui.js，那只要修改tabs.js就可以了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">	var base = require(&apos;base.js&apos;), ui = require(&apos;ui.js&apos;);</div><div class="line">	var div_tabs = base.$(&apos;tabs&apos;);</div><div class="line">	// .... 其他代码</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="加载器"><a href="#加载器" class="headerlink" title="加载器"></a>加载器</h4><p>由于缺乏浏览器的原生支持，如果我们要用模块化的方式编码，就必须借助于一个叫做加载器（loader）的东西。</p>
 <p>目前加载器的实现有很多，比如require.js、seajs。而JRaiser类库也有自己的加载器。</p>
 
       
@@ -327,7 +323,7 @@
         <p><span>本文标题:</span><a href="/2017/02/02/xq5/">了解模块化开发</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
         <p><span>发布时间:</span>2017-02-02, 20:50:50</p>
-        <p><span>最后更新:</span>2017-02-02, 20:54:26</p>
+        <p><span>最后更新:</span>2017-02-02, 20:57:27</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/02/02/xq5/" title="了解模块化开发">http://www.xiaoqi888.cn/2017/02/02/xq5/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/02/xq5/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -357,7 +353,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#全局变量冲突"><span class="toc-number">1.</span> <span class="toc-text">全局变量冲突</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base-js中："><span class="toc-number"></span> <span class="toc-text">根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number"></span> <span class="toc-text">};</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#依赖"><span class="toc-number">1.</span> <span class="toc-text">依赖</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#有一天，新同事小D跟小A反映，自己已经在页面中引用了tabs-js，功能却不正常。小A一看就发现问题了，原来小D不知道tabs-js依赖于base-js以及util-js，他并没有添加这两个文件的引用。于是，他马上进行修改："><span class="toc-number"></span> <span class="toc-text">有一天，新同事小D跟小A反映，自己已经在页面中引用了tabs.js，功能却不正常。小A一看就发现问题了，原来小D不知道tabs.js依赖于base.js以及util.js，他并没有添加这两个文件的引用。于是，他马上进行修改：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-number"></span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#模块化"><span class="toc-number">1.</span> <span class="toc-text">模块化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在模块化编程方式下，每个文件都是一个模块。每个模块都由一个名为define的函数创建。例如，把base-js改造成一个模块后，代码会变成这样："><span class="toc-number"></span> <span class="toc-text">在模块化编程方式下，每个文件都是一个模块。每个模块都由一个名为define的函数创建。例如，把base.js改造成一个模块后，代码会变成这样：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-2"><span class="toc-number"></span> <span class="toc-text">});</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#那如何调用某个模块提供的接口呢？以tabs-js为例，它要依赖于base-js和util-js："><span class="toc-number"></span> <span class="toc-text">那如何调用某个模块提供的接口呢？以tabs.js为例，它要依赖于base.js和util.js：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-3"><span class="toc-number"></span> <span class="toc-text">});</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个模块可以通过局部函数require获取其他模块的接口。此时，变量和util都是局部变量，并且，变量名完全是受开发者控制的，如果你不喜欢，那也可以用base："><span class="toc-number"></span> <span class="toc-text">一个模块可以通过局部函数require获取其他模块的接口。此时，变量和util都是局部变量，并且，变量名完全是受开发者控制的，如果你不喜欢，那也可以用base：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-4"><span class="toc-number"></span> <span class="toc-text">});</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一旦要移除util-js、添加ui-js，那只要修改tabs-js就可以了："><span class="toc-number"></span> <span class="toc-text">一旦要移除util.js、添加ui.js，那只要修改tabs.js就可以了：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-5"><span class="toc-number"></span> <span class="toc-text">});</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#加载器"><span class="toc-number">1.</span> <span class="toc-text">加载器</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#全局变量冲突"><span class="toc-number">1.</span> <span class="toc-text">全局变量冲突</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#依赖"><span class="toc-number">2.</span> <span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模块化"><span class="toc-number">3.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#加载器"><span class="toc-number">4.</span> <span class="toc-text">加载器</span></a></li></ol>
         
     </div>
     <style>

@@ -288,8 +288,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h4 id="全局变量冲突"><a href="#全局变量冲突" class="headerlink" title="全局变量冲突"></a>全局变量冲突</h4><h2 id="根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base-js中："><a href="#根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base-js中：" class="headerlink" title="根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中："></a>根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：</h2><p>var _ = {<br>    $: function(id) { return document.getElementById(id); },<br>    getCookie: function(key) { … },<br>    setCookie: function(key, value) { … }</p>
-<h2 id=""><a href="#" class="headerlink" title="};"></a>};</h2>
+              <h4 id="全局变量冲突"><a href="#全局变量冲突" class="headerlink" title="全局变量冲突"></a>全局变量冲突</h4><p>根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var _ = &#123;</div><div class="line">	$: function(id) &#123; return document.getElementById(id); &#125;,</div><div class="line">	getCookie: function(key) &#123; ... &#125;,</div><div class="line">	setCookie: function(key, value) &#123; ... &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
           
       
     </div>

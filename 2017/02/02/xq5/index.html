@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：12345var _ = &amp;#123;	$: function(id) &amp;#123; return document.getElementById(id); &amp;#125;,	getCookie: function(key) &amp;#123; ... &amp;#125;,	setCookie: function">
+<meta name="description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="了解模块化开发">
 <meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/02/xq5/index.html">
 <meta property="og:site_name" content="黄小齐的前端博客">
-<meta property="og:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：12345var _ = &amp;#123;	$: function(id) &amp;#123; return document.getElementById(id); &amp;#125;,	getCookie: function(key) &amp;#123; ... &amp;#125;,	setCookie: function">
-<meta property="og:updated_time" content="2017-02-02T12:57:27.709Z">
+<meta property="og:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：">
+<meta property="og:updated_time" content="2017-02-02T13:09:39.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="了解模块化开发">
-<meta name="twitter:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：12345var _ = &amp;#123;	$: function(id) &amp;#123; return document.getElementById(id); &amp;#125;,	getCookie: function(key) &amp;#123; ... &amp;#125;,	setCookie: function">
+<meta name="twitter:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -292,8 +292,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="全局变量冲突"><a href="#全局变量冲突" class="headerlink" title="全局变量冲突"></a>全局变量冲突</h4><p>根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var _ = &#123;</div><div class="line">	$: function(id) &#123; return document.getElementById(id); &#125;,</div><div class="line">	getCookie: function(key) &#123; ... &#125;,</div><div class="line">	setCookie: function(key, value) &#123; ... &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
+        <h4 id="全局变量冲突"><a href="#全局变量冲突" class="headerlink" title="全局变量冲突"></a>全局变量冲突</h4><p>根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var _ = &#123;</div><div class="line">	$: function(id) &#123; return document.getElementById(id); &#125;,</div><div class="line">	getCookie: function(key) &#123; ... &#125;,</div><div class="line">	setCookie: function(key, value) &#123; ... &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>小A把这些函数都放在_对象内，以防过多的全局变量造成冲突。他告诉团队的其他成员，如果谁想使用这些函数，只要引入base.js就可以了。</p>
 <p>小C是小A的同事，他向小A反映：自己的页面引入了一个叫做underscore.js的类库，而且，这个类库也会占用<em>这个全局变量，这样一来就会跟base.js中的</em>冲突了。小A心想，underscore.js是第三方类库，估计不好改，但是base.js已经在很多页面铺开，不可能改。最后小A只好无奈地把underscore.js占用的全局变量改了。</p>
 <p>此时，小A发现，把函数都放在一个名字空间内，可以减少全局变量冲突的概率，却没有解决全局变量冲突这个问题。</p>
@@ -323,7 +322,7 @@
         <p><span>本文标题:</span><a href="/2017/02/02/xq5/">了解模块化开发</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
         <p><span>发布时间:</span>2017-02-02, 20:50:50</p>
-        <p><span>最后更新:</span>2017-02-02, 20:57:27</p>
+        <p><span>最后更新:</span>2017-02-02, 21:09:39</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/02/02/xq5/" title="了解模块化开发">http://www.xiaoqi888.cn/2017/02/02/xq5/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/02/xq5/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

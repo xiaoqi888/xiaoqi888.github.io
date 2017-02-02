@@ -14,16 +14,20 @@
 <meta name="author" content="xiaoqi" />
 
 
-    
-    
 
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="黄小齐的前端博客">
-<meta property="og:url" content="http://www.xiaoqi888.cn/index.html">
+<meta name="description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：var _ = {    $: function(id) { return document.getElementById(id); },    getCookie: function(key) { … },    setCookie: function(key, value) { … }
+};小A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="了解模块化开发">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/02/xq5/index.html">
 <meta property="og:site_name" content="黄小齐的前端博客">
+<meta property="og:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：var _ = {    $: function(id) { return document.getElementById(id); },    getCookie: function(key) { … },    setCookie: function(key, value) { … }
+};小A">
+<meta property="og:updated_time" content="2017-02-02T12:53:16.706Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="黄小齐的前端博客">
+<meta name="twitter:title" content="了解模块化开发">
+<meta name="twitter:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：var _ = {    $: function(id) { return document.getElementById(id); },    getCookie: function(key) { … },    setCookie: function(key, value) { … }
+};小A">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -51,13 +55,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>黄小齐的前端博客</title>
+<title>了解模块化开发 | 黄小齐的前端博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,8 +68,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -257,9 +259,7 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-xq5" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-xq5" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2017/02/02/xq5/" class="article-date">
@@ -277,12 +277,19 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/02/xq5/">了解模块化开发</a>
+    <h1 class="article-title" itemprop="name">
+      了解模块化开发
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -312,319 +319,85 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-xq4" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/02/xq4/" class="article-date">
-      <time datetime="2017-02-02T03:32:33.193Z" itemprop="datePublished">2017-02-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/02/xq4/">CSS初始化代码</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h4 id="为什么要初始化CSS？"><a href="#为什么要初始化CSS？" class="headerlink" title="为什么要初始化CSS？"></a>为什么要初始化CSS？</h4><p>   CSS初始化是指重设浏览器的样式。不同的浏览器默认的样式可能不尽相同，所以开发时的第一件事可能就是如何把它们统一。如果没对CSS初始化往往会出现浏览器之间的页面差异。
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2017/02/02/xq4/#more">more >></a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/02/02/xq5/">了解模块化开发</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
+        <p><span>发布时间:</span>2017-02-02, 20:50:50</p>
+        <p><span>最后更新:</span>2017-02-02, 20:53:16</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/02/xq5/" title="了解模块化开发">http://www.xiaoqi888.cn/2017/02/02/xq5/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/02/xq5/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-xq3" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/02/xq3/" class="article-date">
-      <time datetime="2017-02-02T03:08:35.206Z" itemprop="datePublished">2017-02-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/02/xq3/">Git 常用命令大全</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h4 id="Git常用操作命令："><a href="#Git常用操作命令：" class="headerlink" title="Git常用操作命令："></a>Git常用操作命令：</h4><h5 id="1-远程仓库相关命令"><a href="#1-远程仓库相关命令" class="headerlink" title="1) 远程仓库相关命令"></a>1) 远程仓库相关命令</h5><p>检出仓库：$ git clone git://github.com/jquery/jquery.git<br>查看远程仓库：$ git remote -v<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2017/02/02/xq3/#more">more >></a>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
         </p>
-      
-      <div class="clearfix"></div>
     </div>
-    
-  </div>
-  
-</article>
 
 
 
-
-
-
-
-
-
-  
-    <article id="post-xq2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/01/xq2/" class="article-date">
-      <time datetime="2017-02-01T13:42:41.671Z" itemprop="datePublished">2017-02-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/01/xq2/">Javascript日期类型的巧用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h4 id="获取某个月份的天数"><a href="#获取某个月份的天数" class="headerlink" title="获取某个月份的天数"></a>获取某个月份的天数</h4><p>相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2017/02/01/xq2/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-xq1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/01/xq1/" class="article-date">
-      <time datetime="2017-02-01T10:15:23.786Z" itemprop="datePublished">2017-02-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/01/xq1/">深入理解JavaScript—event（事件对象）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h4 id="1-事件对象"><a href="#1-事件对象" class="headerlink" title="1. 事件对象"></a>1. 事件对象</h4><p>Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。<br>什么时候会产生Event 对象呢?<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2017/02/01/xq1/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/01/24/hello-world/" class="article-date">
-      <time datetime="2017-01-24T03:27:50.436Z" itemprop="datePublished">2017-01-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/02/02/xq4/">
+                    CSS初始化代码
+                </a>
+            </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/24/hello-world/">理解 Javascript回调函数</a>
-    </h1>
-  
+    </nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>新单位在用NodeJS和 express,满眼看去，到处是以函数作为参数的回调函数的使用。如果这个概念理解不了，nodejs、express 的代码就会看得一塌糊涂。比如：<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2017/01/24/hello-world/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#全局变量冲突"><span class="toc-number">1.</span> <span class="toc-text">全局变量冲突</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base-js中："><span class="toc-number"></span> <span class="toc-text">根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number"></span> <span class="toc-text">};</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#依赖"><span class="toc-number">1.</span> <span class="toc-text">依赖</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#有一天，新同事小D跟小A反映，自己已经在页面中引用了tabs-js，功能却不正常。小A一看就发现问题了，原来小D不知道tabs-js依赖于base-js以及util-js，他并没有添加这两个文件的引用。于是，他马上进行修改："><span class="toc-number"></span> <span class="toc-text">有一天，新同事小D跟小A反映，自己已经在页面中引用了tabs.js，功能却不正常。小A一看就发现问题了，原来小D不知道tabs.js依赖于base.js以及util.js，他并没有添加这两个文件的引用。于是，他马上进行修改：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-number"></span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#模块化"><span class="toc-number">1.</span> <span class="toc-text">模块化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在模块化编程方式下，每个文件都是一个模块。每个模块都由一个名为define的函数创建。例如，把base-js改造成一个模块后，代码会变成这样："><span class="toc-number"></span> <span class="toc-text">在模块化编程方式下，每个文件都是一个模块。每个模块都由一个名为define的函数创建。例如，把base.js改造成一个模块后，代码会变成这样：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-2"><span class="toc-number"></span> <span class="toc-text">});</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#那如何调用某个模块提供的接口呢？以tabs-js为例，它要依赖于base-js和util-js："><span class="toc-number"></span> <span class="toc-text">那如何调用某个模块提供的接口呢？以tabs.js为例，它要依赖于base.js和util.js：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-3"><span class="toc-number"></span> <span class="toc-text">});</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个模块可以通过局部函数require获取其他模块的接口。此时，变量和util都是局部变量，并且，变量名完全是受开发者控制的，如果你不喜欢，那也可以用base："><span class="toc-number"></span> <span class="toc-text">一个模块可以通过局部函数require获取其他模块的接口。此时，变量和util都是局部变量，并且，变量名完全是受开发者控制的，如果你不喜欢，那也可以用base：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-4"><span class="toc-number"></span> <span class="toc-text">});</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一旦要移除util-js、添加ui-js，那只要修改tabs-js就可以了："><span class="toc-number"></span> <span class="toc-text">一旦要移除util.js、添加ui.js，那只要修改tabs.js就可以了：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-5"><span class="toc-number"></span> <span class="toc-text">});</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#加载器"><span class="toc-number">1.</span> <span class="toc-text">加载器</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"了解模块化开发　| 黄小齐的前端博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -632,9 +405,33 @@
 
 
 
+    
 
-  
-  
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/02/02/xq4/" title="下一篇: CSS初始化代码">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq5/">了解模块化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq4/">CSS初始化代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq3/">Git 常用命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq2/">Javascript日期类型的巧用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq1/">深入理解JavaScript—event（事件对象）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/24/hello-world/">理解 Javascript回调函数</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

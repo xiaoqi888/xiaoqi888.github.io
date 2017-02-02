@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="新单位在用NodeJS和 express,满眼看去，到处是以函数作为参数的回调函数的使用。如果这个概念理解不了，nodejs、express 的代码就会看得一塌糊涂。比如：">
+<meta name="description" content="Git常用操作命令：1) 远程仓库相关命令检出仓库：$ git clone git://github.com/jquery/jquery.git查看远程仓库：$ git remote -v添加远程仓库：$ git remote add [name] [url]删除远程仓库：$ git remote rm [name]修改远程仓库：$ git remote set-url –push [name]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解 Javascript回调函数">
-<meta property="og:url" content="http://www.xiaoqi888.cn/2017/01/24/hello-world/index.html">
+<meta property="og:title" content="Git 常用命令大全">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/02/xq3/index.html">
 <meta property="og:site_name" content="黄小齐的前端博客">
-<meta property="og:description" content="新单位在用NodeJS和 express,满眼看去，到处是以函数作为参数的回调函数的使用。如果这个概念理解不了，nodejs、express 的代码就会看得一塌糊涂。比如：">
-<meta property="og:updated_time" content="2017-02-01T14:05:35.260Z">
+<meta property="og:description" content="Git常用操作命令：1) 远程仓库相关命令检出仓库：$ git clone git://github.com/jquery/jquery.git查看远程仓库：$ git remote -v添加远程仓库：$ git remote add [name] [url]删除远程仓库：$ git remote rm [name]修改远程仓库：$ git remote set-url –push [name]">
+<meta property="og:updated_time" content="2017-02-02T03:11:37.189Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理解 Javascript回调函数">
-<meta name="twitter:description" content="新单位在用NodeJS和 express,满眼看去，到处是以函数作为参数的回调函数的使用。如果这个概念理解不了，nodejs、express 的代码就会看得一塌糊涂。比如：">
+<meta name="twitter:title" content="Git 常用命令大全">
+<meta name="twitter:description" content="Git常用操作命令：1) 远程仓库相关命令检出仓库：$ git clone git://github.com/jquery/jquery.git查看远程仓库：$ git remote -v添加远程仓库：$ git remote add [name] [url]删除远程仓库：$ git remote rm [name]修改远程仓库：$ git remote set-url –push [name]">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>理解 Javascript回调函数 | 黄小齐的前端博客</title>
+<title>Git 常用命令大全 | 黄小齐的前端博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -256,11 +256,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-xq3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/24/hello-world/" class="article-date">
-      <time datetime="2017-01-24T03:27:50.436Z" itemprop="datePublished">2017-01-24</time>
+      <a href="/2017/02/02/xq3/" class="article-date">
+      <time datetime="2017-02-02T03:08:35.206Z" itemprop="datePublished">2017-02-02</time>
 </a>
 
 
@@ -275,7 +275,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      理解 Javascript回调函数
+      Git 常用命令大全
     </h1>
   
 
@@ -292,17 +292,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>新单位在用NodeJS和 express,满眼看去，到处是以函数作为参数的回调函数的使用。如果这个概念理解不了，nodejs、express 的代码就会看得一塌糊涂。比如：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.use(function(req, res, next) &#123;</div><div class="line">    var err = new Error(&apos;Not Found&apos;);</div><div class="line">    err.status = 404;</div><div class="line">    next(err);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>app是对象，use是方法，方法的参数是一个带参的匿名函数，函数体直接在后面给出了。这段代码怎么理解呢？我们先来了解回调函数这个概念。</p>
-<p>首先要了解，在 js 中，函数也是对象，可以赋值给变量，可以作为参数放在函数的参数列表中。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var doSomething = function(a,b)&#123;</div><div class="line">    return a + b;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这段代码的意思是定义一个匿名函数，这个匿名函数除了没有名字之外，其他跟普通的函数没有什么两样。然后把匿名函数赋值给变量doSomething。接下来我们调用：</p>
-<p>console.log(doSomething(2,3));<br>这样会输出5。</p>
-<p>回调函数，就是放在另外一个函数（如 parent）的参数列表中，作为参数传递给这个 parent，然后在 parent 函数体的某个位置执行。说来抽象，看例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// To illustrate the concept of callback</div><div class="line">var doit = function(callback)&#123;</div><div class="line">    var a = 1,</div><div class="line">        b = 2,</div><div class="line">        c = 3;</div><div class="line">    var t = callback(a,b,c);</div><div class="line">    return t + 10;</div><div class="line">&#125;;</div><div class="line">var d = doit(function(x,y,z)&#123;</div><div class="line">    return (x+y+z);</div><div class="line">&#125;);</div><div class="line">console.log(d);</div></pre></td></tr></table></figure></p>
-<p>先定义 doit 函数，有一个参数 callback。这个 callback 就是回调函数，名字可以任意取。看函数体，先定义三个变量 a,b,c。然后调用 callback 函数。最后返回一个值。</p>
-<p>下面就调用 doit 函数了。要注意的是，刚才定义 doit 时，callback 并没有定义，所以刚才并不知道 callback 是干什么用的。这其实很好理解，我们平时定义函数的时候，参数也只是给出了一个名字，比如 a,在函数体中使用 a，但整个过程也并不知道 a 到底是什么，只有在调用那个函数的时候才指定 a 的具体值，比如2.回过头来，在调用 doit 的时候，我们就需要指定 callback 究竟是个什么东西了。可以看到，这个函数完成了一个 sum 功能。</p>
-<p>上述代码的执行过程是：<br>调用 doit函数，参数是一个匿名函数；进入 doit 的函数体中，先定义 a,b,c，然后执行刚才的匿名函数，参数是 a,b,c，并返回一个 t，最后返回一个 t+10给 d。</p>
-<p>回到最初的例子，app.use(…)是函数调用。我们可以想象，之前一定定义了一个 use 方法，只是这里没有给出。这两个例子一对比，就可以马上理解了。</p>
-<p>在使用nodejs、express 的时候，不可能每个方法或函数我们都要找到它的函数定义去看一看。所以只要知道那个定义里面给 callback 传递了什么参数就行了。然后在调用方法或函数时，在参数里我们自己定义匿名函数来完成某些功能。</p>
+        <h3 id="Git常用操作命令："><a href="#Git常用操作命令：" class="headerlink" title="Git常用操作命令："></a>Git常用操作命令：</h3><h4 id="1-远程仓库相关命令"><a href="#1-远程仓库相关命令" class="headerlink" title="1) 远程仓库相关命令"></a>1) 远程仓库相关命令</h4><p>检出仓库：$ git clone git://github.com/jquery/jquery.git<br>查看远程仓库：$ git remote -v<br>添加远程仓库：$ git remote add [name] [url]<br>删除远程仓库：$ git remote rm [name]<br>修改远程仓库：$ git remote set-url –push [name] [newUrl]<br>拉取远程仓库：$ git pull [remoteName] [localBranchName]<br>推送远程仓库：$ git push [remoteName] [localBranchName]</p>
+<p>*如果想把本地的某个分支test提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支，如下：<br>$git push origin test:master         // 提交本地test分支作为远程的master分支<br>$git push origin test:test              // 提交本地test分支作为远程的test分支</p>
+<h4 id="2）分支-branch-操作相关命令"><a href="#2）分支-branch-操作相关命令" class="headerlink" title="2）分支(branch)操作相关命令"></a>2）分支(branch)操作相关命令</h4><p>查看本地分支：$ git branch<br>查看远程分支：$ git branch -r<br>创建本地分支：$ git branch [name] —-注意新分支创建后不会自动切换为当前分支<br>切换分支：$ git checkout [name]<br>创建新分支并立即切换到新分支：$ git checkout -b [name]<br>删除分支：$ git branch -d [name] —- -d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项<br>合并分支：$ git merge [name] —-将名称为[name]的分支与当前分支合并<br>创建远程分支(本地分支push到远程)：$ git push origin [name]<br>删除远程分支：$ git push origin :heads/[name] 或 $ gitpush origin :[name] </p>
+<p>*创建空的分支：(执行命令之前记得先提交你当前分支的修改，否则会被强制删干净没得后悔)<br>$git symbolic-ref HEAD refs/heads/[name]<br>$rm .git/index<br>$git clean -fdx</p>
+<h4 id="3）版本-tag-操作相关命令"><a href="#3）版本-tag-操作相关命令" class="headerlink" title="3）版本(tag)操作相关命令"></a>3）版本(tag)操作相关命令</h4><p>查看版本：$ git tag<br>创建版本：$ git tag [name]<br>删除版本：$ git tag -d [name]<br>查看远程版本：$ git tag -r<br>创建远程版本(本地版本push到远程)：$ git push origin [name]<br>删除远程版本：$ git push origin :refs/tags/[name]<br>合并远程仓库的tag到本地：$ git pull origin –tags<br>上传本地tag到远程仓库：$ git push origin –tags<br>创建带注释的tag：$ git tag -a [name] -m ‘yourMessage’</p>
+<h4 id="4-子模块-submodule-相关操作命令"><a href="#4-子模块-submodule-相关操作命令" class="headerlink" title="4) 子模块(submodule)相关操作命令"></a>4) 子模块(submodule)相关操作命令</h4><p>添加子模块：$ git submodule add [url] [path]<br>   如：$git submodule add git://github.com/soberh/ui-libs.git src/main/webapp/ui-libs<br>初始化子模块：$ git submodule init  —-只在首次检出仓库时运行一次就行<br>更新子模块：$ git submodule update —-每次更新或切换分支后都需要运行一下<br>删除子模块：（分4步走哦）<br> 1) $ git rm –cached [path]<br> 2) 编辑“.gitmodules”文件，将子模块的相关配置节点删除掉<br> 3) 编辑“ .git/config”文件，将子模块的相关配置节点删除掉<br> 4) 手动删除子模块残留的目录</p>
+<h4 id="5）忽略一些文件、文件夹不提交"><a href="#5）忽略一些文件、文件夹不提交" class="headerlink" title="5）忽略一些文件、文件夹不提交"></a>5）忽略一些文件、文件夹不提交</h4><p>在仓库根目录下创建名称为“.gitignore”的文件，写入不需要的文件夹名或文件，每个元素占一行即可，如<br>target<br>bin</p>
+<h1 id="db"><a href="#db" class="headerlink" title="*.db"></a>*.db</h1><h3 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h3><p>git branch 查看本地所有分支<br>git status 查看当前状态<br>git commit 提交<br>git branch -a 查看所有的分支<br>git branch -r 查看本地所有分支<br>git commit -am “init” 提交并且加注释<br>git remote add origin git@192.168.1.119:ndshow<br>git push origin master 将文件给推到服务器上<br>git remote show origin 显示远程库origin里的资源<br>git push origin master:develop<br>git push origin master:hb-dev 将本地库与服务器上的库进行关联<br>git checkout –track origin/dev 切换到远程dev分支<br>git branch -D master develop 删除本地库develop<br>git checkout -b dev 建立一个新的本地分支dev<br>git merge origin/dev 将分支dev与当前分支进行合并<br>git checkout dev 切换到本地dev分支<br>git remote show 查看远程库<br>git add .<br>git rm 文件名(包括路径) 从git中删除指定文件<br>git clone git://github.com/schacon/grit.git 从服务器上将代码给拉下来<br>git config –list 看所有用户<br>git ls-files 看已经被提交的<br>git rm [file name] 删除一个文件<br>git commit -a 提交当前repos的所有的改变<br>git add [file name] 添加一个文件到git index<br>git commit -v 当你用－v参数的时候可以看commit的差异<br>git commit -m “This is the message describing the commit” 添加commit信息<br>git commit -a -a是代表add，把所有的change加到git index里然后再commit<br>git commit -a -v 一般提交命令<br>git log 看你commit的日志<br>git diff 查看尚未暂存的更新<br>git rm a.a 移除文件(从暂存区和工作区中删除)<br>git rm –cached a.a 移除文件(只从暂存区中删除)<br>git commit -m “remove” 移除文件(从Git中删除)<br>git rm -f a.a 强行移除修改后文件(从暂存区和工作区中删除)<br>git diff –cached 或 $ git diff –staged 查看尚未提交的更新<br>git stash push 将文件给push到一个临时空间中</p>
+<h2 id="git-stash-pop-将文件从临时空间pop下来"><a href="#git-stash-pop-将文件从临时空间pop下来" class="headerlink" title="git stash pop 将文件从临时空间pop下来"></a>git stash pop 将文件从临时空间pop下来</h2><p>git remote add origin git@github.com:username/Hello-World.git</p>
+<h2 id="git-push-origin-master-将本地项目给提交到服务器中"><a href="#git-push-origin-master-将本地项目给提交到服务器中" class="headerlink" title="git push origin master 将本地项目给提交到服务器中"></a>git push origin master 将本地项目给提交到服务器中</h2><h2 id="git-pull-本地与服务器端同步"><a href="#git-pull-本地与服务器端同步" class="headerlink" title="git pull 本地与服务器端同步"></a>git pull 本地与服务器端同步</h2><p>git push (远程仓库名) (分支名) 将本地分支推送到服务器上去。</p>
+<h2 id="git-push-origin-serverfix-awesomebranch"><a href="#git-push-origin-serverfix-awesomebranch" class="headerlink" title="git push origin serverfix:awesomebranch"></a>git push origin serverfix:awesomebranch</h2><p>git fetch 相当于是从远程获取最新版本到本地，不会自动merge<br>git commit -a -m “log_message” (-a是提交所有改动，-m是加入log信息) 本地修改同步至服务器端 ：<br>git branch branch_0.1 master 从主分支master创建branch_0.1分支<br>git branch -m branch_0.1 branch_1.0 将branch_0.1重命名为branch_1.0<br>git checkout branch_1.0/master 切换到branch_1.0/master分支</p>
+<h2 id="du-hs"><a href="#du-hs" class="headerlink" title="du -hs"></a>du -hs</h2><p>mkdir WebApp<br>cd WebApp<br>git init<br>touch README<br>git add README<br>git commit -m ‘first commit’<br>git remote add origin git@github.com:daixu/WebApp.git<br>git push -u origin master</p>
 
       
     </div>
@@ -311,13 +312,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/01/24/hello-world/">理解 Javascript回调函数</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/02/xq3/">Git 常用命令大全</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
-        <p><span>发布时间:</span>2017-01-24, 11:27:50</p>
-        <p><span>最后更新:</span>2017-02-01, 22:05:35</p>
+        <p><span>发布时间:</span>2017-02-02, 11:08:35</p>
+        <p><span>最后更新:</span>2017-02-02, 11:11:37</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/01/24/hello-world/" title="理解 Javascript回调函数">http://www.xiaoqi888.cn/2017/01/24/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/01/24/hello-world/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/02/xq3/" title="Git 常用命令大全">http://www.xiaoqi888.cn/2017/02/02/xq3/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/02/xq3/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -329,12 +330,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/01/xq1/">
-                    深入理解JavaScript—event（事件对象）
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/02/01/xq2/">
+                    Javascript日期类型的巧用
                 </a>
             </div>
-        
         
     </nav>
 
@@ -344,7 +345,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Git常用操作命令："><span class="toc-number">1.</span> <span class="toc-text">Git常用操作命令：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-远程仓库相关命令"><span class="toc-number">1.1.</span> <span class="toc-text">1) 远程仓库相关命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）分支-branch-操作相关命令"><span class="toc-number">1.2.</span> <span class="toc-text">2）分支(branch)操作相关命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3）版本-tag-操作相关命令"><span class="toc-number">1.3.</span> <span class="toc-text">3）版本(tag)操作相关命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-子模块-submodule-相关操作命令"><span class="toc-number">1.4.</span> <span class="toc-text">4) 子模块(submodule)相关操作命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5）忽略一些文件、文件夹不提交"><span class="toc-number">1.5.</span> <span class="toc-text">5）忽略一些文件、文件夹不提交</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#db"><span class="toc-number"></span> <span class="toc-text">*.db</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-常用命令"><span class="toc-number">1.</span> <span class="toc-text">Git 常用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-stash-pop-将文件从临时空间pop下来"><span class="toc-number"></span> <span class="toc-text">git stash pop 将文件从临时空间pop下来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-push-origin-master-将本地项目给提交到服务器中"><span class="toc-number"></span> <span class="toc-text">git push origin master 将本地项目给提交到服务器中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-pull-本地与服务器端同步"><span class="toc-number"></span> <span class="toc-text">git pull 本地与服务器端同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-push-origin-serverfix-awesomebranch"><span class="toc-number"></span> <span class="toc-text">git push origin serverfix:awesomebranch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#du-hs"><span class="toc-number"></span> <span class="toc-text">du -hs</span></a>
         
     </div>
     <style>
@@ -380,7 +381,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"理解 Javascript回调函数　| 黄小齐的前端博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Git 常用命令大全　| 黄小齐的前端博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -400,15 +401,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/01/xq1/" title="上一篇: 深入理解JavaScript—event（事件对象）">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/02/01/xq2/" title="下一篇: Javascript日期类型的巧用">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 

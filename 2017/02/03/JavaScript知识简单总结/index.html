@@ -17,16 +17,16 @@
 
 
 
-<meta name="description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：">
+<meta name="description" content="以 &amp;lt; script&amp;gt;开头，以结尾,老式的浏览器中需要加上language，如： &amp;lt; script language = “JavaScript” /script&amp;gt; 表示该脚本是JavaScript，也可以写上其他脚本的名字。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="了解模块化开发">
-<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/02/xq5/index.html">
+<meta property="og:title" content="JavaScript知识简单总结">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/03/JavaScript知识简单总结/index.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：">
-<meta property="og:updated_time" content="2017-02-02T13:09:39.603Z">
+<meta property="og:description" content="以 &amp;lt; script&amp;gt;开头，以结尾,老式的浏览器中需要加上language，如： &amp;lt; script language = “JavaScript” /script&amp;gt; 表示该脚本是JavaScript，也可以写上其他脚本的名字。">
+<meta property="og:updated_time" content="2017-02-03T06:18:52.667Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="了解模块化开发">
-<meta name="twitter:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：">
+<meta name="twitter:title" content="JavaScript知识简单总结">
+<meta name="twitter:description" content="以 &amp;lt; script&amp;gt;开头，以结尾,老式的浏览器中需要加上language，如： &amp;lt; script language = “JavaScript” /script&amp;gt; 表示该脚本是JavaScript，也可以写上其他脚本的名字。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>了解模块化开发 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>JavaScript知识简单总结 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-xq5" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JavaScript知识简单总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/02/xq5/" class="article-date">
-      <time datetime="2017-02-02T12:50:50.899Z" itemprop="datePublished">2017-02-02</time>
+      <a href="/2017/02/03/JavaScript知识简单总结/" class="article-date">
+      <time datetime="2017-02-03T05:10:33.000Z" itemprop="datePublished">2017-02-03</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      了解模块化开发
+      JavaScript知识简单总结
     </h1>
   
 
@@ -287,6 +287,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -294,25 +298,48 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="全局变量冲突"><a href="#全局变量冲突" class="headerlink" title="全局变量冲突"></a>全局变量冲突</h4><p>根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var _ = &#123;</div><div class="line">	$: function(id) &#123; return document.getElementById(id); &#125;,</div><div class="line">	getCookie: function(key) &#123; ... &#125;,</div><div class="line">	setCookie: function(key, value) &#123; ... &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>小A把这些函数都放在_对象内，以防过多的全局变量造成冲突。他告诉团队的其他成员，如果谁想使用这些函数，只要引入base.js就可以了。</p>
-<p>小C是小A的同事，他向小A反映：自己的页面引入了一个叫做underscore.js的类库，而且，这个类库也会占用<em>这个全局变量，这样一来就会跟base.js中的</em>冲突了。小A心想，underscore.js是第三方类库，估计不好改，但是base.js已经在很多页面铺开，不可能改。最后小A只好无奈地把underscore.js占用的全局变量改了。</p>
-<p>此时，小A发现，把函数都放在一个名字空间内，可以减少全局变量冲突的概率，却没有解决全局变量冲突这个问题。</p>
-<h4 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h4><p>随着业务的发展，小A又编写了一系列的函数库和UI组件，比方说标签切换组件tabs.js，此组件需调用base.js以及util.js中的函数。</p>
-<p>有一天，新同事小D跟小A反映，自己已经在页面中引用了tabs.js，功能却不正常。小A一看就发现问题了，原来小D不知道tabs.js依赖于base.js以及util.js，他并没有添加这两个文件的引用。于是，他马上进行修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;tabs.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;base.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;util.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>然而，功能还是不正常，此时小A教训小D说：“都说是依赖，那被依赖方肯定要放在依赖方之前啊”。原来小D把base.js和util.js放到tabs.js之后了。</p>
-<p>小A心想，他是作者，自然知道组件的依赖情况，但是别人就难说了，特别是新人。</p>
-<p>过了一段时间，小A给标签切换组件增加了功能，为了实现这个功能，tabs.js还需要调用ui.js中的函数。这时，小A发现了一个严重的问题，他需要在所有调用了tabs.js的页面上增加ui.js的引用！！！</p>
-<p>又过了一段时间，小A优化了tabs.js，这个组件已经不再依赖于util.js，所以他在所有用到tabs.js的页面中移除了util.js的引用，以提高性能。他这一修改，出大事了，测试组MM告诉他，有些页面不正常了。小A一看，恍然大悟，原来某些页面的其他功能用到了util.js中的函数，他把这个文件的引用去掉导致出错了。为了保证功能正常，他又把代码恢复了。</p>
-<p>小A又想，有没有办法在修改依赖的同时不用逐一修改页面，也不影响其他功能呢？</p>
-<h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4><p>小A逛互联网的时候，无意中发现了一种新奇的模块化编码方式，可以把它之前遇到的问题全部解决。</p>
-<p>在模块化编程方式下，每个文件都是一个模块。每个模块都由一个名为define的函数创建。例如，把base.js改造成一个模块后，代码会变成这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">	exports.$ = function(id) &#123; return document.getElementById(id); &#125;;</div><div class="line">	exports.getCookie = function(key) &#123; ... &#125;;</div><div class="line">	exports.setCookie = function(key, value) &#123; ... &#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>base.js向外提供的接口都被添加到exports这个对象。而exports是一个局部变量，整个模块的代码都没有占用半个全局变量。</p>
-<p>那如何调用某个模块提供的接口呢？以tabs.js为例，它要依赖于base.js和util.js：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">	var _ = require(&apos;base.js&apos;), util = require(&apos;util.js&apos;);</div><div class="line">	var div_tabs = _.$(&apos;tabs&apos;);</div><div class="line">	// .... 其他代码</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>一个模块可以通过局部函数require获取其他模块的接口。此时，变量<em>和util都是局部变量，并且，变量名完全是受开发者控制的，如果你不喜欢</em>，那也可以用base：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">	var base = require(&apos;base.js&apos;), util = require(&apos;util.js&apos;);</div><div class="line">	var div_tabs = base.$(&apos;tabs&apos;);</div><div class="line">	// .... 其他代码</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>一旦要移除util.js、添加ui.js，那只要修改tabs.js就可以了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">	var base = require(&apos;base.js&apos;), ui = require(&apos;ui.js&apos;);</div><div class="line">	var div_tabs = base.$(&apos;tabs&apos;);</div><div class="line">	// .... 其他代码</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h4 id="加载器"><a href="#加载器" class="headerlink" title="加载器"></a>加载器</h4><p>由于缺乏浏览器的原生支持，如果我们要用模块化的方式编码，就必须借助于一个叫做加载器（loader）的东西。</p>
-<p>目前加载器的实现有很多，比如require.js、seajs。而JRaiser类库也有自己的加载器。</p>
+        <ol>
+<li>以 &lt; script&gt;开头，以结尾,老式的浏览器中需要加上language，如： &lt; script language = “JavaScript” /script&gt; 表示该脚本是JavaScript，<br>也可以写上其他脚本的名字。<a id="more"></a></li>
+<li>JavaScript语句只要放在不同的行就可以执行，但更好的方式是，在每一条语句后加上分号结尾，<br>document.write();向页面上输出内容。<br>document.write(“hello!”);<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 在屏幕中输出加粗的hello</div><div class="line">&lt;script&gt;</div><div class="line">    document.write(&quot;&lt;strong&gt;hello &lt;/strong&gt;&quot;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>3.变量<br>用 var+变量名 声明一个变量 可以不考虑变量的类型。所有类型都用var来声明。</p>
+<ol>
+<li>变量区分大小写 </li>
+<li>用\表示转义字符 </li>
+<li>不使用var声明的变量当做全局变量，用var声明的变量拥有特定的作用域。 </li>
+<li>推荐使用下划线分割变量名中的单词，用驼峰格式命名方法名，这样可以方便的区分变量和方法。 </li>
+<li>JavaScript是一种弱类型的语言，即变量的使用不需要声明，而且变量的类型在使用时可以改变。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var age=&quot;thirty&quot;;   //字符串型</div><div class="line">age = 30;           //数值型</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>常用的类型有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = 16; //数字 </div><div class="line">var b = 16.123; //浮点型 </div><div class="line">var falg = true; //布尔型 </div><div class="line">var s = “hello”//字符串型</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//字符串的相加运算</div><div class="line">&lt;script&gt;</div><div class="line">    var a = &quot;abc&quot;;</div><div class="line">    a += &apos;d&apos;;</div><div class="line">    document.write(a);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">结果是abcd。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//html中将多个空格当成一个来处理</div><div class="line">&lt;script&gt;</div><div class="line">    var s = &apos;hello   &apos;;</div><div class="line">    s += &apos;   world&apos;;</div><div class="line">    document.write(s);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">结果是: hello world</div></pre></td></tr></table></figure>
+<p>4.运算 </p>
+<p>常见的运算符在JavaScript中都有，例如：<br>加减乘除： +-*\ %<br>自加自减：++ –<br>加法：+= -=<br>逻辑： &amp;&amp; || ？： ！<br>判断： ==（类似于C语言）<br>字符串比较大小： &gt; &lt; == (小写字母大于大写字母)</p>
+<p>5.注释<br>和C语言一样用//或/<em> </em>/ 表示 </p>
+<p>6.判断<br>与C语言基本相同</p>
+<p>建议每一条if语句都加上{}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//不加括号时，else属于较近的if</div><div class="line">&lt;script&gt;</div><div class="line">    var s = &apos;hello&apos;;</div><div class="line">    if (s == &apos;hello&apos;)</div><div class="line">        if(s == &apos;world&apos;)</div><div class="line">            document.write(&apos;world&apos;);</div><div class="line">            else</div><div class="line">            document.write(s);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>7.循环<br>和c语言一样<br>for(;;)<br>while()<br>do while()</p>
+<p>8.函数<br>function fun_name(形参){函数体}<br>函数也被当成是一种类型，有时可以像变量一样使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//定义一个函数</div><div class="line">function add(a,b)&#123;</div><div class="line">    return a+b;</div><div class="line">&#125;</div><div class="line">//使用函数</div><div class="line">alert(&apos;加:&apos;+add(1,2))</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//将函数类似于变量的用法</div><div class="line">function add(a,b)&#123;</div><div class="line">    return a+b;</div><div class="line">&#125;</div><div class="line">function cal(x,y,z)&#123;</div><div class="line">    return x(y,z);</div><div class="line">&#125;</div><div class="line">//将函数作为参数</div><div class="line">alert(cal(add,1,2));</div></pre></td></tr></table></figure>
+<p>9.数组<br>数组可以使用以下方法建立：<br>1 var a = new Array();<br>2 var b = new Array(10);<br>3 var c = new Array(1,2,”三”,true,5.5); //自动加上下标<br>4 var d = [6,7,8,9,10];</p>
+<p>数组的特点：<br>1，数组中的元素使用时才会被创建，即使创建了a[1]和a[10]，中间的元素依然是空。<br>2，数组的长度a.length为最大的下标加1，不管中间的元素是否存在。<br>3，数组的长度是可以人为修改的。修改后不属于长度内的元素会被清除。<br>4，数组的元素可以是不同的类型<br>5，数组的元素也可以是数组</p>
+<p>关联数组：数组的下标用特定的名称来表示，不一定是数组，类似于 Java中的键值对，但是不推荐使用，因为对象可以更好的完成同样的效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = new Array();</div><div class="line">a[1] = 10;</div><div class="line">a[10] = 20;</div><div class="line">document.write(a[9]+&quot;&lt;br/&gt;&quot;);</div><div class="line">document.write(a.length);</div></pre></td></tr></table></figure>
+<p>在这里会输出：<br>undefined<br>11<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//人为改变数组长度，等同于截取数组中的一段</div><div class="line">var a = new Array(1,2,3,4,5);</div><div class="line">document.write(a.length+&quot;&lt;br/&gt;&quot;);</div><div class="line">a.length = 3;</div><div class="line">document.write(a+&quot;&lt;br/&gt;&quot;);</div><div class="line">a.length = 5;</div><div class="line">document.write(a);</div></pre></td></tr></table></figure></p>
+<p>结果如下：<br>5<br>1,2,3<br>1,2,3,,</p>
+<p>join(“&amp;”) 表示认为的改变输出时元素的分隔符如：</p>
+<p>document.write(a.join(“%”));<br>会输出 1%2%3</p>
+<p>10.对象</p>
+<p>属性和方法的集合</p>
+<p>声明：<br>var o = new Object();<br>var cidr = {x:2,y:0,radius:2};</p>
+<p>对象的元素是在使用时添加进类中的，第一次使用时就会自动为该类创建这个成员</p>
+<p>删除属性：<br>delete book.name;<br>book.name=null;</p>
+<p>遍历属性：<br>for(var x in book ){<br>x是成员的名字，用法类似于数组的下标<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var book = new Object();</div><div class="line">book.name = &apos;百年孤独&apos;;</div><div class="line">book.about = &#123;name:&apos;马尔克斯&apos;,price:100&#125;;</div><div class="line">document.write(book.name+&apos;&lt;br/&gt;&apos;);</div><div class="line">document.write(book.about.name);</div></pre></td></tr></table></figure></p>
+<p>结果：<br>百年孤独<br>马尔克斯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var book = new Object();</div><div class="line">book.name = &apos;百年孤独&apos;;</div><div class="line">book.about = &#123;name:&apos;马尔克斯&apos;,price:100&#125;;</div><div class="line">//遍历</div><div class="line">for (var x in book )&#123;</div><div class="line">    document.write(book[x]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -321,13 +348,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/02/xq5/">了解模块化开发</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/03/JavaScript知识简单总结/">JavaScript知识简单总结</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
-        <p><span>发布时间:</span>2017-02-02, 20:50:50</p>
-        <p><span>最后更新:</span>2017-02-02, 21:09:39</p>
+        <p><span>发布时间:</span>2017-02-03, 13:10:33</p>
+        <p><span>最后更新:</span>2017-02-03, 14:18:52</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/02/xq5/" title="了解模块化开发">http://www.xiaoqi888.cn/2017/02/02/xq5/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/02/xq5/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/03/JavaScript知识简单总结/" title="JavaScript知识简单总结">http://www.xiaoqi888.cn/2017/02/03/JavaScript知识简单总结/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/03/JavaScript知识简单总结/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -339,16 +366,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/02/xq6/">
-                    JavaScript实现冒泡排序
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/02/xq4/">
-                    CSS初始化代码
+                <a href="/2017/02/02/xq6/">
+                    JavaScript实现冒泡排序
                 </a>
             </div>
         
@@ -360,7 +381,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#全局变量冲突"><span class="toc-number">1.</span> <span class="toc-text">全局变量冲突</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#依赖"><span class="toc-number">2.</span> <span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模块化"><span class="toc-number">3.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#加载器"><span class="toc-number">4.</span> <span class="toc-text">加载器</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -396,7 +417,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"了解模块化开发　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"JavaScript知识简单总结　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -416,15 +437,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/02/xq6/" title="上一篇: JavaScript实现冒泡排序">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/02/xq4/" title="下一篇: CSS初始化代码">
+            <a href="/2017/02/02/xq6/" title="下一篇: JavaScript实现冒泡排序">
                 <i class="fa fa-angle-right"></i>
             </a>
         

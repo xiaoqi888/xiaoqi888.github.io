@@ -17,16 +17,16 @@
 
 
 
-<meta name="description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：">
+<meta name="description" content="去掉chrome(谷歌)浏览器默认的input、textarea的边框(border)和背景(background) 及chrome下不可更改textarea大小">
 <meta property="og:type" content="article">
-<meta property="og:title" content="了解模块化开发">
-<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/02/xq5/index.html">
+<meta property="og:title" content="去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/03/去掉谷歌浏览器获取焦点时默认的input/index.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：">
-<meta property="og:updated_time" content="2017-02-02T13:09:39.603Z">
+<meta property="og:description" content="去掉chrome(谷歌)浏览器默认的input、textarea的边框(border)和背景(background) 及chrome下不可更改textarea大小">
+<meta property="og:updated_time" content="2017-02-03T10:54:01.243Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="了解模块化开发">
-<meta name="twitter:description" content="全局变量冲突根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：">
+<meta name="twitter:title" content="去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景">
+<meta name="twitter:description" content="去掉chrome(谷歌)浏览器默认的input、textarea的边框(border)和背景(background) 及chrome下不可更改textarea大小">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>了解模块化开发 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-xq5" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-去掉谷歌浏览器获取焦点时默认的input" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/02/xq5/" class="article-date">
-      <time datetime="2017-02-02T12:50:50.899Z" itemprop="datePublished">2017-02-02</time>
+      <a href="/2017/02/03/去掉谷歌浏览器获取焦点时默认的input/" class="article-date">
+      <time datetime="2017-02-03T10:03:47.000Z" itemprop="datePublished">2017-02-03</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      了解模块化开发
+      去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景
     </h1>
   
 
@@ -287,6 +287,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/input/">input</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/textarea/">textarea</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -294,25 +298,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="全局变量冲突"><a href="#全局变量冲突" class="headerlink" title="全局变量冲突"></a>全局变量冲突</h4><p>根据自己的经验，小A先把一些常用的功能抽出来，写成函数放到一个公用文件base.js中：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var _ = &#123;</div><div class="line">	$: function(id) &#123; return document.getElementById(id); &#125;,</div><div class="line">	getCookie: function(key) &#123; ... &#125;,</div><div class="line">	setCookie: function(key, value) &#123; ... &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>小A把这些函数都放在_对象内，以防过多的全局变量造成冲突。他告诉团队的其他成员，如果谁想使用这些函数，只要引入base.js就可以了。</p>
-<p>小C是小A的同事，他向小A反映：自己的页面引入了一个叫做underscore.js的类库，而且，这个类库也会占用<em>这个全局变量，这样一来就会跟base.js中的</em>冲突了。小A心想，underscore.js是第三方类库，估计不好改，但是base.js已经在很多页面铺开，不可能改。最后小A只好无奈地把underscore.js占用的全局变量改了。</p>
-<p>此时，小A发现，把函数都放在一个名字空间内，可以减少全局变量冲突的概率，却没有解决全局变量冲突这个问题。</p>
-<h4 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h4><p>随着业务的发展，小A又编写了一系列的函数库和UI组件，比方说标签切换组件tabs.js，此组件需调用base.js以及util.js中的函数。</p>
-<p>有一天，新同事小D跟小A反映，自己已经在页面中引用了tabs.js，功能却不正常。小A一看就发现问题了，原来小D不知道tabs.js依赖于base.js以及util.js，他并没有添加这两个文件的引用。于是，他马上进行修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;tabs.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;base.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;util.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>然而，功能还是不正常，此时小A教训小D说：“都说是依赖，那被依赖方肯定要放在依赖方之前啊”。原来小D把base.js和util.js放到tabs.js之后了。</p>
-<p>小A心想，他是作者，自然知道组件的依赖情况，但是别人就难说了，特别是新人。</p>
-<p>过了一段时间，小A给标签切换组件增加了功能，为了实现这个功能，tabs.js还需要调用ui.js中的函数。这时，小A发现了一个严重的问题，他需要在所有调用了tabs.js的页面上增加ui.js的引用！！！</p>
-<p>又过了一段时间，小A优化了tabs.js，这个组件已经不再依赖于util.js，所以他在所有用到tabs.js的页面中移除了util.js的引用，以提高性能。他这一修改，出大事了，测试组MM告诉他，有些页面不正常了。小A一看，恍然大悟，原来某些页面的其他功能用到了util.js中的函数，他把这个文件的引用去掉导致出错了。为了保证功能正常，他又把代码恢复了。</p>
-<p>小A又想，有没有办法在修改依赖的同时不用逐一修改页面，也不影响其他功能呢？</p>
-<h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4><p>小A逛互联网的时候，无意中发现了一种新奇的模块化编码方式，可以把它之前遇到的问题全部解决。</p>
-<p>在模块化编程方式下，每个文件都是一个模块。每个模块都由一个名为define的函数创建。例如，把base.js改造成一个模块后，代码会变成这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">	exports.$ = function(id) &#123; return document.getElementById(id); &#125;;</div><div class="line">	exports.getCookie = function(key) &#123; ... &#125;;</div><div class="line">	exports.setCookie = function(key, value) &#123; ... &#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>base.js向外提供的接口都被添加到exports这个对象。而exports是一个局部变量，整个模块的代码都没有占用半个全局变量。</p>
-<p>那如何调用某个模块提供的接口呢？以tabs.js为例，它要依赖于base.js和util.js：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">	var _ = require(&apos;base.js&apos;), util = require(&apos;util.js&apos;);</div><div class="line">	var div_tabs = _.$(&apos;tabs&apos;);</div><div class="line">	// .... 其他代码</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>一个模块可以通过局部函数require获取其他模块的接口。此时，变量<em>和util都是局部变量，并且，变量名完全是受开发者控制的，如果你不喜欢</em>，那也可以用base：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">	var base = require(&apos;base.js&apos;), util = require(&apos;util.js&apos;);</div><div class="line">	var div_tabs = base.$(&apos;tabs&apos;);</div><div class="line">	// .... 其他代码</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>一旦要移除util.js、添加ui.js，那只要修改tabs.js就可以了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(function(require, exports, module) &#123;</div><div class="line">	var base = require(&apos;base.js&apos;), ui = require(&apos;ui.js&apos;);</div><div class="line">	var div_tabs = base.$(&apos;tabs&apos;);</div><div class="line">	// .... 其他代码</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h4 id="加载器"><a href="#加载器" class="headerlink" title="加载器"></a>加载器</h4><p>由于缺乏浏览器的原生支持，如果我们要用模块化的方式编码，就必须借助于一个叫做加载器（loader）的东西。</p>
-<p>目前加载器的实现有很多，比如require.js、seajs。而JRaiser类库也有自己的加载器。</p>
+        <p>去掉chrome(谷歌)浏览器默认的input、textarea的边框(border)和背景(background) 及chrome下不可更改textarea大小<br><a id="more"></a><br>1、使用Chrome的都知道，当鼠标焦点在input、textarea这些元素上时，Chrome默认的会给它们加上黄色的边框，我以前一直以为这是chrome的特性，没法去掉，原来是css的效果，outline这个属性。<br>你可以用下面的css代码去掉所有元素的边框：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*:focus &#123;outline: none;&#125;</div></pre></td></tr></table></figure></p>
+<p>用下面的代码去掉你要去掉的元素的边框：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.nohighlight:focus &#123; outline:none; &#125;</div></pre></td></tr></table></figure></p>
+<p>你也可以给元素增加你希望的边框：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.changeborder:focus &#123; outline:Blue Solid 4px; &#125;</div></pre></td></tr></table></figure></p>
+<p>2、用chrome登录了一次并记录了COOKIES之后，再次打开，CHROME记录了上次输入的内容，背景图片就会被覆盖一层淡黄色的背景色， 点击一下鼠标，背景图片才显示出来。这个怎么解决呢？我当时碰到这个问题的时候，也很头疼，至今都没有发现有什么好的办法。有发现的请分享一下。 </p>
+<p>3、chrome默认用户可以控制textarea的大小，在CSS中加入下面一句就可以了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">textarea &#123;resize:none;&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -321,13 +311,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/02/xq5/">了解模块化开发</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/03/去掉谷歌浏览器获取焦点时默认的input/">去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
-        <p><span>发布时间:</span>2017-02-02, 20:50:50</p>
-        <p><span>最后更新:</span>2017-02-02, 21:09:39</p>
+        <p><span>发布时间:</span>2017-02-03, 18:03:47</p>
+        <p><span>最后更新:</span>2017-02-03, 18:54:01</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/02/xq5/" title="了解模块化开发">http://www.xiaoqi888.cn/2017/02/02/xq5/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/02/xq5/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/03/去掉谷歌浏览器获取焦点时默认的input/" title="去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景">http://www.xiaoqi888.cn/2017/02/03/去掉谷歌浏览器获取焦点时默认的input/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/03/去掉谷歌浏览器获取焦点时默认的input/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -339,16 +329,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/02/xq6/">
-                    JavaScript实现冒泡排序
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/02/xq4/">
-                    CSS初始化代码
+                <a href="/2017/02/03/元素设置padding或margin的问题/">
+                    元素设置width:100%之后再设置padding或margin的问题
                 </a>
             </div>
         
@@ -360,7 +344,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#全局变量冲突"><span class="toc-number">1.</span> <span class="toc-text">全局变量冲突</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#依赖"><span class="toc-number">2.</span> <span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模块化"><span class="toc-number">3.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#加载器"><span class="toc-number">4.</span> <span class="toc-text">加载器</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -396,7 +380,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"了解模块化开发　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -416,15 +400,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/02/xq6/" title="上一篇: JavaScript实现冒泡排序">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/02/xq4/" title="下一篇: CSS初始化代码">
+            <a href="/2017/02/03/元素设置padding或margin的问题/" title="下一篇: 元素设置width:100%之后再设置padding或margin的问题">
                 <i class="fa fa-angle-right"></i>
             </a>
         

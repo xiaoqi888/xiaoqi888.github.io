@@ -17,16 +17,16 @@
 
 
 
-<meta name="description" content="黄小齐前端博客—热爱web前端开发、移动web开发，乐于分享web前端开发技术。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:url" content="http://www.xiaoqi888.cn/tags/index.html">
+<meta name="description" content="比较运算符常见错误在常规的比较中，数据类型是被忽略的，以下 if 条件语句返回 true：123var x = 5;var y = &amp;quot;5&amp;quot;;if (x == y)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript运算符使用误区">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/04/JavaScript运算符使用误区/index.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="黄小齐前端博客—热爱web前端开发、移动web开发，乐于分享web前端开发技术。">
-<meta property="og:updated_time" content="2017-02-03T06:21:12.490Z">
+<meta property="og:description" content="比较运算符常见错误在常规的比较中，数据类型是被忽略的，以下 if 条件语句返回 true：123var x = 5;var y = &amp;quot;5&amp;quot;;if (x == y)">
+<meta property="og:updated_time" content="2017-02-04T10:25:28.524Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta name="twitter:description" content="黄小齐前端博客—热爱web前端开发、移动web开发，乐于分享web前端开发技术。">
+<meta name="twitter:title" content="JavaScript运算符使用误区">
+<meta name="twitter:description" content="比较运算符常见错误在常规的比较中，数据类型是被忽略的，以下 if 条件语句返回 true：123var x = 5;var y = &amp;quot;5&amp;quot;;if (x == y)">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>JavaScript运算符使用误区 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -68,7 +68,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JavaScript运算符使用误区" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2017-02-03T06:21:12.539Z" itemprop="datePublished">2017-02-03</time>
+      <a href="/2017/02/04/JavaScript运算符使用误区/" class="article-date">
+      <time datetime="2017-02-04T02:13:34.000Z" itemprop="datePublished">2017-02-04</time>
 </a>
 
 
@@ -273,99 +273,95 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript运算符使用误区
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/运算符/">运算符</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
+        <h5 id="比较运算符常见错误"><a href="#比较运算符常见错误" class="headerlink" title="比较运算符常见错误"></a>比较运算符常见错误</h5><p>在常规的比较中，数据类型是被忽略的，以下 if 条件语句返回 true：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var x = 5;</div><div class="line">var y = &quot;5&quot;;</div><div class="line">if (x == y)</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>在严格的比较运算中，=== 为恒等计算符，同时检查表达式的值与类型，以下 if 条件语句返回 false：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var x = 5;</div><div class="line">var y = &quot;5&quot;;</div><div class="line">if (x === y)</div></pre></td></tr></table></figure></p>
+<p>这种错误经常会在 switch 语句中出现，switch 语句会使用恒等计算符(===)进行比较:<br>以下实例会执行 alert 弹窗：<br>var x = 5;<br>switch(x) {<br>    case 5:<br>alert(“Hello”);<br>break;<br>}<br>以下实例由于类型不一致不会执行 alert 弹窗：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var x = 5;</div><div class="line">switch(x) &#123;</div><div class="line">    case &quot;5&quot;: </div><div class="line">alert(&quot;Hello&quot;);</div><div class="line">break;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
-
-    <!-- Tag Cloud Page -->
-    <hr>
-<br>
-
-
-<p class="count"></p>
-
-<div class="tags">
-    <a href="/tags/JavaScript/" style="font-size: 35px; color: #000">JavaScript</a> <a href="/tags/css/" style="font-size: 35px; color: #000">css</a> <a href="/tags/input/" style="font-size: 16px; color: #808080">input</a> <a href="/tags/padding/" style="font-size: 16px; color: #808080">padding</a> <a href="/tags/textarea/" style="font-size: 16px; color: #808080">textarea</a> <a href="/tags/运算符/" style="font-size: 16px; color: #808080">运算符</a>
-</div>
-<style>
-    .category-list li{
-        display: inline-block;
-        margin: 0 1em .5em 0;
-        padding: 4px;
-        border: 1px solid lightgray;
-        font-size: 1.2rem;
-    }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
-        text-decoration: none;
-    }
-    .category-list-count {
-        margin-left: 2px;
-        font-size: .9rem;
-    }
-    .article-entry ul li:before{ display: none; }
-    .article-inner { text-align: center; }
-    .tags {
-        max-width: 42em;
-        margin: 2em auto;
-        margin-top: 0em;
-    }
-    .tags a {
-        margin-right: 1em;
-        line-height: 65px;
-        border-bottom: 1px solid gray;
-        white-space: nowrap;
-        transition: border-bottom .5s;
-    }
-    .tags a:hover {
-        border-bottom: 3px dotted gray;
-        text-decoration: none;
-    }
-    #count > span {
-        margin: auto .2em;
-        font-weight: bold;
-    }
-</style>
-
-<!-- Count tags and categories -->
-<p id="count">
-        已有<span><script>document.write($(".category-list-item").length)</script></span>个分类，
-        共计<span><script>document.write($(".tags > a").length)</script></span>个标签
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
-
-          
-        
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/02/04/JavaScript运算符使用误区/">JavaScript运算符使用误区</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
+        <p><span>发布时间:</span>2017-02-04, 10:13:34</p>
+        <p><span>最后更新:</span>2017-02-04, 18:25:28</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/04/JavaScript运算符使用误区/" title="JavaScript运算符使用误区">http://www.xiaoqi888.cn/2017/02/04/JavaScript运算符使用误区/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/04/JavaScript运算符使用误区/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/02/03/去掉谷歌浏览器获取焦点时默认的input/">
+                    去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#比较运算符常见错误"><span class="toc-number">1.</span> <span class="toc-text">比较运算符常见错误</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
 
@@ -383,7 +379,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"JavaScript运算符使用误区　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -398,6 +394,24 @@
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/02/03/去掉谷歌浏览器获取焦点时默认的input/" title="下一篇: 去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/JavaScript运算符使用误区/">JavaScript运算符使用误区</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/去掉谷歌浏览器获取焦点时默认的input/">去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/元素设置padding或margin的问题/">元素设置width:100%之后再设置padding或margin的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/JavaScript知识简单总结/">JavaScript知识简单总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq6/">JavaScript实现冒泡排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq5/">了解模块化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq4/">CSS初始化代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq3/">Git 常用命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq2/">Javascript日期类型的巧用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq1/">深入理解JavaScript—event（事件对象）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/24/hello-world/">理解 Javascript回调函数</a></li></ul>
 
 
 

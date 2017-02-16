@@ -17,16 +17,16 @@
 
 
 
-<meta name="description" content="jquery 处理 CheckBox复选框">
+<meta name="description" content="闭包（closure）是JavaScript语言的特色，很多高级应用都要依靠闭包实现。作为一个初学者，还是用最通俗易懂的语言解释一下闭包吧。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jquery 处理 CheckBox复选框">
-<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/06/jquery 处理 CheckBox复选框/index.html">
+<meta property="og:title" content="详谈一下闭包是什么">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/14/详谈一下闭包是什么/index.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="jquery 处理 CheckBox复选框">
-<meta property="og:updated_time" content="2017-02-08T04:02:49.518Z">
+<meta property="og:description" content="闭包（closure）是JavaScript语言的特色，很多高级应用都要依靠闭包实现。作为一个初学者，还是用最通俗易懂的语言解释一下闭包吧。">
+<meta property="og:updated_time" content="2017-02-16T13:58:38.393Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jquery 处理 CheckBox复选框">
-<meta name="twitter:description" content="jquery 处理 CheckBox复选框">
+<meta name="twitter:title" content="详谈一下闭包是什么">
+<meta name="twitter:description" content="闭包（closure）是JavaScript语言的特色，很多高级应用都要依靠闭包实现。作为一个初学者，还是用最通俗易懂的语言解释一下闭包吧。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>jquery 处理 CheckBox复选框 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>详谈一下闭包是什么 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-jquery 处理 CheckBox复选框" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-详谈一下闭包是什么" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/06/jquery 处理 CheckBox复选框/" class="article-date">
-      <time datetime="2017-02-06T02:03:47.000Z" itemprop="datePublished">2017-02-06</time>
+      <a href="/2017/02/14/详谈一下闭包是什么/" class="article-date">
+      <time datetime="2017-02-14T13:52:47.000Z" itemprop="datePublished">2017-02-14</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jquery 处理 CheckBox复选框
+      详谈一下闭包是什么
     </h1>
   
 
@@ -288,7 +288,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CheckBox/">CheckBox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jquery/">Jquery</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -298,7 +298,27 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>jquery 处理 CheckBox复选框<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$(function () &#123;  </div><div class="line">   //第一个复选框id  </div><div class="line">   $(&quot;#btnCheckAll&quot;).bind(&quot;click&quot;,function()&#123;  </div><div class="line">       if($(this).is(&quot;:checked&quot;))&#123;  </div><div class="line">           //全选  </div><div class="line">           $(&quot;[name = checkboxed]:checkbox&quot;).prop(&quot;checked&quot;,true);  </div><div class="line">       &#125;else&#123;  </div><div class="line">           //取消全选  </div><div class="line">           $(&quot;[name = checkboxed]:checkbox&quot;).prop(&quot;checked&quot;,false);  </div><div class="line">       &#125;  </div><div class="line">   &#125;);  </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+        <p>闭包（closure）是JavaScript语言的特色，很多高级应用都要依靠闭包实现。作为一个初学者，还是用最通俗易懂的语言解释一下闭包吧。<br><a id="more"></a><br>在讲闭包之前，我们先复习一下</p>
+<p>变量的作用域</p>
+<p>变量的作用域两种：全局变量和局部变量。<br>在Javascript语言中函数内部可以直接读取全局变量<br>先看个小例子。<br>例1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    var a = &quot;我是全局变量&quot;;</div><div class="line">    function fun()&#123;</div><div class="line">        var b = &quot;我是局部变量&quot;;</div><div class="line">        console.log(b);</div><div class="line">        console.log(a);</div><div class="line">    &#125;</div><div class="line">    fun();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>毫无疑问，打印出来的就是<br>我是全局变量<br>我是局部变量<br>但是，如果我要这样写呢？<br>例2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function fun()&#123;</div><div class="line">        var b = &quot;我是局部变量&quot;;   </div><div class="line">&#125;</div><div class="line">    console.log(b);</div></pre></td></tr></table></figure></p>
+<p>结果输出： b is not defined 让你大眼一看，你也肯定会说，这个不是胡扯嘛，b明明就是局部变量，怎么能在函数体外调用呢！结果不出错才奇怪呢！ 可我就想调用函数体内的变量，怎么办？ 别急，既然你能想出这个问题，那么就肯定有办法解决。这不 “闭包”这个大神就给你支招了，只要你用了“闭包”，你就能让fun 函数以外的函数 来 使用 b 的值 。</p>
+<p>闭包的概念</p>
+<p>在程序语言中，所谓闭包，是指语法域位于某个特定的区域，具有持续参照(读写)位于该区域内自身范围之外的执行域上的非持久型变量值能力的段落。这些外部执行域的非持久型变量神奇地保留他们在闭包最初定义(或创建)时的值。<br>大白话的将： 我们可以用一个函数 去访问 另外一个函数的内部变量的方式就是闭包。<br>为了让自己更明白，继续来举个例子，<br>例3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function outFun() &#123;</div><div class="line">        var num = 9;  //  num 是outFun函数内 的一个变量</div><div class="line">        function inFun() &#123;</div><div class="line">            var key = 10;</div><div class="line">            console.log(num);  //   外部函数outFun的变量num可以被内部函数inFun所使用</div><div class="line">        &#125;</div><div class="line">        console.log(key);    // 这样是不可以的，key是内部函数inFun的变量，内部函数的变量不可以被外部函数所使用</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的例子中 我们知道num 这个变量只可以供内部函数使用，其他的不能随便使用。<br>可我想让外部的函数也使用num变量肿么办呢？ 别急，看我给变变型。<br>例4：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function outFun()&#123;</div><div class="line">        var num = 9;</div><div class="line">        function inFun()&#123;</div><div class="line">            console.log(num);</div><div class="line">        &#125;</div><div class="line">        return inFun;   // 让outFun函数的结果   返回 inFun这个函数体   这也是闭包的核心语句</div><div class="line">    &#125;</div><div class="line">    // 立即执行outFun这个函数，把返回的结果赋给fun </div><div class="line">    var fun = outFun();  // 这个点要多注意了</div><div class="line">    // outFun();  返回的是 function inFun()&#123;console.log(num);&#125;</div><div class="line">    //  也就是说 var fun = function inFun()&#123;console.log(num);&#125;</div><div class="line">    fun();</div></pre></td></tr></table></figure></p>
+<p>输出结果就为9</p>
+<p>所以外部函数 fun使用了 另一个函数outFun里面的变量num 这个创建的方法我们称之为闭包。<br>我们来看一道测试题，检验一下我们到底理解闭包了没.</p>
+<p>思考题</p>
+<p>例5：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function outerFun()  // 外部函数</div><div class="line">    &#123;</div><div class="line">        var a=0;    // 清空</div><div class="line">        function innerFun()  // 内部函数</div><div class="line">        &#123;</div><div class="line">            a++;</div><div class="line">            alert(a);</div><div class="line">        &#125;</div><div class="line">        return innerFun;  // 注意这里  核心</div><div class="line">    &#125;</div><div class="line">var obj=outerFun();   </div><div class="line"> obj(); </div><div class="line"> obj();</div><div class="line">    var obj2= outerFun();</div><div class="line">obj2();  </div><div class="line">obj2();</div></pre></td></tr></table></figure></p>
+<p>返回的结果是 1 2 1 2<br>提示：在这里深深体会这句话，这些外部执行域的非持久型变量神奇地保留他们在闭包最初定义(或创建)时的值。</p>
+<p>总结：</p>
+<p>其实闭包的核心机制就是return一个内部函数。<br>再重复一遍： 如何让外部函数a访问另一个函数b内部的变量，直接访问，是行不通的。我们采用曲线救国的方法：让一个内部函数c可以使用b函数的变量，然后把这个内部函数c 给return出来，赋给外部函数a。再让外部函数a调用内部函数c。简单来讲就是让外部函数访问另一个函数的内部函数。<br>其中例4我们可以改成这个样子，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function outFun()&#123;</div><div class="line">        var num = 9;        </div><div class="line">        return function()&#123;</div><div class="line">            console.log(num);</div><div class="line">        &#125;  </div><div class="line">    &#125;</div><div class="line">    var fun = outFun();  </div><div class="line">    fun();</div></pre></td></tr></table></figure></p>
+<p>闭包的优缺点 ：</p>
+<p>优点：不产生全局变量，实现属性私有化。<br>缺点：闭包中的数据会常驻内存，在不用的时候要删掉否则会导致内存溢出。<br>闭包的用法：闭包的函数传参。<br>例6，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fun(x)&#123;</div><div class="line">        return function()&#123;</div><div class="line">            console.log(x);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    var obj = fun(4);</div><div class="line">    obj();</div></pre></td></tr></table></figure></p>
+<p>输出结果为 4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function fun(x)&#123;</div><div class="line">        return function(y)&#123;</div><div class="line">            console.log(x+y);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    var obj = fun(4);</div><div class="line">    obj();</div><div class="line">    obj(5);</div></pre></td></tr></table></figure></p>
+<p>输出结果为 NaN 9<br>来个小例子，点击不同的按钮，让图片向左右不同的方向滑动</p>
+<p>闭包传参示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">        &lt;title&gt;&lt;/title&gt;</div><div class="line">        &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">            *&#123;</div><div class="line">                margin: 0;</div><div class="line">                padding: 0;</div><div class="line">            &#125;</div><div class="line">            div&#123;</div><div class="line">                width: 100px;</div><div class="line">                height: 100px;</div><div class="line">                background-color: pink;</div><div class="line">                position: absolute;</div><div class="line">            &#125;</div><div class="line">        &lt;/style&gt;</div><div class="line">        &lt;script&gt;</div><div class="line">            window.onload = function()&#123;</div><div class="line">                var btn1 = document.getElementById(&quot;btn1&quot;);</div><div class="line">                var btn2 = document.getElementById(&quot;btn2&quot;);</div><div class="line">                var box = document.getElementById(&quot;box&quot;)</div><div class="line">                function move(speed)&#123;</div><div class="line">                    return function()&#123;</div><div class="line">                        box.style.left = box.offsetLeft + speed +&quot;px&quot;;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                btn1.onclick = move(5);</div><div class="line">                btn2.onclick = move(-5);</div><div class="line">            &#125;</div><div class="line">        &lt;/script&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;button id=&quot;btn1&quot;&gt;向右&lt;/button&gt;</div><div class="line">        &lt;button id=&quot;btn2&quot;&gt;向左&lt;/button&gt;</div><div class="line">        &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>好啦，闭包的基础知识暂时讲到这里，以后还会深入总结闭包知识点的，敬请期待吧！</p>
 
       
     </div>
@@ -307,13 +327,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2017/02/06/jquery 处理 CheckBox复选框/">jquery 处理 CheckBox复选框</a></p>
+        <p><span>Title:</span><a href="/2017/02/14/详谈一下闭包是什么/">详谈一下闭包是什么</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">xiaoqi</a></p>
-        <p><span>Created:</span>2017-02-06, 10:03:47</p>
-        <p><span>Updated:</span>2017-02-08, 12:02:49</p>
+        <p><span>Created:</span>2017-02-14, 21:52:47</p>
+        <p><span>Updated:</span>2017-02-16, 21:58:38</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2017/02/06/jquery 处理 CheckBox复选框/" title="jquery 处理 CheckBox复选框">http://www.xiaoqi888.cn/2017/02/06/jquery 处理 CheckBox复选框/</a>
-            <span class="copy-path" data-clipboard-text="From http://www.xiaoqi888.cn/2017/02/06/jquery 处理 CheckBox复选框/　　By xiaoqi" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/02/14/详谈一下闭包是什么/" title="详谈一下闭包是什么">http://www.xiaoqi888.cn/2017/02/14/详谈一下闭包是什么/</a>
+            <span class="copy-path" data-clipboard-text="From http://www.xiaoqi888.cn/2017/02/14/详谈一下闭包是什么/　　By xiaoqi" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -325,16 +345,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/06/关于css的一些知识小总结/">
-                    关于css的一些知识小总结
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/04/JavaScript运算符使用误区/">
-                    JavaScript运算符使用误区
+                <a href="/2017/02/12/JavaScript-原型、原型链/">
+                    JavaScript-原型、原型链
                 </a>
             </div>
         
@@ -382,7 +396,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"jquery 处理 CheckBox复选框　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"详谈一下闭包是什么　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -402,15 +416,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/06/关于css的一些知识小总结/" title="Pre: 关于css的一些知识小总结">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/04/JavaScript运算符使用误区/" title="Next: JavaScript运算符使用误区">
+            <a href="/2017/02/12/JavaScript-原型、原型链/" title="Next: JavaScript-原型、原型链">
                 <i class="fa fa-angle-right"></i>
             </a>
         

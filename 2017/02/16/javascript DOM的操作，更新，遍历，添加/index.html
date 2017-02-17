@@ -17,16 +17,16 @@
 
 
 
-<meta name="description" content="获取某个月份的天数相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。">
+<meta name="description" content="介绍JavaScript DOM的操作，更新，遍历，添加首先列出来HTML代码等待嵌套脚本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript日期类型的巧用">
-<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/01/xq2/index.html">
+<meta property="og:title" content="javascript DOM的操作，更新，遍历，添加">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/16/javascript DOM的操作，更新，遍历，添加/index.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="获取某个月份的天数相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。">
-<meta property="og:updated_time" content="2017-02-02T03:47:07.195Z">
+<meta property="og:description" content="介绍JavaScript DOM的操作，更新，遍历，添加首先列出来HTML代码等待嵌套脚本">
+<meta property="og:updated_time" content="2017-02-17T13:29:20.849Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript日期类型的巧用">
-<meta name="twitter:description" content="获取某个月份的天数相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。">
+<meta name="twitter:title" content="javascript DOM的操作，更新，遍历，添加">
+<meta name="twitter:description" content="介绍JavaScript DOM的操作，更新，遍历，添加首先列出来HTML代码等待嵌套脚本">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Javascript日期类型的巧用 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>javascript DOM的操作，更新，遍历，添加 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-xq2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-javascript DOM的操作，更新，遍历，添加" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/01/xq2/" class="article-date">
-      <time datetime="2017-02-01T13:42:41.671Z" itemprop="datePublished">2017-02-01</time>
+      <a href="/2017/02/16/javascript DOM的操作，更新，遍历，添加/" class="article-date">
+      <time datetime="2017-02-16T13:08:16.000Z" itemprop="datePublished">2017-02-16</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Javascript日期类型的巧用
+      javascript DOM的操作，更新，遍历，添加
     </h1>
   
 
@@ -287,6 +287,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/遍历/">遍历</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -294,18 +298,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="获取某个月份的天数"><a href="#获取某个月份的天数" class="headerlink" title="获取某个月份的天数"></a>获取某个月份的天数</h4><p>相信大家读小学的时候就知道一年十二个月各有多少天了，这里面有个特殊的存在——2月。闰年的2月有29天，非闰年的2月只有28天。估计不少人跟我一样，已经不记得闰年的规则了，这时候，下面的这个方法就派上用场了。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var date = new Date(2013, 2, 0);</div><div class="line">date.getDate();  // 28### </div><div class="line">date = new Date(2012, 2, 0);</div><div class="line">date.getDate();  // 29</div></pre></td></tr></table></figure></p>
-<p>创建Date对象时可以传入三个参数，分别是年、月（0~11，0表示一月）、日，如果日的参数为0，那创建出来的对象表示的就是上个月的最后一天，如此就可以知道上个月有多少天了。</p>
-<p>同样的，我们也可以通过这个方法判断某年是否闰年：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function isLeapYear(year)&#123;</div><div class="line">    return new Date(year, 2, 0).getDate() === 29;</div><div class="line">&#125;</div><div class="line">isLeapYear(2012);  // true</div></pre></td></tr></table></figure></p>
-<h4 id="获取时区"><a href="#获取时区" class="headerlink" title="获取时区"></a>获取时区</h4><p>日期类型的 getTimezoneOffset() 方法可以获取格林威治时间和本地时间之间的时间差，以分钟为单位。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var date = new Date();</div><div class="line">var timezoneOffset = date.getTimezoneOffset(); // 中国（东八区）为-480</div><div class="line">-timezoneOffset / 60;  // 8</div></pre></td></tr></table></figure></p>
-<p>把获取到的时间差除以60，再取负值就是所在的时区了。</p>
-<p>除此以外，还有一个方法。调用日期类型的 toString() 后，可以得到一段固定格式的日期字符串：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new Date().toString(); // Sun Mar 10 2013 16:41:12 GMT+0800 (中国标准时间)</div></pre></td></tr></table></figure></p>
-<p>显而易见，GMT后面的+800就是我们要的时区了，只要通过正则表达式匹配一下就可以拿到该值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/GMT([+-]\d+)/.test( new Date().toString() );</div><div class="line">var timezone = RegExp.$1;  // +0800</div></pre></td></tr></table></figure></p>
-<p>不过此时的 timezone 变量是字符串，如果要转成数字类型，还要进行一些处理。</p>
-<h4 id="计算运行时间"><a href="#计算运行时间" class="headerlink" title="计算运行时间"></a>计算运行时间</h4><p>如何测量某段程序的执行时间呢？方法很简单，在执行前记录一次时间，执行后用当前时间减去执行前的时间，就得到结果了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var startTime = new Date();</div><div class="line">// some program</div><div class="line">console.log(new Date() - startTime);</div></pre></td></tr></table></figure></p>
-<p>这里无需手动把日期转换为数字，因为进行减法运算的时候自然会强制转换。这样算出来的结果是毫秒级的，精度不是很够，不过对浏览器端的Javascript来说，也没必要纠结于1毫秒以内的消耗了。</p>
-<h4 id="删除cookie"><a href="#删除cookie" class="headerlink" title="删除cookie"></a>删除cookie</h4><p>准确地说，我们没法直接通过Javascript删除cookie。要想把某个cookie从这个世界抹杀掉，唯一的办法就是让它过期，这样浏览器的内建机制就会把它自动干掉。</p>
-<p>而要让cookie过期，最直截了当的方法就是把它的过期时间设为最小值。Javascript里面能表示的最小日期就是1970年1月1日0时0点0分，通过 new Date(0) 就可以创建出这样一个日期对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var cookieName = &apos;name&apos;; // cookie名</div><div class="line">document.cookie = cookieName + &apos;=&apos; + &apos;; expires=&apos; + new Date(0).toUTCString();</div></pre></td></tr></table></figure></p>
+        <p>介绍JavaScript DOM的操作，更新，遍历，添加<br>首先列出来HTML代码等待嵌套脚本<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">	    &lt;dl id=&quot;drink-menu&quot; style=&quot;border:soild 1px #ccc;padding:6px;&quot;&gt;</div><div class="line">	    &lt;dt id=&quot;摩卡咖啡&quot;&gt;摩卡咖啡&lt;/dt&gt;</div><div class="line">	    &lt;dd id=&quot;橙汁&quot;&gt;橙汁&lt;/dd&gt;</div><div class="line">	    &lt;dt id=&quot;可乐&quot;&gt;可乐&lt;/dt&gt;</div><div class="line">	    &lt;/dl&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>遍历操作<br>遍历父节点dl的所有标签并输出innertext<br>添加代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;script language=&apos;javascript&apos;&gt;</div><div class="line">    //javascipt.cookie(); DOM的操作，更新，遍历，添加，删除css选择getElementsbyclassname()</div><div class="line">    var menu=document.getElementById(&apos;drink-menu&apos;);</div><div class="line">    var len=menu.children.length;//没有子节点，不能用children函数</div><div class="line">    //var len=menu.length;</div><div class="line">    var str=&quot;&quot;;</div><div class="line">    for(var i=0;i&lt;len;i++)</div><div class="line">    &#123;</div><div class="line">        str=str+i+&quot;=&quot;+menu.children[i].innerText+&quot;,&quot;;</div><div class="line">    &#125;</div><div class="line">    alert(str);</div><div class="line">    //menu.innerHTML=&quot;&lt;script&gt; alert()</div><div class="line">&lt;/Script&gt;</div></pre></td></tr></table></figure></p>
+<p>添加操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script language=&apos;javascript&apos;&gt;</div><div class="line">    var tagp=document.createElement(&quot;p&quot;);//创建新的标签</div><div class="line">    tagp.id=&quot;new&quot;;</div><div class="line">    tagp.innerText=&quot;tea&quot;;</div><div class="line">    var z=document.getElementById(&quot;drink-menu&quot;);//提取父节点</div><div class="line">    var dd=document.getElementsByTagName(&quot;dd&quot;);</div><div class="line">    z.insertBefore(tagp,dd);//将新创建的放入dd标签之前</div><div class="line">&lt;/Script&gt;</div></pre></td></tr></table></figure></p>
+<p>更改脚本文件的css属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script language=&apos;javascript&apos;&gt;</div><div class="line">	var test=document.getElementById(&apos;橙汁&apos;);</div><div class="line">	test.innerText=&quot;JavaScript&quot;;</div><div class="line">	test.style.color=&quot;#ff0000&quot;;</div><div class="line">	test.style.fontWeight=&quot;bold&quot;;</div><div class="line">	//test.style.backgroundColor=&quot;red&quot;;</div><div class="line">&lt;/Script&gt;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -314,13 +310,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/01/xq2/">Javascript日期类型的巧用</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/16/javascript DOM的操作，更新，遍历，添加/">javascript DOM的操作，更新，遍历，添加</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
-        <p><span>发布时间:</span>2017-02-01, 21:42:41</p>
-        <p><span>最后更新:</span>2017-02-02, 11:47:07</p>
+        <p><span>发布时间:</span>2017-02-16, 21:08:16</p>
+        <p><span>最后更新:</span>2017-02-17, 21:29:20</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/01/xq2/" title="Javascript日期类型的巧用">http://www.xiaoqi888.cn/2017/02/01/xq2/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/01/xq2/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/16/javascript DOM的操作，更新，遍历，添加/" title="javascript DOM的操作，更新，遍历，添加">http://www.xiaoqi888.cn/2017/02/16/javascript DOM的操作，更新，遍历，添加/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/16/javascript DOM的操作，更新，遍历，添加/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -332,16 +328,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/02/xq3/">
-                    Git 常用命令大全
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/01/xq1/">
-                    深入理解JavaScript—event（事件对象）
+                <a href="/2017/02/15/倒计时的三种写法/">
+                    倒计时的三种写法
                 </a>
             </div>
         
@@ -353,7 +343,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取某个月份的天数"><span class="toc-number">1.</span> <span class="toc-text">获取某个月份的天数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取时区"><span class="toc-number">2.</span> <span class="toc-text">获取时区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#计算运行时间"><span class="toc-number">3.</span> <span class="toc-text">计算运行时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除cookie"><span class="toc-number">4.</span> <span class="toc-text">删除cookie</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -389,7 +379,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Javascript日期类型的巧用　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"javascript DOM的操作，更新，遍历，添加　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -409,15 +399,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/02/xq3/" title="上一篇: Git 常用命令大全">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/01/xq1/" title="下一篇: 深入理解JavaScript—event（事件对象）">
+            <a href="/2017/02/15/倒计时的三种写法/" title="下一篇: 倒计时的三种写法">
                 <i class="fa fa-angle-right"></i>
             </a>
         

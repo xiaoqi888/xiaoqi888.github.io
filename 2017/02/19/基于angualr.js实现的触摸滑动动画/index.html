@@ -17,16 +17,16 @@
 
 
 
-<meta name="description" content="以 &amp;lt; script&amp;gt;开头，以结尾,老式的浏览器中需要加上language，如： &amp;lt; script language = “JavaScript” /script&amp;gt; 表示该脚本是JavaScript，也可以写上其他脚本的名字。">
+<meta name="description" content="这个主要用到是angular-touch.js中封装好的ng-swipe-left,ng-swipe-right，向左或向右的触摸事件。结合CSS3的transition实现的动画。ng-class为切换写好的动画的className.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript知识简单总结">
-<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/03/JavaScript知识简单总结/index.html">
+<meta property="og:title" content="基于angualr.js实现的触摸滑动动画">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/19/基于angualr.js实现的触摸滑动动画/index.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="以 &amp;lt; script&amp;gt;开头，以结尾,老式的浏览器中需要加上language，如： &amp;lt; script language = “JavaScript” /script&amp;gt; 表示该脚本是JavaScript，也可以写上其他脚本的名字。">
-<meta property="og:updated_time" content="2017-02-03T06:18:52.667Z">
+<meta property="og:description" content="这个主要用到是angular-touch.js中封装好的ng-swipe-left,ng-swipe-right，向左或向右的触摸事件。结合CSS3的transition实现的动画。ng-class为切换写好的动画的className.">
+<meta property="og:updated_time" content="2017-02-19T07:24:07.241Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript知识简单总结">
-<meta name="twitter:description" content="以 &amp;lt; script&amp;gt;开头，以结尾,老式的浏览器中需要加上language，如： &amp;lt; script language = “JavaScript” /script&amp;gt; 表示该脚本是JavaScript，也可以写上其他脚本的名字。">
+<meta name="twitter:title" content="基于angualr.js实现的触摸滑动动画">
+<meta name="twitter:description" content="这个主要用到是angular-touch.js中封装好的ng-swipe-left,ng-swipe-right，向左或向右的触摸事件。结合CSS3的transition实现的动画。ng-class为切换写好的动画的className.">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>JavaScript知识简单总结 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>基于angualr.js实现的触摸滑动动画 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-JavaScript知识简单总结" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-基于angualr.js实现的触摸滑动动画" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/03/JavaScript知识简单总结/" class="article-date">
-      <time datetime="2017-02-03T05:10:33.000Z" itemprop="datePublished">2017-02-03</time>
+      <a href="/2017/02/19/基于angualr.js实现的触摸滑动动画/" class="article-date">
+      <time datetime="2017-02-19T07:20:24.000Z" itemprop="datePublished">2017-02-19</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript知识简单总结
+      基于angualr.js实现的触摸滑动动画
     </h1>
   
 
@@ -288,7 +288,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画/">动画</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -298,48 +298,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <ol>
-<li>以 &lt; script&gt;开头，以结尾,老式的浏览器中需要加上language，如： &lt; script language = “JavaScript” /script&gt; 表示该脚本是JavaScript，<br>也可以写上其他脚本的名字。<a id="more"></a></li>
-<li>JavaScript语句只要放在不同的行就可以执行，但更好的方式是，在每一条语句后加上分号结尾，<br>document.write();向页面上输出内容。<br>document.write(“hello!”);<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 在屏幕中输出加粗的hello</div><div class="line">&lt;script&gt;</div><div class="line">    document.write(&quot;&lt;strong&gt;hello &lt;/strong&gt;&quot;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>3.变量<br>用 var+变量名 声明一个变量 可以不考虑变量的类型。所有类型都用var来声明。</p>
-<ol>
-<li>变量区分大小写 </li>
-<li>用\表示转义字符 </li>
-<li>不使用var声明的变量当做全局变量，用var声明的变量拥有特定的作用域。 </li>
-<li>推荐使用下划线分割变量名中的单词，用驼峰格式命名方法名，这样可以方便的区分变量和方法。 </li>
-<li>JavaScript是一种弱类型的语言，即变量的使用不需要声明，而且变量的类型在使用时可以改变。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var age=&quot;thirty&quot;;   //字符串型</div><div class="line">age = 30;           //数值型</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>常用的类型有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = 16; //数字 </div><div class="line">var b = 16.123; //浮点型 </div><div class="line">var falg = true; //布尔型 </div><div class="line">var s = “hello”//字符串型</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//字符串的相加运算</div><div class="line">&lt;script&gt;</div><div class="line">    var a = &quot;abc&quot;;</div><div class="line">    a += &apos;d&apos;;</div><div class="line">    document.write(a);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">结果是abcd。</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//html中将多个空格当成一个来处理</div><div class="line">&lt;script&gt;</div><div class="line">    var s = &apos;hello   &apos;;</div><div class="line">    s += &apos;   world&apos;;</div><div class="line">    document.write(s);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">结果是: hello world</div></pre></td></tr></table></figure>
-<p>4.运算 </p>
-<p>常见的运算符在JavaScript中都有，例如：<br>加减乘除： +-*\ %<br>自加自减：++ –<br>加法：+= -=<br>逻辑： &amp;&amp; || ？： ！<br>判断： ==（类似于C语言）<br>字符串比较大小： &gt; &lt; == (小写字母大于大写字母)</p>
-<p>5.注释<br>和C语言一样用//或/<em> </em>/ 表示 </p>
-<p>6.判断<br>与C语言基本相同</p>
-<p>建议每一条if语句都加上{}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//不加括号时，else属于较近的if</div><div class="line">&lt;script&gt;</div><div class="line">    var s = &apos;hello&apos;;</div><div class="line">    if (s == &apos;hello&apos;)</div><div class="line">        if(s == &apos;world&apos;)</div><div class="line">            document.write(&apos;world&apos;);</div><div class="line">            else</div><div class="line">            document.write(s);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>7.循环<br>和c语言一样<br>for(;;)<br>while()<br>do while()</p>
-<p>8.函数<br>function fun_name(形参){函数体}<br>函数也被当成是一种类型，有时可以像变量一样使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//定义一个函数</div><div class="line">function add(a,b)&#123;</div><div class="line">    return a+b;</div><div class="line">&#125;</div><div class="line">//使用函数</div><div class="line">alert(&apos;加:&apos;+add(1,2))</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//将函数类似于变量的用法</div><div class="line">function add(a,b)&#123;</div><div class="line">    return a+b;</div><div class="line">&#125;</div><div class="line">function cal(x,y,z)&#123;</div><div class="line">    return x(y,z);</div><div class="line">&#125;</div><div class="line">//将函数作为参数</div><div class="line">alert(cal(add,1,2));</div></pre></td></tr></table></figure>
-<p>9.数组<br>数组可以使用以下方法建立：<br>1 var a = new Array();<br>2 var b = new Array(10);<br>3 var c = new Array(1,2,”三”,true,5.5); //自动加上下标<br>4 var d = [6,7,8,9,10];</p>
-<p>数组的特点：<br>1，数组中的元素使用时才会被创建，即使创建了a[1]和a[10]，中间的元素依然是空。<br>2，数组的长度a.length为最大的下标加1，不管中间的元素是否存在。<br>3，数组的长度是可以人为修改的。修改后不属于长度内的元素会被清除。<br>4，数组的元素可以是不同的类型<br>5，数组的元素也可以是数组</p>
-<p>关联数组：数组的下标用特定的名称来表示，不一定是数组，类似于 Java中的键值对，但是不推荐使用，因为对象可以更好的完成同样的效果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = new Array();</div><div class="line">a[1] = 10;</div><div class="line">a[10] = 20;</div><div class="line">document.write(a[9]+&quot;&lt;br/&gt;&quot;);</div><div class="line">document.write(a.length);</div></pre></td></tr></table></figure>
-<p>在这里会输出：<br>undefined<br>11<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//人为改变数组长度，等同于截取数组中的一段</div><div class="line">var a = new Array(1,2,3,4,5);</div><div class="line">document.write(a.length+&quot;&lt;br/&gt;&quot;);</div><div class="line">a.length = 3;</div><div class="line">document.write(a+&quot;&lt;br/&gt;&quot;);</div><div class="line">a.length = 5;</div><div class="line">document.write(a);</div></pre></td></tr></table></figure></p>
-<p>结果如下：<br>5<br>1,2,3<br>1,2,3,,</p>
-<p>join(“&amp;”) 表示认为的改变输出时元素的分隔符如：</p>
-<p>document.write(a.join(“%”));<br>会输出 1%2%3</p>
-<p>10.对象</p>
-<p>属性和方法的集合</p>
-<p>声明：<br>var o = new Object();<br>var cidr = {x:2,y:0,radius:2};</p>
-<p>对象的元素是在使用时添加进类中的，第一次使用时就会自动为该类创建这个成员</p>
-<p>删除属性：<br>delete book.name;<br>book.name=null;</p>
-<p>遍历属性：<br>for(var x in book ){<br>x是成员的名字，用法类似于数组的下标<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var book = new Object();</div><div class="line">book.name = &apos;百年孤独&apos;;</div><div class="line">book.about = &#123;name:&apos;马尔克斯&apos;,price:100&#125;;</div><div class="line">document.write(book.name+&apos;&lt;br/&gt;&apos;);</div><div class="line">document.write(book.about.name);</div></pre></td></tr></table></figure></p>
-<p>结果：<br>百年孤独<br>马尔克斯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var book = new Object();</div><div class="line">book.name = &apos;百年孤独&apos;;</div><div class="line">book.about = &#123;name:&apos;马尔克斯&apos;,price:100&#125;;</div><div class="line">//遍历</div><div class="line">for (var x in book )&#123;</div><div class="line">    document.write(book[x]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>这个主要用到是angular-touch.js中封装好的ng-swipe-left,ng-swipe-right，向左或向右的触摸事件。结合CSS3的transition实现的动画。ng-class为切换写好的动画的className.<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;  </div><div class="line">&lt;html ng-app=&quot;myapp&quot;&gt;  </div><div class="line">    &lt;head&gt;  </div><div class="line">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;  </div><div class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0&quot;&gt;  </div><div class="line">        &lt;title&gt;基于angualr.js实现的触摸滑动动画&lt;/title&gt;  </div><div class="line">        &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;angular.min.js&quot;&gt;&lt;/script&gt;  </div><div class="line">        &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;angular-touch.min.js&quot;&gt;&lt;/script&gt;  </div><div class="line">        &lt;style type=&quot;text/css&quot;&gt;  </div><div class="line">            *&#123;</div><div class="line">            	margin:0px;padding:0px;</div><div class="line">            &#125;  </div><div class="line">            .box&#123;</div><div class="line">            	position:relative;</div><div class="line">            	left:0px;</div><div class="line">            	margin:10px 0px;</div><div class="line">            	width:100%;</div><div class="line">            	height:100px;</div><div class="line">            	background:red;</div><div class="line">            	transition:all .5s;</div><div class="line">            &#125;  </div><div class="line">            .swipeleft&#123;</div><div class="line">            	left:-100%;</div><div class="line">            &#125;  </div><div class="line">        &lt;/style&gt;  </div><div class="line">        &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;  </div><div class="line">            angular.module(&quot;myapp&quot;,[&quot;ngTouch&quot;]).controller(&quot;Controller&quot;,[function()&#123;  </div><div class="line">                var self = this;  </div><div class="line">                self.swipeLeft = function()&#123;  </div><div class="line">                    return (self.className = &quot;swipeleft&quot;);  </div><div class="line">                &#125;  </div><div class="line">            &#125;]);  </div><div class="line">        &lt;/script&gt;  </div><div class="line">    &lt;/head&gt;  </div><div class="line">    &lt;body&gt;  </div><div class="line">        &lt;ul&gt;  </div><div class="line">            &lt;li ng-controller=&quot;Controller as con&quot; class=&quot;box box1&quot; ng-swipe-left=&quot;con.swipeLeft()&quot; ng-class=&quot;con.className&quot;&gt;&lt;/li&gt;  </div><div class="line">            &lt;li ng-controller=&quot;Controller as con&quot; class=&quot;box box2&quot; ng-swipe-left=&quot;con.swipeLeft()&quot; ng-class=&quot;con.className&quot;&gt;&lt;/li&gt;  </div><div class="line">            &lt;li ng-controller=&quot;Controller as con&quot; class=&quot;box box3&quot; ng-swipe-left=&quot;con.swipeLeft()&quot; ng-class=&quot;con.className&quot;&gt;&lt;/li&gt;  </div><div class="line">            &lt;li ng-controller=&quot;Controller as con&quot; class=&quot;box box4&quot; ng-swipe-left=&quot;con.swipeLeft()&quot; ng-class=&quot;con.className&quot;&gt;&lt;/li&gt;  </div><div class="line">        &lt;/ul&gt;  </div><div class="line">    &lt;/body&gt;  </div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -348,13 +307,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2017/02/03/JavaScript知识简单总结/">JavaScript知识简单总结</a></p>
+        <p><span>Title:</span><a href="/2017/02/19/基于angualr.js实现的触摸滑动动画/">基于angualr.js实现的触摸滑动动画</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">xiaoqi</a></p>
-        <p><span>Created:</span>2017-02-03, 13:10:33</p>
-        <p><span>Updated:</span>2017-02-03, 14:18:52</p>
+        <p><span>Created:</span>2017-02-19, 15:20:24</p>
+        <p><span>Updated:</span>2017-02-19, 15:24:07</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2017/02/03/JavaScript知识简单总结/" title="JavaScript知识简单总结">http://www.xiaoqi888.cn/2017/02/03/JavaScript知识简单总结/</a>
-            <span class="copy-path" data-clipboard-text="From http://www.xiaoqi888.cn/2017/02/03/JavaScript知识简单总结/　　By xiaoqi" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/02/19/基于angualr.js实现的触摸滑动动画/" title="基于angualr.js实现的触摸滑动动画">http://www.xiaoqi888.cn/2017/02/19/基于angualr.js实现的触摸滑动动画/</a>
+            <span class="copy-path" data-clipboard-text="From http://www.xiaoqi888.cn/2017/02/19/基于angualr.js实现的触摸滑动动画/　　By xiaoqi" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -366,16 +325,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/03/元素设置padding或margin的问题/">
-                    元素设置width:100%之后再设置padding或margin的问题
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/02/xq6/">
-                    JavaScript实现冒泡排序
+                <a href="/2017/02/17/Web安全与防御措施/">
+                    Web安全与防御措施
                 </a>
             </div>
         
@@ -423,7 +376,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"JavaScript知识简单总结　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"基于angualr.js实现的触摸滑动动画　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -443,15 +396,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/03/元素设置padding或margin的问题/" title="Pre: 元素设置width:100%之后再设置padding或margin的问题">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/02/xq6/" title="Next: JavaScript实现冒泡排序">
+            <a href="/2017/02/17/Web安全与防御措施/" title="Next: Web安全与防御措施">
                 <i class="fa fa-angle-right"></i>
             </a>
         

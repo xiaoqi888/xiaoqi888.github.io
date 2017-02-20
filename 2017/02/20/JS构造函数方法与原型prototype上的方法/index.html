@@ -17,16 +17,16 @@
 
 
 
-<meta name="description" content="大家在系统开发中都可能会在js中用到ajax或者dwr，因为IE的缓存，使得我们在填入相同的值的时候总是使用IE缓存，为了解决这个问题一般可以用一下方法：">
+<meta name="description" content="构造函数内的方法与构造函数prototype属性上方法的对比本文的目的是让大家理解什么情况下把函数的方法写在JavaScript的构造函数上,什么时候把方法写在函数的prototype属性上;以及这样做的好处.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax的url请求中为何要加随机数">
-<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/07/Ajax的url请求中为何要加随机数/index.html">
+<meta property="og:title" content="JS构造函数方法与原型prototype上的方法">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/20/JS构造函数方法与原型prototype上的方法/index.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="大家在系统开发中都可能会在js中用到ajax或者dwr，因为IE的缓存，使得我们在填入相同的值的时候总是使用IE缓存，为了解决这个问题一般可以用一下方法：">
-<meta property="og:updated_time" content="2017-02-08T04:15:09.875Z">
+<meta property="og:description" content="构造函数内的方法与构造函数prototype属性上方法的对比本文的目的是让大家理解什么情况下把函数的方法写在JavaScript的构造函数上,什么时候把方法写在函数的prototype属性上;以及这样做的好处.">
+<meta property="og:updated_time" content="2017-02-20T15:57:38.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax的url请求中为何要加随机数">
-<meta name="twitter:description" content="大家在系统开发中都可能会在js中用到ajax或者dwr，因为IE的缓存，使得我们在填入相同的值的时候总是使用IE缓存，为了解决这个问题一般可以用一下方法：">
+<meta name="twitter:title" content="JS构造函数方法与原型prototype上的方法">
+<meta name="twitter:description" content="构造函数内的方法与构造函数prototype属性上方法的对比本文的目的是让大家理解什么情况下把函数的方法写在JavaScript的构造函数上,什么时候把方法写在函数的prototype属性上;以及这样做的好处.">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Ajax的url请求中为何要加随机数 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>JS构造函数方法与原型prototype上的方法 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Ajax的url请求中为何要加随机数" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JS构造函数方法与原型prototype上的方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/07/Ajax的url请求中为何要加随机数/" class="article-date">
-      <time datetime="2017-02-07T03:43:29.000Z" itemprop="datePublished">2017-02-07</time>
+      <a href="/2017/02/20/JS构造函数方法与原型prototype上的方法/" class="article-date">
+      <time datetime="2017-02-20T15:25:52.000Z" itemprop="datePublished">2017-02-20</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Ajax的url请求中为何要加随机数
+      JS构造函数方法与原型prototype上的方法
     </h1>
   
 
@@ -288,7 +288,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随机数/">随机数</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型/">原型</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/构造函数/">构造函数</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -298,9 +298,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>大家在系统开发中都可能会在js中用到ajax或者dwr，因为IE的缓存，使得我们在填入相同的值的时候总是使用IE缓存，为了解决这个问题一般可以用一下方法：<br><a id="more"></a><br>1：在ajax或者dwr提交的url后面加时间戳。<br>例如<br>http_request.onreadystatechange = funcName;<br>http_request.open(“GET”, url, true);</p>
-<p>比如url是test .jsp<br>那么我们在它后面加上?time=new Date();<br>即url=test.jsp?time=new Date();</p>
-<p>2 ：在url后面加一个随机数。<br>url=test.jsp?number=Math.random();<br>URL随机数的作用就是避免游览器缓冲JS</p>
+        <p>构造函数内的方法与构造函数prototype属性上方法的对比<br>本文的目的是让大家理解什么情况下把函数的方法写在JavaScript的构造函数上,什么时候把方法写在函数的prototype属性上;以及这样做的好处.<br><a id="more"></a><br>为了阅读方便,我们约定一下:把方法写在构造函数内的情况我们简称为函数内方法,把方法写在prototype属性上的情况我们简称为prototype上的方法<br>首先我们先了解一下这篇文章的重点:<br>函数内的方法: 使用函数内的方法我们可以访问到函数内部的私有变量,如果我们通过构造函数new出来的对象需要我们操作构造函数内部的私有变量的话,<br>我们这个时候就要考虑使用函数内的方法.<br>prototype上的方法: 当我们需要通过一个函数创建大量的对象,并且这些对象还都有许多的方法的时候;这时我们就要考虑在函数的prototype上添加这些方法.<br>这种情况下我们代码的内存占用就比较小.<br>在实际的应用中,这两种方法往往是结合使用的;所以我们要首先了解我们需要的是什么,然后再去选择如何使用.<br>我们还是根据下面的代码来说明一下这些要点吧,下面是[代码部分]:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">// 构造函数A</div><div class="line">function A(name) &#123;</div><div class="line">    this.name = name || &apos;a&apos;;</div><div class="line">    this.sayHello = function() &#123;</div><div class="line">        console.log(&apos;Hello, my name is: &apos; + this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 构造函数B</div><div class="line">function B(name) &#123;</div><div class="line">    this.name = name || &apos;b&apos;;</div><div class="line">&#125;</div><div class="line">B.prototype.sayHello = function() &#123;</div><div class="line">    console.log(&apos;Hello, my name is: &apos; + this.name);</div><div class="line">&#125;;</div><div class="line"> </div><div class="line">var a1 = new A(&apos;a1&apos;);</div><div class="line">var a2 = new A(&apos;a2&apos;);</div><div class="line">a1.sayHello();</div><div class="line">a2.sayHello();</div><div class="line"> </div><div class="line">var b1 = new B(&apos;b1&apos;);</div><div class="line">var b2 = new B(&apos;b2&apos;);</div><div class="line">b1.sayHello();</div><div class="line">b2.sayHello();</div></pre></td></tr></table></figure></p>
+<p>我们首先写了两个构造函数,第一个是A,这个构造函数里面包含了一个方法sayHello;第二个是构造函数B,<br>我们把那个方法sayHello写在了构造函数B的prototype属性上面.<br>需要指出的是,通过这两个构造函数new出来的对象具有一样的属性和方法,但是它们的区别我们可以通过下面的一个图来说明:</p>
+<p>我们通过使用构造函数A创建了两个对象,分别是a1,a2;通过构造函数B创建了两个对象b1,b2;我们可以发现b1,b2这两个对象的那个sayHello方法<br>都是指向了它们的构造函数的prototype属性的sayHello方法.而a1,a2都是在自己内部定义了这个方法.<br>定义在构造函数内部的方法,会在它的每一个实例上都克隆这个方法;定义在构造函数的prototype属性上的方法会让它的所有示例都共享这个方法,但是不会在每个实例的内部重新定义这个方法.<br>如果我们的应用需要创建很多新的对象,并且这些对象还有许多的方法,为了节省内存,我们建议把这些方法都定义在构造函数的prototype属性上<br>当然,在某些情况下,我们需要将某些方法定义在构造函数中,这种情况一般是因为我们需要访问构造函数内部的私有变量.<br>下面我们举一个两者结合的例子,代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">function Person(name, family) &#123;</div><div class="line">    this.name = name;</div><div class="line">    this.family = family;</div><div class="line"> </div><div class="line">    var records = [&#123;type: &quot;in&quot;, amount: 0&#125;];</div><div class="line"> </div><div class="line">    this.addTransaction = function(trans) &#123;</div><div class="line">        if(trans.hasOwnProperty(&quot;type&quot;) &amp;&amp; trans.hasOwnProperty(&quot;amount&quot;)) &#123;</div><div class="line">           records.push(trans);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    this.balance = function() &#123;</div><div class="line">       var total = 0;</div><div class="line"> </div><div class="line">       records.forEach(function(record) &#123;</div><div class="line">           if(record.type === &quot;in&quot;) &#123;</div><div class="line">             total += record.amount;</div><div class="line">           &#125;</div><div class="line">           else &#123;</div><div class="line">             total -= record.amount;</div><div class="line">           &#125;</div><div class="line">       &#125;);</div><div class="line"> </div><div class="line">        return total;</div><div class="line">    &#125;;</div><div class="line">&#125;;</div><div class="line"> </div><div class="line">Person.prototype.getFull = function() &#123;</div><div class="line">    return this.name + &quot; &quot; + this.family;</div><div class="line">&#125;;</div><div class="line"> </div><div class="line">Person.prototype.getProfile = function() &#123;</div><div class="line">     return this.getFull() + &quot;, total balance: &quot; + this.balance();</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>在上面的代码中,我们定义了一个Person构造函数;这个函数有一个内部的私有变量records,这个变量我们是不希望通过函数内部以外的方法<br>去操作这个变量,所以我们把操作这个变量的方法都写在了函数的内部.而把一些可以公开的方法写在了Person的prototype属性上,比如方法getFull和getProfile.<br>把方法写在构造函数的内部,增加了通过构造函数初始化一个对象的成本,把方法写在prototype属性上就有效的减少了这种成本.<br>你也许会觉得,调用对象上的方法要比调用它的原型链上的方法快得多,其实并不是这样的,如果你的那个对象上面不是有很多的原型的话,它们的速度其实是差不多的<br>另外,需要注意的一些地方:<br>1）首先如果是在函数的prototype属性上定义方法的话,要牢记一点,如果你改变某个方法,那么由这个构造函数产生的所有对象的那个方法都会被改变.<br>2）还有一点就是变量提升的问题,我们可以稍微的看一下下面的代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">func1(); // 这里会报错,因为在函数执行的时候,func1还没有被赋值. error: func1 is not a function</div><div class="line">var func1 = function() &#123;</div><div class="line">   console.log(&apos;func1&apos;);</div><div class="line">&#125;;</div><div class="line"> </div><div class="line">func2(); // 这个会被正确执行,因为函数的声明会被提升.</div><div class="line">function func2() &#123;</div><div class="line">   console.log(&apos;func2&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3）关于对象序列化的问题.定义在函数的prototype上的属性不会被序列化,可以看下面的代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function A(name) &#123;</div><div class="line">   this.name = name;</div><div class="line">&#125;</div><div class="line">A.prototype.sayWhat = &apos;say what...&apos;;</div><div class="line"> </div><div class="line">var a = new A(&apos;dreamapple&apos;);</div><div class="line">console.log(JSON.stringify(a));</div></pre></td></tr></table></figure></p>
+<p>我们可以看到输出结果是{“name”:”dreamapple”}</p>
 
       
     </div>
@@ -309,13 +312,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/07/Ajax的url请求中为何要加随机数/">Ajax的url请求中为何要加随机数</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/20/JS构造函数方法与原型prototype上的方法/">JS构造函数方法与原型prototype上的方法</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
-        <p><span>发布时间:</span>2017-02-07, 11:43:29</p>
-        <p><span>最后更新:</span>2017-02-08, 12:15:09</p>
+        <p><span>发布时间:</span>2017-02-20, 23:25:52</p>
+        <p><span>最后更新:</span>2017-02-20, 23:57:38</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/07/Ajax的url请求中为何要加随机数/" title="Ajax的url请求中为何要加随机数">http://www.xiaoqi888.cn/2017/02/07/Ajax的url请求中为何要加随机数/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/07/Ajax的url请求中为何要加随机数/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/20/JS构造函数方法与原型prototype上的方法/" title="JS构造函数方法与原型prototype上的方法">http://www.xiaoqi888.cn/2017/02/20/JS构造函数方法与原型prototype上的方法/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/20/JS构造函数方法与原型prototype上的方法/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -327,16 +330,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/08/Web前端的学习路线,你真的知道吗/">
-                    Web前端的学习路线,你真的知道吗
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/06/关于css的一些知识小总结/">
-                    关于css的一些知识小总结
+                <a href="/2017/02/20/js实现随机点名/">
+                    js实现随机点名
                 </a>
             </div>
         
@@ -384,7 +381,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Ajax的url请求中为何要加随机数　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"JS构造函数方法与原型prototype上的方法　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -404,15 +401,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/08/Web前端的学习路线,你真的知道吗/" title="上一篇: Web前端的学习路线,你真的知道吗">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/06/关于css的一些知识小总结/" title="下一篇: 关于css的一些知识小总结">
+            <a href="/2017/02/20/js实现随机点名/" title="下一篇: js实现随机点名">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -1,1 +1,1 @@
-http://www.xiaoqi888.cn/2017/02/20/js实现随机点名/
+http://www.xiaoqi888.cn/2017/02/20/JS构造函数方法与原型prototype上的方法/

@@ -17,16 +17,28 @@
 
 
 
-<meta name="description" content="闭包（closure）是JavaScript语言的特色，很多高级应用都要依靠闭包实现。作为一个初学者，还是用最通俗易懂的语言解释一下闭包吧。">
+<meta name="description" content="约定 
+
+省市区三级城市联动效果，选择框默认全部显示，选择后根据实际情况显示或隐藏。 
+在省得select上加上属性 load-data=“330102” 即表示页面需把330102这个对应的相关select做相应选中。 
+json数据结构：城市编码6位（每2位表示一级），城市层级，上一级编码，城市名称，其他根据业务实际需求而定">
 <meta property="og:type" content="article">
-<meta property="og:title" content="详谈一下闭包是什么">
-<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/14/详谈一下闭包是什么/index.html">
+<meta property="og:title" content="省市区三级城市联动">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/21/省市区三级联动/index.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="闭包（closure）是JavaScript语言的特色，很多高级应用都要依靠闭包实现。作为一个初学者，还是用最通俗易懂的语言解释一下闭包吧。">
-<meta property="og:updated_time" content="2017-02-16T13:58:38.393Z">
+<meta property="og:description" content="约定 
+
+省市区三级城市联动效果，选择框默认全部显示，选择后根据实际情况显示或隐藏。 
+在省得select上加上属性 load-data=“330102” 即表示页面需把330102这个对应的相关select做相应选中。 
+json数据结构：城市编码6位（每2位表示一级），城市层级，上一级编码，城市名称，其他根据业务实际需求而定">
+<meta property="og:updated_time" content="2017-02-21T06:59:18.437Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="详谈一下闭包是什么">
-<meta name="twitter:description" content="闭包（closure）是JavaScript语言的特色，很多高级应用都要依靠闭包实现。作为一个初学者，还是用最通俗易懂的语言解释一下闭包吧。">
+<meta name="twitter:title" content="省市区三级城市联动">
+<meta name="twitter:description" content="约定 
+
+省市区三级城市联动效果，选择框默认全部显示，选择后根据实际情况显示或隐藏。 
+在省得select上加上属性 load-data=“330102” 即表示页面需把330102这个对应的相关select做相应选中。 
+json数据结构：城市编码6位（每2位表示一级），城市层级，上一级编码，城市名称，其他根据业务实际需求而定">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +70,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>详谈一下闭包是什么 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>省市区三级城市联动 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +270,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-详谈一下闭包是什么" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-省市区三级联动" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/14/详谈一下闭包是什么/" class="article-date">
-      <time datetime="2017-02-14T13:52:47.000Z" itemprop="datePublished">2017-02-14</time>
+      <a href="/2017/02/21/省市区三级联动/" class="article-date">
+      <time datetime="2017-02-21T06:55:32.000Z" itemprop="datePublished">2017-02-21</time>
 </a>
 
 
@@ -277,7 +289,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      详谈一下闭包是什么
+      省市区三级城市联动
     </h1>
   
 
@@ -288,7 +300,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/三级联动/">三级联动</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -298,27 +310,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>闭包（closure）是JavaScript语言的特色，很多高级应用都要依靠闭包实现。作为一个初学者，还是用最通俗易懂的语言解释一下闭包吧。<br><a id="more"></a><br>在讲闭包之前，我们先复习一下</p>
-<p>变量的作用域</p>
-<p>变量的作用域两种：全局变量和局部变量。<br>在Javascript语言中函数内部可以直接读取全局变量<br>先看个小例子。<br>例1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    var a = &quot;我是全局变量&quot;;</div><div class="line">    function fun()&#123;</div><div class="line">        var b = &quot;我是局部变量&quot;;</div><div class="line">        console.log(b);</div><div class="line">        console.log(a);</div><div class="line">    &#125;</div><div class="line">    fun();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>毫无疑问，打印出来的就是<br>我是全局变量<br>我是局部变量<br>但是，如果我要这样写呢？<br>例2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function fun()&#123;</div><div class="line">        var b = &quot;我是局部变量&quot;;   </div><div class="line">&#125;</div><div class="line">    console.log(b);</div></pre></td></tr></table></figure></p>
-<p>结果输出： b is not defined 让你大眼一看，你也肯定会说，这个不是胡扯嘛，b明明就是局部变量，怎么能在函数体外调用呢！结果不出错才奇怪呢！ 可我就想调用函数体内的变量，怎么办？ 别急，既然你能想出这个问题，那么就肯定有办法解决。这不 “闭包”这个大神就给你支招了，只要你用了“闭包”，你就能让fun 函数以外的函数 来 使用 b 的值 。</p>
-<p>闭包的概念</p>
-<p>在程序语言中，所谓闭包，是指语法域位于某个特定的区域，具有持续参照(读写)位于该区域内自身范围之外的执行域上的非持久型变量值能力的段落。这些外部执行域的非持久型变量神奇地保留他们在闭包最初定义(或创建)时的值。<br>大白话的将： 我们可以用一个函数 去访问 另外一个函数的内部变量的方式就是闭包。<br>为了让自己更明白，继续来举个例子，<br>例3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function outFun() &#123;</div><div class="line">        var num = 9;  //  num 是outFun函数内 的一个变量</div><div class="line">        function inFun() &#123;</div><div class="line">            var key = 10;</div><div class="line">            console.log(num);  //   外部函数outFun的变量num可以被内部函数inFun所使用</div><div class="line">        &#125;</div><div class="line">        console.log(key);    // 这样是不可以的，key是内部函数inFun的变量，内部函数的变量不可以被外部函数所使用</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>上面的例子中 我们知道num 这个变量只可以供内部函数使用，其他的不能随便使用。<br>可我想让外部的函数也使用num变量肿么办呢？ 别急，看我给变变型。<br>例4：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function outFun()&#123;</div><div class="line">        var num = 9;</div><div class="line">        function inFun()&#123;</div><div class="line">            console.log(num);</div><div class="line">        &#125;</div><div class="line">        return inFun;   // 让outFun函数的结果   返回 inFun这个函数体   这也是闭包的核心语句</div><div class="line">    &#125;</div><div class="line">    // 立即执行outFun这个函数，把返回的结果赋给fun </div><div class="line">    var fun = outFun();  // 这个点要多注意了</div><div class="line">    // outFun();  返回的是 function inFun()&#123;console.log(num);&#125;</div><div class="line">    //  也就是说 var fun = function inFun()&#123;console.log(num);&#125;</div><div class="line">    fun();</div></pre></td></tr></table></figure></p>
-<p>输出结果就为9</p>
-<p>所以外部函数 fun使用了 另一个函数outFun里面的变量num 这个创建的方法我们称之为闭包。<br>我们来看一道测试题，检验一下我们到底理解闭包了没.</p>
-<p>思考题</p>
-<p>例5：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function outerFun()  // 外部函数</div><div class="line">    &#123;</div><div class="line">        var a=0;    // 清空</div><div class="line">        function innerFun()  // 内部函数</div><div class="line">        &#123;</div><div class="line">            a++;</div><div class="line">            alert(a);</div><div class="line">        &#125;</div><div class="line">        return innerFun;  // 注意这里  核心</div><div class="line">    &#125;</div><div class="line">var obj=outerFun();   </div><div class="line"> obj(); </div><div class="line"> obj();</div><div class="line">    var obj2= outerFun();</div><div class="line">obj2();  </div><div class="line">obj2();</div></pre></td></tr></table></figure></p>
-<p>返回的结果是 1 2 1 2<br>提示：在这里深深体会这句话，这些外部执行域的非持久型变量神奇地保留他们在闭包最初定义(或创建)时的值。</p>
-<p>总结：</p>
-<p>其实闭包的核心机制就是return一个内部函数。<br>再重复一遍： 如何让外部函数a访问另一个函数b内部的变量，直接访问，是行不通的。我们采用曲线救国的方法：让一个内部函数c可以使用b函数的变量，然后把这个内部函数c 给return出来，赋给外部函数a。再让外部函数a调用内部函数c。简单来讲就是让外部函数访问另一个函数的内部函数。<br>其中例4我们可以改成这个样子，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function outFun()&#123;</div><div class="line">        var num = 9;        </div><div class="line">        return function()&#123;</div><div class="line">            console.log(num);</div><div class="line">        &#125;  </div><div class="line">    &#125;</div><div class="line">    var fun = outFun();  </div><div class="line">    fun();</div></pre></td></tr></table></figure></p>
-<p>闭包的优缺点 ：</p>
-<p>优点：不产生全局变量，实现属性私有化。<br>缺点：闭包中的数据会常驻内存，在不用的时候要删掉否则会导致内存溢出。<br>闭包的用法：闭包的函数传参。<br>例6，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fun(x)&#123;</div><div class="line">        return function()&#123;</div><div class="line">            console.log(x);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    var obj = fun(4);</div><div class="line">    obj();</div></pre></td></tr></table></figure></p>
-<p>输出结果为 4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function fun(x)&#123;</div><div class="line">        return function(y)&#123;</div><div class="line">            console.log(x+y);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    var obj = fun(4);</div><div class="line">    obj();</div><div class="line">    obj(5);</div></pre></td></tr></table></figure></p>
-<p>输出结果为 NaN 9<br>来个小例子，点击不同的按钮，让图片向左右不同的方向滑动</p>
-<p>闭包传参示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">        &lt;title&gt;&lt;/title&gt;</div><div class="line">        &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">            *&#123;</div><div class="line">                margin: 0;</div><div class="line">                padding: 0;</div><div class="line">            &#125;</div><div class="line">            div&#123;</div><div class="line">                width: 100px;</div><div class="line">                height: 100px;</div><div class="line">                background-color: pink;</div><div class="line">                position: absolute;</div><div class="line">            &#125;</div><div class="line">        &lt;/style&gt;</div><div class="line">        &lt;script&gt;</div><div class="line">            window.onload = function()&#123;</div><div class="line">                var btn1 = document.getElementById(&quot;btn1&quot;);</div><div class="line">                var btn2 = document.getElementById(&quot;btn2&quot;);</div><div class="line">                var box = document.getElementById(&quot;box&quot;)</div><div class="line">                function move(speed)&#123;</div><div class="line">                    return function()&#123;</div><div class="line">                        box.style.left = box.offsetLeft + speed +&quot;px&quot;;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                btn1.onclick = move(5);</div><div class="line">                btn2.onclick = move(-5);</div><div class="line">            &#125;</div><div class="line">        &lt;/script&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;button id=&quot;btn1&quot;&gt;向右&lt;/button&gt;</div><div class="line">        &lt;button id=&quot;btn2&quot;&gt;向左&lt;/button&gt;</div><div class="line">        &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<p>好啦，闭包的基础知识暂时讲到这里，以后还会深入总结闭包知识点的，敬请期待吧！</p>
+        <p>约定 </p>
+<ul>
+<li>省市区三级城市联动效果，选择框默认全部显示，选择后根据实际情况显示或隐藏。 </li>
+<li>在省得select上加上属性 load-data=“330102” 即表示页面需把330102这个对应的相关select做相应选中。 </li>
+<li>json数据结构：城市编码6位（每2位表示一级），城市层级，上一级编码，城市名称，其他根据业务实际需求而定 <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;黄小齐博客-城市三级联动&lt;/title&gt;</div><div class="line">		&lt;link rel=&quot;stylesheet&quot; href=&quot;http://static.dev.egtcp.com/static/lib/zui/1.4.0/css/zui.min.css&quot;&gt;</div><div class="line">		&lt;script src=&quot;http://static.dev.egtcp.com/static/lib/jquery/core/1.9.1/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">		&lt;script src=&quot;http://static.dev.egtcp.com/static/lib/zui/1.4.0/js/zui.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;h4&gt;城市三级联动-默认全部显示&lt;/h4&gt;</div><div class="line">		&lt;h4&gt;数据读取-selsect加属性-load-data并赋值最后一级城市编号，如load-data=&quot;330701&quot;&lt;/h4&gt;</div><div class="line">		&lt;form class=&quot;form-horizontal col-xs-6&quot;&gt;</div><div class="line">			&lt;div class=&quot;form-group&quot;&gt;</div><div class="line">				&lt;label for=&quot;&quot; class=&quot;col-sm-3 text-right&quot;&gt;地址&lt;/label&gt;</div><div class="line">				&lt;div class=&quot;col-sm-3&quot;&gt;</div><div class="line">					&lt;select id=&quot;province&quot; class=&quot;form-control&quot; load-data=&quot;330701&quot;&gt;</div><div class="line">						&lt;option value=&quot;&quot;&gt;--选择省/市--&lt;/option&gt;</div><div class="line">					&lt;/select&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">				&lt;div class=&quot;col-sm-3&quot;&gt;</div><div class="line">					&lt;select id=&quot;city&quot; class=&quot;form-control&quot;&gt;</div><div class="line">						&lt;option value=&quot;&quot;&gt;--选择城市--&lt;/option&gt;</div><div class="line">					&lt;/select&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">				&lt;div class=&quot;col-sm-3&quot;&gt;</div><div class="line">					&lt;select id=&quot;dist&quot; class=&quot;form-control&quot;&gt;</div><div class="line">						&lt;option value=&quot;&quot;&gt;--选择区域--&lt;/option&gt;</div><div class="line">					&lt;/select&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">				&lt;input class=&quot;show&quot; type=&quot;text&quot; name=&quot;address&quot; id=&quot;address&quot; /&gt;(class改加hide即可隐藏)</div><div class="line">			&lt;/div&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">			var prov_obj = $(&quot;#province&quot;);</div><div class="line">			var city_obj = $(&quot;#city&quot;);</div><div class="line">			var district_obj = $(&quot;#dist&quot;);</div><div class="line">			var are_obj = $(&quot;#address&quot;);</div><div class="line">			var city = document.getElementById(&apos;city&apos;);</div><div class="line">			var district = document.getElementById(&apos;dist&apos;);</div><div class="line">			var select_prehtml=&quot;&quot;;</div><div class="line">			var getcity;</div><div class="line">			var setCity = function() &#123;</div><div class="line">				//只要触发了此事件，2、3级菜单必须还原				</div><div class="line">				city.options.length = 1; //重置选项</div><div class="line">				district.options.length = 1; //重置选项</div><div class="line">				var val = prov_obj.val();</div><div class="line">				</div><div class="line">				temp_html=select_prehtml;</div><div class="line">				var getjson = $.each(getcity, function(i, prov) &#123;</div><div class="line">					if(prov.level == 2 &amp;&amp; prov.parent_code == val) &#123;</div><div class="line">						temp_html += &quot;&lt;option name=\&quot;&quot; + prov.abbr + &quot;\&quot; value=\&quot;&quot; + prov.code + &quot;\&quot;&gt;&quot; + prov.name + &quot;&lt;/option&gt;&quot;;</div><div class="line">					&#125;</div><div class="line">				&#125;);</div><div class="line">				$.when(getjson).done(function(data) &#123;</div><div class="line">					city_obj.append(temp_html);</div><div class="line">					getdist(&quot;one&quot;);</div><div class="line">				&#125;);</div><div class="line">			&#125;; //设置城市</div><div class="line">			var setArea = function() &#123;</div><div class="line">				//只要触发了此事件，3级菜单必须还原				</div><div class="line">				district.options.length = 1; //重置选项</div><div class="line">				var val = city_obj.val();</div><div class="line">				</div><div class="line">				temp_html=select_prehtml;</div><div class="line">				var getjson = $.each(getcity, function(i, prov) &#123;</div><div class="line">					if(prov.level == 3 &amp;&amp; prov.parent_code == val) &#123;</div><div class="line">						temp_html += &quot;&lt;option name=\&quot;&quot; + prov.abbr + &quot;\&quot; value=\&quot;&quot; + prov.code + &quot;\&quot;&gt;&quot; + prov.name + &quot;&lt;/option&gt;&quot;;</div><div class="line">					&#125;</div><div class="line">				&#125;);</div><div class="line">				$.when(getjson).done(function(data) &#123;</div><div class="line">					district_obj.append(temp_html);</div><div class="line">					if(district.options.length &lt; 2) &#123;</div><div class="line">						district_obj.hide();</div><div class="line">					&#125; else &#123;</div><div class="line">						district_obj.show();</div><div class="line">					&#125;</div><div class="line">					getdist(&quot;two&quot;);</div><div class="line">				&#125;);</div><div class="line">			&#125;; //设置区域</div><div class="line">			var getdist = function(sign) &#123;</div><div class="line">				var s1 = prov_obj.val();</div><div class="line">				var s2 = city_obj.val();</div><div class="line">				var s3 = district_obj.val();</div><div class="line">				if(sign == &quot;one&quot;) &#123;</div><div class="line">					are_obj.val(s1);</div><div class="line">					prov_obj.attr(&quot;load-data&quot;, s1);</div><div class="line">				&#125; else if(sign == &quot;two&quot;) &#123;</div><div class="line">					are_obj.val(s2);</div><div class="line">					prov_obj.attr(&quot;load-data&quot;, s2);</div><div class="line">				&#125; else &#123;</div><div class="line">					are_obj.val(s3);</div><div class="line">					prov_obj.attr(&quot;load-data&quot;, s3);</div><div class="line">				&#125;</div><div class="line">			&#125;; //获取城市编码</div><div class="line">			var load_city = function() &#123;</div><div class="line">				if($(&quot;select&quot;).attr(&quot;load-data&quot;) != &quot;&quot;) &#123;</div><div class="line">					var ldata = $(&quot;select&quot;).attr(&quot;load-data&quot;);</div><div class="line">					are_obj.val(ldata);</div><div class="line">					temp_html,temp_html2=select_prehtml;</div><div class="line">					for(var i = 0; i &lt; getcity.length; i++) &#123;</div><div class="line">						if(getcity[i].code == ldata &amp;&amp; getcity[i].parent_code.substr(2, 4) == &quot;0000&quot;) &#123;</div><div class="line">							var s1 = ldata.substr(0, 2) + &quot;0000&quot;; //1级</div><div class="line">							prov_obj.val(s1);//获取1级城市目录并赋值</div><div class="line">							for(var j = 0; j &lt; getcity.length; j++) &#123;</div><div class="line">								if(getcity[j].level == 2 &amp;&amp; getcity[j].parent_code == getcity[i].parent_code) &#123;</div><div class="line">									temp_html += &quot;&lt;option name=\&quot;&quot; + getcity[j].abbr + &quot;\&quot; value=\&quot;&quot; + getcity[j].code + &quot;\&quot;&gt;&quot; + getcity[j].name + &quot;&lt;/option&gt;&quot;; //获取2级城市目录</div><div class="line">								&#125;</div><div class="line">							&#125;</div><div class="line">							city_obj.append(temp_html);</div><div class="line">							city_obj.val(ldata);//获取2级城市目录并赋值</div><div class="line">						&#125; else if(getcity[i].code == ldata &amp;&amp; getcity[i].parent_code.substr(2, 4) !== &quot;0000&quot;) &#123;</div><div class="line">							var s1 = ldata.substr(0, 2) + &quot;0000&quot;; //1级</div><div class="line">							var s2 = ldata.substr(0, 4) + &quot;00&quot;; //2级</div><div class="line">							$(&quot;#province option[value=&apos;&quot; + s1 + &quot;&apos;]&quot;).attr(&apos;selected&apos;, true);</div><div class="line">							for(var j = 0; j &lt; getcity.length; j++) &#123;</div><div class="line">								if(getcity[j].level == 3 &amp;&amp; getcity[j].parent_code == s2) &#123;</div><div class="line">									temp_html += &quot;&lt;option name=\&quot;&quot; + getcity[j].abbr + &quot;\&quot; value=\&quot;&quot; + getcity[j].code + &quot;\&quot;&gt;&quot; + getcity[j].name + &quot;&lt;/option&gt;&quot;; //获取3级城市目录</div><div class="line">								&#125; else if(getcity[j].level == 2 &amp;&amp; getcity[j].parent_code == s1) &#123;</div><div class="line">									temp_html2 += &quot;&lt;option name=\&quot;&quot; + getcity[j].abbr + &quot;\&quot; value=\&quot;&quot; + getcity[j].code + &quot;\&quot;&gt;&quot; + getcity[j].name + &quot;&lt;/option&gt;&quot;; //获取2级城市目录</div><div class="line">								&#125;</div><div class="line">							&#125;</div><div class="line">							city_obj.append(temp_html2);</div><div class="line">							city_obj.val(s2);//获取2级城市目录并赋值</div><div class="line">							district_obj.append(temp_html);</div><div class="line">							district_obj.val(ldata);//获取3级城市目录并赋值</div><div class="line">						&#125;</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			var init = function() &#123;</div><div class="line">				// 遍历赋值省份下拉列表</div><div class="line">				temp_html=select_prehtml;</div><div class="line">				$.each(getcity, function(i, prov) &#123;</div><div class="line">					if(prov.level == 1) &#123;</div><div class="line">						temp_html += &quot;&lt;option name=\&quot;&quot; + prov.abbr + &quot;\&quot; value=\&quot;&quot; + prov.code + &quot;\&quot;&gt;&quot; + prov.name + &quot;&lt;/option&gt;&quot;;</div><div class="line">					&#125;</div><div class="line">				&#125;);</div><div class="line">				prov_obj.append(temp_html);</div><div class="line">				prov_obj.bind(&quot;change&quot;, function() &#123;</div><div class="line">					setCity();</div><div class="line">				&#125;);</div><div class="line">				city_obj.bind(&quot;change&quot;, function() &#123;</div><div class="line">					setArea();</div><div class="line">				&#125;);</div><div class="line">				district_obj.bind(&quot;change&quot;, function() &#123;</div><div class="line">					getdist();</div><div class="line">				&#125;);</div><div class="line">			&#125;;</div><div class="line">			//加载json数据</div><div class="line">			$.getJSON(&apos;city.json&apos;, function(data) &#123;</div><div class="line">				getcity = data.area;</div><div class="line">				init();</div><div class="line">				load_city();</div><div class="line">			&#125;);</div><div class="line">		&lt;/script&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -327,13 +325,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/14/详谈一下闭包是什么/">详谈一下闭包是什么</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/21/省市区三级联动/">省市区三级城市联动</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
-        <p><span>发布时间:</span>2017-02-14, 21:52:47</p>
-        <p><span>最后更新:</span>2017-02-16, 21:58:38</p>
+        <p><span>发布时间:</span>2017-02-21, 14:55:32</p>
+        <p><span>最后更新:</span>2017-02-21, 14:59:18</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/14/详谈一下闭包是什么/" title="详谈一下闭包是什么">http://www.xiaoqi888.cn/2017/02/14/详谈一下闭包是什么/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/14/详谈一下闭包是什么/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/21/省市区三级联动/" title="省市区三级城市联动">http://www.xiaoqi888.cn/2017/02/21/省市区三级联动/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/21/省市区三级联动/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -345,16 +343,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/15/倒计时的三种写法/">
-                    倒计时的三种写法
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/13/表单取消监听数据变化/">
-                    表单取消监听数据变化
+                <a href="/2017/02/20/JS构造函数方法与原型prototype上的方法/">
+                    JS构造函数方法与原型prototype上的方法
                 </a>
             </div>
         
@@ -402,7 +394,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"详谈一下闭包是什么　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"省市区三级城市联动　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -422,15 +414,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/15/倒计时的三种写法/" title="上一篇: 倒计时的三种写法">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/13/表单取消监听数据变化/" title="下一篇: 表单取消监听数据变化">
+            <a href="/2017/02/20/JS构造函数方法与原型prototype上的方法/" title="下一篇: JS构造函数方法与原型prototype上的方法">
                 <i class="fa fa-angle-right"></i>
             </a>
         

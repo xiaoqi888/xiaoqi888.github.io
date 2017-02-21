@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="xiaoqi" />
+
+<meta name="keywords" content="黄小齐,黄小齐前端博客,前端开发,分享前端技术,web前端开发博客,xiaoqi888,技术博客,blog">
+
+
+
+<meta name="description" content="Git常用操作命令：1) 远程仓库相关命令检出仓库：$ git clone git://github.com/jquery/jquery.git查看远程仓库：$ git remote -v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 常用命令大全">
+<meta property="og:url" content="http://www.xiaoqi888.cn/post/xq3.html">
+<meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
+<meta property="og:description" content="Git常用操作命令：1) 远程仓库相关命令检出仓库：$ git clone git://github.com/jquery/jquery.git查看远程仓库：$ git remote -v">
+<meta property="og:updated_time" content="2017-02-02T03:44:40.379Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 常用命令大全">
+<meta name="twitter:description" content="Git常用操作命令：1) 远程仓库相关命令检出仓库：$ git clone git://github.com/jquery/jquery.git查看远程仓库：$ git remote -v">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="黄小齐前端博客—热爱WEB前端开发,分享前端技术" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Git 常用命令大全 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">xiaoqi</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">当你的才华还撑不起你的野心时，那你就应该静下心来学习。</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="#" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="#" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CheckBox/">CheckBox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jquery/">Jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web安全/">Web安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/input/">input</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/padding/">padding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/textarea/">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三级联动/">三级联动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/倒计时/">倒计时</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型/">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型链/">原型链</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习路线/">学习路线</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/封装/">封装</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/当前时间/">当前时间</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无缝滚动/">无缝滚动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构造函数/">构造函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/监听/">监听</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/表单/">表单</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运算符/">运算符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遍历/">遍历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/防御/">防御</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随机数/">随机数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随机点名/">随机点名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.qdabc.cn">前端abc</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">xiaoqi</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">xiaoqi</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">当你的才华还撑不起你的野心时，那你就应该静下心来学习。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="#" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="#" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-xq3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/post/xq3.html" class="article-date">
+      <time datetime="2017-02-02T03:08:35.206Z" itemprop="datePublished">2017-02-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git 常用命令大全
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="Git常用操作命令："><a href="#Git常用操作命令：" class="headerlink" title="Git常用操作命令："></a>Git常用操作命令：</h4><h5 id="1-远程仓库相关命令"><a href="#1-远程仓库相关命令" class="headerlink" title="1) 远程仓库相关命令"></a>1) 远程仓库相关命令</h5><p>检出仓库：$ git clone git://github.com/jquery/jquery.git<br>查看远程仓库：$ git remote -v<br><a id="more"></a><br>添加远程仓库：$ git remote add [name] [url]<br>删除远程仓库：$ git remote rm [name]<br>修改远程仓库：$ git remote set-url –push [name] [newUrl]<br>拉取远程仓库：$ git pull [remoteName] [localBranchName]<br>推送远程仓库：$ git push [remoteName] [localBranchName]</p>
+<p>*如果想把本地的某个分支test提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支，如下：<br>$git push origin test:master         // 提交本地test分支作为远程的master分支<br>$git push origin test:test              // 提交本地test分支作为远程的test分支</p>
+<h5 id="2）分支-branch-操作相关命令"><a href="#2）分支-branch-操作相关命令" class="headerlink" title="2）分支(branch)操作相关命令"></a>2）分支(branch)操作相关命令</h5><p>查看本地分支：$ git branch<br>查看远程分支：$ git branch -r<br>创建本地分支：$ git branch [name] —-注意新分支创建后不会自动切换为当前分支<br>切换分支：$ git checkout [name]<br>创建新分支并立即切换到新分支：$ git checkout -b [name]<br>删除分支：$ git branch -d [name] —- -d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项<br>合并分支：$ git merge [name] —-将名称为[name]的分支与当前分支合并<br>创建远程分支(本地分支push到远程)：$ git push origin [name]<br>删除远程分支：$ git push origin :heads/[name] 或 $ gitpush origin :[name] </p>
+<p>*创建空的分支：(执行命令之前记得先提交你当前分支的修改，否则会被强制删干净没得后悔)<br>$git symbolic-ref HEAD refs/heads/[name]<br>$rm .git/index<br>$git clean -fdx</p>
+<h5 id="3）版本-tag-操作相关命令"><a href="#3）版本-tag-操作相关命令" class="headerlink" title="3）版本(tag)操作相关命令"></a>3）版本(tag)操作相关命令</h5><p>查看版本：$ git tag<br>创建版本：$ git tag [name]<br>删除版本：$ git tag -d [name]<br>查看远程版本：$ git tag -r<br>创建远程版本(本地版本push到远程)：$ git push origin [name]<br>删除远程版本：$ git push origin :refs/tags/[name]<br>合并远程仓库的tag到本地：$ git pull origin –tags<br>上传本地tag到远程仓库：$ git push origin –tags<br>创建带注释的tag：$ git tag -a [name] -m ‘yourMessage’</p>
+<h5 id="4-子模块-submodule-相关操作命令"><a href="#4-子模块-submodule-相关操作命令" class="headerlink" title="4) 子模块(submodule)相关操作命令"></a>4) 子模块(submodule)相关操作命令</h5><p>添加子模块：$ git submodule add [url] [path]<br>   如：$git submodule add git://github.com/soberh/ui-libs.git src/main/webapp/ui-libs<br>初始化子模块：$ git submodule init  —-只在首次检出仓库时运行一次就行<br>更新子模块：$ git submodule update —-每次更新或切换分支后都需要运行一下<br>删除子模块：（分4步走哦）<br> 1) $ git rm –cached [path]<br> 2) 编辑“.gitmodules”文件，将子模块的相关配置节点删除掉<br> 3) 编辑“ .git/config”文件，将子模块的相关配置节点删除掉<br> 4) 手动删除子模块残留的目录</p>
+<h5 id="5）忽略一些文件、文件夹不提交"><a href="#5）忽略一些文件、文件夹不提交" class="headerlink" title="5）忽略一些文件、文件夹不提交"></a>5）忽略一些文件、文件夹不提交</h5><p>在仓库根目录下创建名称为“.gitignore”的文件，写入不需要的文件夹名或文件，每个元素占一行即可，如<br>target<br>bin<br>*.db</p>
+<h4 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h4><p>git branch 查看本地所有分支<br>git status 查看当前状态<br>git commit 提交<br>git branch -a 查看所有的分支<br>git branch -r 查看本地所有分支<br>git commit -am “init” 提交并且加注释<br>git remote add origin git@192.168.1.119:ndshow<br>git push origin master 将文件给推到服务器上<br>git remote show origin 显示远程库origin里的资源<br>git push origin master:develop<br>git push origin master:hb-dev 将本地库与服务器上的库进行关联<br>git checkout –track origin/dev 切换到远程dev分支<br>git branch -D master develop 删除本地库develop<br>git checkout -b dev 建立一个新的本地分支dev<br>git merge origin/dev 将分支dev与当前分支进行合并<br>git checkout dev 切换到本地dev分支<br>git remote show 查看远程库<br>git add .<br>git rm 文件名(包括路径) 从git中删除指定文件<br>git clone git://github.com/schacon/grit.git 从服务器上将代码给拉下来<br>git config –list 看所有用户<br>git ls-files 看已经被提交的<br>git rm [file name] 删除一个文件<br>git commit -a 提交当前repos的所有的改变<br>git add [file name] 添加一个文件到git index<br>git commit -v 当你用－v参数的时候可以看commit的差异<br>git commit -m “This is the message describing the commit” 添加commit信息<br>git commit -a -a是代表add，把所有的change加到git index里然后再commit<br>git commit -a -v 一般提交命令<br>git log 看你commit的日志<br>git diff 查看尚未暂存的更新<br>git rm a.a 移除文件(从暂存区和工作区中删除)<br>git rm –cached a.a 移除文件(只从暂存区中删除)<br>git commit -m “remove” 移除文件(从Git中删除)<br>git rm -f a.a 强行移除修改后文件(从暂存区和工作区中删除)<br>git diff –cached 或 $ git diff –staged 查看尚未提交的更新<br>git stash push 将文件给push到一个临时空间中<br>git stash pop 将文件从临时空间pop下来</p>
+<p>git remote add origin git@github.com:username/Hello-World.git<br>git push origin master 将本地项目给提交到服务器中</p>
+<p>git pull 本地与服务器端同步</p>
+<p>git push (远程仓库名) (分支名) 将本地分支推送到服务器上去。<br>git push origin serverfix:awesomebranch</p>
+<p>git fetch 相当于是从远程获取最新版本到本地，不会自动merge<br>git commit -a -m “log_message” (-a是提交所有改动，-m是加入log信息) 本地修改同步至服务器端 ：<br>git branch branch_0.1 master 从主分支master创建branch_0.1分支<br>git branch -m branch_0.1 branch_1.0 将branch_0.1重命名为branch_1.0<br>git checkout branch_1.0/master 切换到branch_1.0/master分支<br>du -hs</p>
+<p>mkdir WebApp<br>cd WebApp<br>git init<br>touch README<br>git add README<br>git commit -m ‘first commit’<br>git remote add origin git@github.com:daixu/WebApp.git<br>git push -u origin master</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/post/xq3.html">Git 常用命令大全</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
+        <p><span>发布时间:</span>2017-02-02, 11:08:35</p>
+        <p><span>最后更新:</span>2017-02-02, 11:44:40</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/post/xq3.html" title="Git 常用命令大全">http://www.xiaoqi888.cn/post/xq3.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/post/xq3.html　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/post/xq4.html">
+                    CSS初始化代码
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/post/xq2.html">
+                    Javascript日期类型的巧用
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Git常用操作命令："><span class="toc-number">1.</span> <span class="toc-text">Git常用操作命令：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-远程仓库相关命令"><span class="toc-number">1.1.</span> <span class="toc-text">1) 远程仓库相关命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2）分支-branch-操作相关命令"><span class="toc-number">1.2.</span> <span class="toc-text">2）分支(branch)操作相关命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3）版本-tag-操作相关命令"><span class="toc-number">1.3.</span> <span class="toc-text">3）版本(tag)操作相关命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-子模块-submodule-相关操作命令"><span class="toc-number">1.4.</span> <span class="toc-text">4) 子模块(submodule)相关操作命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5）忽略一些文件、文件夹不提交"><span class="toc-number">1.5.</span> <span class="toc-text">5）忽略一些文件、文件夹不提交</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Git-常用命令"><span class="toc-number">2.</span> <span class="toc-text">Git 常用命令</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Git 常用命令大全　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/post/xq4.html" title="上一篇: CSS初始化代码">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/post/xq2.html" title="下一篇: Javascript日期类型的巧用">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/post/省市区三级联动.html">省市区三级城市联动</a></li><li class="post-list-item"><a class="post-list-link" href="/post/JS构造函数方法与原型prototype上的方法.html">JS构造函数方法与原型prototype上的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/post/js实现随机点名.html">js实现随机点名</a></li><li class="post-list-item"><a class="post-list-link" href="/post/基于angualr.js实现的触摸滑动动画.html">基于angualr.js实现的触摸滑动动画</a></li><li class="post-list-item"><a class="post-list-link" href="/post/Web安全与防御措施.html">Web安全与防御措施</a></li><li class="post-list-item"><a class="post-list-link" href="/post/javascript DOM的操作，更新，遍历，添加.html">javascript DOM的操作，更新，遍历，添加</a></li><li class="post-list-item"><a class="post-list-link" href="/post/js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS.html">js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS</a></li><li class="post-list-item"><a class="post-list-link" href="/post/倒计时的三种写法.html">倒计时的三种写法</a></li><li class="post-list-item"><a class="post-list-link" href="/post/详谈一下闭包是什么.html">详谈一下闭包是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/post/表单取消监听数据变化.html">表单取消监听数据变化</a></li><li class="post-list-item"><a class="post-list-link" href="/post/JavaScript-原型、原型链.html">JavaScript-原型、原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/post/上下移动的无缝滚动.html">上下移动的无缝滚动</a></li><li class="post-list-item"><a class="post-list-link" href="/post/Javascript 面向对象编程（一）：封装.html">Javascript 面向对象编程（一）：封装</a></li><li class="post-list-item"><a class="post-list-link" href="/post/Web前端的学习路线,你真的知道吗.html">Web前端的学习路线,你真的知道吗</a></li><li class="post-list-item"><a class="post-list-link" href="/post/Ajax的url请求中为何要加随机数.html">Ajax的url请求中为何要加随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/post/关于css的一些知识小总结.html">关于css的一些知识小总结</a></li><li class="post-list-item"><a class="post-list-link" href="/post/jquery 处理 CheckBox复选框.html">jquery 处理 CheckBox复选框</a></li><li class="post-list-item"><a class="post-list-link" href="/post/JavaScript运算符使用误区.html">JavaScript运算符使用误区</a></li><li class="post-list-item"><a class="post-list-link" href="/post/去掉谷歌浏览器获取焦点时默认的input.html">去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景</a></li><li class="post-list-item"><a class="post-list-link" href="/post/元素设置padding或margin的问题.html">元素设置width:100%之后再设置padding或margin的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/post/JavaScript知识简单总结.html">JavaScript知识简单总结</a></li><li class="post-list-item"><a class="post-list-link" href="/post/xq6.html">JavaScript实现冒泡排序</a></li><li class="post-list-item"><a class="post-list-link" href="/post/xq5.html">了解模块化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/post/xq4.html">CSS初始化代码</a></li><li class="post-list-item"><a class="post-list-link" href="/post/xq3.html">Git 常用命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/post/xq2.html">Javascript日期类型的巧用</a></li><li class="post-list-item"><a class="post-list-link" href="/post/xq1.html">深入理解JavaScript—event（事件对象）</a></li><li class="post-list-item"><a class="post-list-link" href="/post/hello-world.html">理解 Javascript回调函数</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 xiaoqi  <a href="http://www.miitbeian.gov.cn/" target="_blank">豫ICP备16041185号</a>
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+  </div>
+</body>
+</html>

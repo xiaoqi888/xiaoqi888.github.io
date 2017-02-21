@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="xiaoqi" />
+
+<meta name="keywords" content="黄小齐,黄小齐前端博客,前端开发,分享前端技术,web前端开发博客,xiaoqi888,技术博客,blog">
+
+
+
+<meta name="description" content="闭包（closure）是JavaScript语言的特色，很多高级应用都要依靠闭包实现。作为一个初学者，还是用最通俗易懂的语言解释一下闭包吧。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="详谈一下闭包是什么">
+<meta property="og:url" content="http://www.xiaoqi888.cn/post/详谈一下闭包是什么.html">
+<meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
+<meta property="og:description" content="闭包（closure）是JavaScript语言的特色，很多高级应用都要依靠闭包实现。作为一个初学者，还是用最通俗易懂的语言解释一下闭包吧。">
+<meta property="og:updated_time" content="2017-02-16T13:58:38.393Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="详谈一下闭包是什么">
+<meta name="twitter:description" content="闭包（closure）是JavaScript语言的特色，很多高级应用都要依靠闭包实现。作为一个初学者，还是用最通俗易懂的语言解释一下闭包吧。">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="黄小齐前端博客—热爱WEB前端开发,分享前端技术" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>详谈一下闭包是什么 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">xiaoqi</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">当你的才华还撑不起你的野心时，那你就应该静下心来学习。</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="#" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="#" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CheckBox/">CheckBox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jquery/">Jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web安全/">Web安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/input/">input</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/padding/">padding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/textarea/">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三级联动/">三级联动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/倒计时/">倒计时</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型/">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型链/">原型链</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习路线/">学习路线</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/封装/">封装</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/当前时间/">当前时间</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无缝滚动/">无缝滚动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构造函数/">构造函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/监听/">监听</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/表单/">表单</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运算符/">运算符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遍历/">遍历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/防御/">防御</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随机数/">随机数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随机点名/">随机点名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.qdabc.cn">前端abc</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">xiaoqi</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">xiaoqi</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">当你的才华还撑不起你的野心时，那你就应该静下心来学习。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="#" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="#" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-详谈一下闭包是什么" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/post/详谈一下闭包是什么.html" class="article-date">
+      <time datetime="2017-02-14T13:52:47.000Z" itemprop="datePublished">2017-02-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      详谈一下闭包是什么
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>闭包（closure）是JavaScript语言的特色，很多高级应用都要依靠闭包实现。作为一个初学者，还是用最通俗易懂的语言解释一下闭包吧。<br><a id="more"></a><br>在讲闭包之前，我们先复习一下</p>
+<p>变量的作用域</p>
+<p>变量的作用域两种：全局变量和局部变量。<br>在Javascript语言中函数内部可以直接读取全局变量<br>先看个小例子。<br>例1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    var a = &quot;我是全局变量&quot;;</div><div class="line">    function fun()&#123;</div><div class="line">        var b = &quot;我是局部变量&quot;;</div><div class="line">        console.log(b);</div><div class="line">        console.log(a);</div><div class="line">    &#125;</div><div class="line">    fun();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>毫无疑问，打印出来的就是<br>我是全局变量<br>我是局部变量<br>但是，如果我要这样写呢？<br>例2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function fun()&#123;</div><div class="line">        var b = &quot;我是局部变量&quot;;   </div><div class="line">&#125;</div><div class="line">    console.log(b);</div></pre></td></tr></table></figure></p>
+<p>结果输出： b is not defined 让你大眼一看，你也肯定会说，这个不是胡扯嘛，b明明就是局部变量，怎么能在函数体外调用呢！结果不出错才奇怪呢！ 可我就想调用函数体内的变量，怎么办？ 别急，既然你能想出这个问题，那么就肯定有办法解决。这不 “闭包”这个大神就给你支招了，只要你用了“闭包”，你就能让fun 函数以外的函数 来 使用 b 的值 。</p>
+<p>闭包的概念</p>
+<p>在程序语言中，所谓闭包，是指语法域位于某个特定的区域，具有持续参照(读写)位于该区域内自身范围之外的执行域上的非持久型变量值能力的段落。这些外部执行域的非持久型变量神奇地保留他们在闭包最初定义(或创建)时的值。<br>大白话的将： 我们可以用一个函数 去访问 另外一个函数的内部变量的方式就是闭包。<br>为了让自己更明白，继续来举个例子，<br>例3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function outFun() &#123;</div><div class="line">        var num = 9;  //  num 是outFun函数内 的一个变量</div><div class="line">        function inFun() &#123;</div><div class="line">            var key = 10;</div><div class="line">            console.log(num);  //   外部函数outFun的变量num可以被内部函数inFun所使用</div><div class="line">        &#125;</div><div class="line">        console.log(key);    // 这样是不可以的，key是内部函数inFun的变量，内部函数的变量不可以被外部函数所使用</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的例子中 我们知道num 这个变量只可以供内部函数使用，其他的不能随便使用。<br>可我想让外部的函数也使用num变量肿么办呢？ 别急，看我给变变型。<br>例4：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function outFun()&#123;</div><div class="line">        var num = 9;</div><div class="line">        function inFun()&#123;</div><div class="line">            console.log(num);</div><div class="line">        &#125;</div><div class="line">        return inFun;   // 让outFun函数的结果   返回 inFun这个函数体   这也是闭包的核心语句</div><div class="line">    &#125;</div><div class="line">    // 立即执行outFun这个函数，把返回的结果赋给fun </div><div class="line">    var fun = outFun();  // 这个点要多注意了</div><div class="line">    // outFun();  返回的是 function inFun()&#123;console.log(num);&#125;</div><div class="line">    //  也就是说 var fun = function inFun()&#123;console.log(num);&#125;</div><div class="line">    fun();</div></pre></td></tr></table></figure></p>
+<p>输出结果就为9</p>
+<p>所以外部函数 fun使用了 另一个函数outFun里面的变量num 这个创建的方法我们称之为闭包。<br>我们来看一道测试题，检验一下我们到底理解闭包了没.</p>
+<p>思考题</p>
+<p>例5：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function outerFun()  // 外部函数</div><div class="line">    &#123;</div><div class="line">        var a=0;    // 清空</div><div class="line">        function innerFun()  // 内部函数</div><div class="line">        &#123;</div><div class="line">            a++;</div><div class="line">            alert(a);</div><div class="line">        &#125;</div><div class="line">        return innerFun;  // 注意这里  核心</div><div class="line">    &#125;</div><div class="line">var obj=outerFun();   </div><div class="line"> obj(); </div><div class="line"> obj();</div><div class="line">    var obj2= outerFun();</div><div class="line">obj2();  </div><div class="line">obj2();</div></pre></td></tr></table></figure></p>
+<p>返回的结果是 1 2 1 2<br>提示：在这里深深体会这句话，这些外部执行域的非持久型变量神奇地保留他们在闭包最初定义(或创建)时的值。</p>
+<p>总结：</p>
+<p>其实闭包的核心机制就是return一个内部函数。<br>再重复一遍： 如何让外部函数a访问另一个函数b内部的变量，直接访问，是行不通的。我们采用曲线救国的方法：让一个内部函数c可以使用b函数的变量，然后把这个内部函数c 给return出来，赋给外部函数a。再让外部函数a调用内部函数c。简单来讲就是让外部函数访问另一个函数的内部函数。<br>其中例4我们可以改成这个样子，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function outFun()&#123;</div><div class="line">        var num = 9;        </div><div class="line">        return function()&#123;</div><div class="line">            console.log(num);</div><div class="line">        &#125;  </div><div class="line">    &#125;</div><div class="line">    var fun = outFun();  </div><div class="line">    fun();</div></pre></td></tr></table></figure></p>
+<p>闭包的优缺点 ：</p>
+<p>优点：不产生全局变量，实现属性私有化。<br>缺点：闭包中的数据会常驻内存，在不用的时候要删掉否则会导致内存溢出。<br>闭包的用法：闭包的函数传参。<br>例6，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fun(x)&#123;</div><div class="line">        return function()&#123;</div><div class="line">            console.log(x);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    var obj = fun(4);</div><div class="line">    obj();</div></pre></td></tr></table></figure></p>
+<p>输出结果为 4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function fun(x)&#123;</div><div class="line">        return function(y)&#123;</div><div class="line">            console.log(x+y);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    var obj = fun(4);</div><div class="line">    obj();</div><div class="line">    obj(5);</div></pre></td></tr></table></figure></p>
+<p>输出结果为 NaN 9<br>来个小例子，点击不同的按钮，让图片向左右不同的方向滑动</p>
+<p>闭包传参示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">        &lt;title&gt;&lt;/title&gt;</div><div class="line">        &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">            *&#123;</div><div class="line">                margin: 0;</div><div class="line">                padding: 0;</div><div class="line">            &#125;</div><div class="line">            div&#123;</div><div class="line">                width: 100px;</div><div class="line">                height: 100px;</div><div class="line">                background-color: pink;</div><div class="line">                position: absolute;</div><div class="line">            &#125;</div><div class="line">        &lt;/style&gt;</div><div class="line">        &lt;script&gt;</div><div class="line">            window.onload = function()&#123;</div><div class="line">                var btn1 = document.getElementById(&quot;btn1&quot;);</div><div class="line">                var btn2 = document.getElementById(&quot;btn2&quot;);</div><div class="line">                var box = document.getElementById(&quot;box&quot;)</div><div class="line">                function move(speed)&#123;</div><div class="line">                    return function()&#123;</div><div class="line">                        box.style.left = box.offsetLeft + speed +&quot;px&quot;;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                btn1.onclick = move(5);</div><div class="line">                btn2.onclick = move(-5);</div><div class="line">            &#125;</div><div class="line">        &lt;/script&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;button id=&quot;btn1&quot;&gt;向右&lt;/button&gt;</div><div class="line">        &lt;button id=&quot;btn2&quot;&gt;向左&lt;/button&gt;</div><div class="line">        &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>好啦，闭包的基础知识暂时讲到这里，以后还会深入总结闭包知识点的，敬请期待吧！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/post/详谈一下闭包是什么.html">详谈一下闭包是什么</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
+        <p><span>发布时间:</span>2017-02-14, 21:52:47</p>
+        <p><span>最后更新:</span>2017-02-16, 21:58:38</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/post/详谈一下闭包是什么.html" title="详谈一下闭包是什么">http://www.xiaoqi888.cn/post/详谈一下闭包是什么.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/post/详谈一下闭包是什么.html　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/post/倒计时的三种写法.html">
+                    倒计时的三种写法
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/post/表单取消监听数据变化.html">
+                    表单取消监听数据变化
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"详谈一下闭包是什么　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/post/倒计时的三种写法.html" title="上一篇: 倒计时的三种写法">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/post/表单取消监听数据变化.html" title="下一篇: 表单取消监听数据变化">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/post/省市区三级联动.html">省市区三级城市联动</a></li><li class="post-list-item"><a class="post-list-link" href="/post/JS构造函数方法与原型prototype上的方法.html">JS构造函数方法与原型prototype上的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/post/js实现随机点名.html">js实现随机点名</a></li><li class="post-list-item"><a class="post-list-link" href="/post/基于angualr.js实现的触摸滑动动画.html">基于angualr.js实现的触摸滑动动画</a></li><li class="post-list-item"><a class="post-list-link" href="/post/Web安全与防御措施.html">Web安全与防御措施</a></li><li class="post-list-item"><a class="post-list-link" href="/post/javascript DOM的操作，更新，遍历，添加.html">javascript DOM的操作，更新，遍历，添加</a></li><li class="post-list-item"><a class="post-list-link" href="/post/js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS.html">js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS</a></li><li class="post-list-item"><a class="post-list-link" href="/post/倒计时的三种写法.html">倒计时的三种写法</a></li><li class="post-list-item"><a class="post-list-link" href="/post/详谈一下闭包是什么.html">详谈一下闭包是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/post/表单取消监听数据变化.html">表单取消监听数据变化</a></li><li class="post-list-item"><a class="post-list-link" href="/post/JavaScript-原型、原型链.html">JavaScript-原型、原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/post/上下移动的无缝滚动.html">上下移动的无缝滚动</a></li><li class="post-list-item"><a class="post-list-link" href="/post/Javascript 面向对象编程（一）：封装.html">Javascript 面向对象编程（一）：封装</a></li><li class="post-list-item"><a class="post-list-link" href="/post/Web前端的学习路线,你真的知道吗.html">Web前端的学习路线,你真的知道吗</a></li><li class="post-list-item"><a class="post-list-link" href="/post/Ajax的url请求中为何要加随机数.html">Ajax的url请求中为何要加随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/post/关于css的一些知识小总结.html">关于css的一些知识小总结</a></li><li class="post-list-item"><a class="post-list-link" href="/post/jquery 处理 CheckBox复选框.html">jquery 处理 CheckBox复选框</a></li><li class="post-list-item"><a class="post-list-link" href="/post/JavaScript运算符使用误区.html">JavaScript运算符使用误区</a></li><li class="post-list-item"><a class="post-list-link" href="/post/去掉谷歌浏览器获取焦点时默认的input.html">去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景</a></li><li class="post-list-item"><a class="post-list-link" href="/post/元素设置padding或margin的问题.html">元素设置width:100%之后再设置padding或margin的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/post/JavaScript知识简单总结.html">JavaScript知识简单总结</a></li><li class="post-list-item"><a class="post-list-link" href="/post/xq6.html">JavaScript实现冒泡排序</a></li><li class="post-list-item"><a class="post-list-link" href="/post/xq5.html">了解模块化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/post/xq4.html">CSS初始化代码</a></li><li class="post-list-item"><a class="post-list-link" href="/post/xq3.html">Git 常用命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/post/xq2.html">Javascript日期类型的巧用</a></li><li class="post-list-item"><a class="post-list-link" href="/post/xq1.html">深入理解JavaScript—event（事件对象）</a></li><li class="post-list-item"><a class="post-list-link" href="/post/hello-world.html">理解 Javascript回调函数</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 xiaoqi  <a href="http://www.miitbeian.gov.cn/" target="_blank">豫ICP备16041185号</a>
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+  </div>
+</body>
+</html>

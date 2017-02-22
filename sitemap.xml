@@ -1,626 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
+  
   <url>
-    <loc>http://www.xiaoqi888.cn/2016/12/21/%E9%81%BF%E5%85%8D%E5%B8%B8%E8%A7%81%E7%9A%846%E7%A7%8DHTML5%E9%94%99%E8%AF%AF%E7%94%A8%E6%B3%95/</loc>
-    <lastmod>2017-02-22T16:20:51.977Z</lastmod>
-    <data>
-        <display>
-        <title>避免常见的6种HTML5错误用法</title>
-        <pubTime>2016-12-21T02:36:28.000Z</pubTime>
-        
-        <tag>html5 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
+    <loc>http://www.xiaoqi888.cn/2016/12/27/%E9%81%BF%E5%85%8D%E5%B8%B8%E8%A7%81%E7%9A%846%E7%A7%8DHTML5%E9%94%99%E8%AF%AF%E7%94%A8%E6%B3%95/</loc>
     
+    <lastmod>2017-02-22T16:34:22.402Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/01/05/JS%E4%B8%AD%E7%9A%84call()%E5%92%8Capply()%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2017-02-22T15:57:37.099Z</lastmod>
-    <data>
-        <display>
-        <title>JS中的call()和apply()方法</title>
-        <pubTime>2017-01-05T13:26:47.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>call </tag>
-         
-        <tag>apply </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-22T15:57:37.099Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/01/02/JavaScript%20%E8%AF%AF%E5%8C%BA/</loc>
-    <lastmod>2017-02-22T15:15:11.101Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 误区</title>
-        <pubTime>2017-01-02T06:06:23.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-22T15:15:11.101Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/01/03/%E8%B0%88%E8%B0%88JavaScript%E7%9A%84prototype/</loc>
-    <lastmod>2017-02-22T14:13:29.448Z</lastmod>
-    <data>
-        <display>
-        <title>谈谈JavaScript的prototype</title>
-        <pubTime>2017-01-03T09:35:53.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>prototype </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-22T14:13:29.448Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/01/06/JavaScript%20%E9%97%AD%E5%8C%85%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
-    <lastmod>2017-02-22T13:40:35.235Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 闭包到底是什么</title>
-        <pubTime>2017-01-06T01:53:32.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>闭包 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-22T13:40:35.235Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/01/23/%E8%B6%85%E8%AF%A6%E7%BB%86%E7%9A%84%E7%A7%BB%E5%8A%A8%E7%AB%AFhtml5%E5%A4%B4%E6%A0%87%E7%AD%BEhead%E4%BB%8B%E7%BB%8D/</loc>
-    <lastmod>2017-02-22T12:40:33.379Z</lastmod>
-    <data>
-        <display>
-        <title>超详细的移动端html5头标签head介绍</title>
-        <pubTime>2017-01-23T05:25:14.000Z</pubTime>
-        
-        <tag>html5 </tag>
-         
-        <tag>移动端 </tag>
-         
-        <tag>head </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-22T12:40:33.379Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/21/%E7%9C%81%E5%B8%82%E5%8C%BA%E4%B8%89%E7%BA%A7%E8%81%94%E5%8A%A8/</loc>
-    <lastmod>2017-02-21T07:06:44.903Z</lastmod>
-    <data>
-        <display>
-        <title>省市区三级城市联动</title>
-        <pubTime>2017-02-21T06:55:32.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>三级联动 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-21T07:06:44.903Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/20/JS%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95%E4%B8%8E%E5%8E%9F%E5%9E%8Bprototype%E4%B8%8A%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2017-02-20T15:57:38.427Z</lastmod>
-    <data>
-        <display>
-        <title>JS构造函数方法与原型prototype上的方法</title>
-        <pubTime>2017-02-20T15:25:52.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>构造函数 </tag>
-         
-        <tag>原型 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-20T15:57:38.427Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/20/js%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E7%82%B9%E5%90%8D/</loc>
-    <lastmod>2017-02-20T15:08:48.236Z</lastmod>
-    <data>
-        <display>
-        <title>js实现随机点名</title>
-        <pubTime>2017-02-20T14:47:13.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>随机点名 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-20T15:08:48.236Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/19/%E5%9F%BA%E4%BA%8Eangualr.js%E5%AE%9E%E7%8E%B0%E7%9A%84%E8%A7%A6%E6%91%B8%E6%BB%91%E5%8A%A8%E5%8A%A8%E7%94%BB/</loc>
-    <lastmod>2017-02-19T07:24:07.241Z</lastmod>
-    <data>
-        <display>
-        <title>基于angualr.js实现的触摸滑动动画</title>
-        <pubTime>2017-02-19T07:20:24.000Z</pubTime>
-        
-        <tag>angular </tag>
-         
-        <tag>js </tag>
-         
-        <tag>动画 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-19T07:24:07.241Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/17/Web%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E5%BE%A1%E6%8E%AA%E6%96%BD/</loc>
-    <lastmod>2017-02-17T14:12:41.335Z</lastmod>
-    <data>
-        <display>
-        <title>Web安全与防御措施</title>
-        <pubTime>2017-02-17T13:55:39.000Z</pubTime>
-        
-        <tag>Web安全 </tag>
-         
-        <tag>防御 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-17T14:12:41.335Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/16/js%E4%B8%AD%E6%80%8E%E4%B9%88%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%20%E6%A0%BC%E5%BC%8F%20yyyy-MM-dd%20HHMMSS/</loc>
-    <lastmod>2017-02-17T13:35:25.429Z</lastmod>
-    <data>
-        <display>
-        <title>js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS</title>
-        <pubTime>2017-02-16T06:31:39.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>当前时间 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-17T13:35:25.429Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/16/javascript%20DOM%E7%9A%84%E6%93%8D%E4%BD%9C%EF%BC%8C%E6%9B%B4%E6%96%B0%EF%BC%8C%E9%81%8D%E5%8E%86%EF%BC%8C%E6%B7%BB%E5%8A%A0/</loc>
-    <lastmod>2017-02-17T13:29:20.849Z</lastmod>
-    <data>
-        <display>
-        <title>javascript DOM的操作，更新，遍历，添加</title>
-        <pubTime>2017-02-16T13:08:16.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>遍历 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-17T13:29:20.849Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/15/%E5%80%92%E8%AE%A1%E6%97%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E5%86%99%E6%B3%95/</loc>
-    <lastmod>2017-02-17T13:18:43.589Z</lastmod>
-    <data>
-        <display>
-        <title>倒计时的三种写法</title>
-        <pubTime>2017-02-15T05:43:46.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>倒计时 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-17T13:18:43.589Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/13/%E8%A1%A8%E5%8D%95%E5%8F%96%E6%B6%88%E7%9B%91%E5%90%AC%E6%95%B0%E6%8D%AE%E5%8F%98%E5%8C%96/</loc>
-    <lastmod>2017-02-16T14:07:14.398Z</lastmod>
-    <data>
-        <display>
-        <title>表单取消监听数据变化</title>
-        <pubTime>2017-02-13T02:48:53.000Z</pubTime>
-        
-        <tag>表单 </tag>
-         
-        <tag>监听 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-16T14:07:14.398Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/14/%E8%AF%A6%E8%B0%88%E4%B8%80%E4%B8%8B%E9%97%AD%E5%8C%85%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
-    <lastmod>2017-02-16T13:58:38.393Z</lastmod>
-    <data>
-        <display>
-        <title>详谈一下闭包是什么</title>
-        <pubTime>2017-02-14T13:52:47.000Z</pubTime>
-        
-        <tag>闭包 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-16T13:58:38.393Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/12/JavaScript-%E5%8E%9F%E5%9E%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
-    <lastmod>2017-02-16T13:47:47.492Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript-原型、原型链</title>
-        <pubTime>2017-02-12T08:37:29.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>原型 </tag>
-         
-        <tag>原型链 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-16T13:47:47.492Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/10/%E4%B8%8A%E4%B8%8B%E7%A7%BB%E5%8A%A8%E7%9A%84%E6%97%A0%E7%BC%9D%E6%BB%9A%E5%8A%A8/</loc>
-    <lastmod>2017-02-16T06:49:50.129Z</lastmod>
-    <data>
-        <display>
-        <title>上下移动的无缝滚动</title>
-        <pubTime>2017-02-10T03:18:23.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>无缝滚动 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-16T06:49:50.129Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/08/Javascript%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%B0%81%E8%A3%85/</loc>
-    <lastmod>2017-02-08T10:46:22.175Z</lastmod>
-    <data>
-        <display>
-        <title>Javascript 面向对象编程（一）：封装</title>
-        <pubTime>2017-02-08T09:25:39.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>面向对象 </tag>
-         
-        <tag>封装 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-08T10:46:22.175Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/08/Web%E5%89%8D%E7%AB%AF%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF,%E4%BD%A0%E7%9C%9F%E7%9A%84%E7%9F%A5%E9%81%93%E5%90%97/</loc>
-    <lastmod>2017-02-08T04:39:39.146Z</lastmod>
-    <data>
-        <display>
-        <title>Web前端的学习路线,你真的知道吗</title>
-        <pubTime>2017-02-08T02:25:39.000Z</pubTime>
-        
-        <tag>学习路线 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-08T04:39:39.146Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/07/Ajax%E7%9A%84url%E8%AF%B7%E6%B1%82%E4%B8%AD%E4%B8%BA%E4%BD%95%E8%A6%81%E5%8A%A0%E9%9A%8F%E6%9C%BA%E6%95%B0/</loc>
-    <lastmod>2017-02-08T04:15:09.875Z</lastmod>
-    <data>
-        <display>
-        <title>Ajax的url请求中为何要加随机数</title>
-        <pubTime>2017-02-07T03:43:29.000Z</pubTime>
-        
-        <tag>Ajax </tag>
-         
-        <tag>随机数 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-08T04:15:09.875Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/06/%E5%85%B3%E4%BA%8Ecss%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E5%B0%8F%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2017-02-08T04:10:00.231Z</lastmod>
-    <data>
-        <display>
-        <title>关于css的一些知识小总结</title>
-        <pubTime>2017-02-06T08:26:31.000Z</pubTime>
-        
-        <tag>css </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-08T04:10:00.231Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/06/jquery%20%E5%A4%84%E7%90%86%20CheckBox%E5%A4%8D%E9%80%89%E6%A1%86/</loc>
-    <lastmod>2017-02-08T04:02:49.518Z</lastmod>
-    <data>
-        <display>
-        <title>jquery 处理 CheckBox复选框</title>
-        <pubTime>2017-02-06T02:03:47.000Z</pubTime>
-        
-        <tag>Jquery </tag>
-         
-        <tag>CheckBox </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-08T04:02:49.518Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/04/JavaScript%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BD%BF%E7%94%A8%E8%AF%AF%E5%8C%BA/</loc>
-    <lastmod>2017-02-04T10:27:28.571Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript运算符使用误区</title>
-        <pubTime>2017-02-04T02:13:34.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-        <tag>运算符 </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-04T10:27:28.571Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/03/%E5%8E%BB%E6%8E%89%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E8%8E%B7%E5%8F%96%E7%84%A6%E7%82%B9%E6%97%B6%E9%BB%98%E8%AE%A4%E7%9A%84input/</loc>
-    <lastmod>2017-02-03T10:54:01.243Z</lastmod>
-    <data>
-        <display>
-        <title>去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景</title>
-        <pubTime>2017-02-03T10:03:47.000Z</pubTime>
-        
-        <tag>css </tag>
-         
-        <tag>input </tag>
-         
-        <tag>textarea </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-03T10:54:01.243Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/03/%E5%85%83%E7%B4%A0%E8%AE%BE%E7%BD%AEpadding%E6%88%96margin%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    
     <lastmod>2017-02-03T09:39:58.723Z</lastmod>
-    <data>
-        <display>
-        <title>元素设置width:100%之后再设置padding或margin的问题</title>
-        <pubTime>2017-02-03T08:36:19.000Z</pubTime>
-        
-        <tag>css </tag>
-         
-        <tag>padding </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+  </url>
+  
+  <url>
+    <loc>http://www.xiaoqi888.cn/tags/index.html</loc>
     
+    <lastmod>2017-02-03T06:21:12.490Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/03/JavaScript%E7%9F%A5%E8%AF%86%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2017-02-03T06:18:52.667Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript知识简单总结</title>
-        <pubTime>2017-02-03T05:10:33.000Z</pubTime>
-        
-        <tag>JavaScript </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-03T06:18:52.667Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/02/xq5/</loc>
-    <lastmod>2017-02-02T13:09:39.603Z</lastmod>
-    <data>
-        <display>
-        <title>了解模块化开发</title>
-        <pubTime>2017-02-02T12:50:50.899Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-02T13:09:39.603Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/02/xq6/</loc>
-    <lastmod>2017-02-02T13:07:22.624Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript实现冒泡排序</title>
-        <pubTime>2017-02-02T13:03:05.284Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-02T13:07:22.624Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/02/xq4/</loc>
-    <lastmod>2017-02-02T12:54:28.486Z</lastmod>
-    <data>
-        <display>
-        <title>CSS初始化代码</title>
-        <pubTime>2017-02-02T03:32:33.193Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-02T12:54:28.486Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/01/xq2/</loc>
-    <lastmod>2017-02-02T03:47:07.195Z</lastmod>
-    <data>
-        <display>
-        <title>Javascript日期类型的巧用</title>
-        <pubTime>2017-02-01T13:42:41.671Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-02T03:47:07.195Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/01/xq1/</loc>
-    <lastmod>2017-02-02T03:45:47.719Z</lastmod>
-    <data>
-        <display>
-        <title>深入理解JavaScript—event（事件对象）</title>
-        <pubTime>2017-02-01T10:15:23.786Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+    <lastmod>2017-02-02T03:45:47.719Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/02/02/xq3/</loc>
+    
     <lastmod>2017-02-02T03:44:40.379Z</lastmod>
-    <data>
-        <display>
-        <title>Git 常用命令大全</title>
-        <pubTime>2017-02-02T03:08:35.206Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
+  </url>
+  
+  <url>
+    <loc>http://www.xiaoqi888.cn/about/index.html</loc>
     
+    <lastmod>2017-02-01T15:25:14.814Z</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://www.xiaoqi888.cn/2017/01/24/hello-world/</loc>
+    
     <lastmod>2017-02-01T14:05:35.260Z</lastmod>
-    <data>
-        <display>
-        <title>理解 Javascript回调函数</title>
-        <pubTime>2017-01-24T03:27:50.436Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
+    
+  </url>
+  
 </urlset>

@@ -17,16 +17,19 @@
 
 
 
-<meta name="description" content="现实生活中用到随机的场景有很多，是非常常见的，比如随机点名，随机红包等等。今天给大家实现如何随机点名，请看下面所有代码。">
+<meta name="description" content="JavaScript中有一个call和apply方法，其作用基本相同，但也有略微的区别。
+1、方法定义call方法:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js实现随机点名">
-<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/20/js实现随机点名/index.html">
+<meta property="og:title" content="JS中的call()和apply()方法">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/01/05/JS中的call()和apply()方法.html/index.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="现实生活中用到随机的场景有很多，是非常常见的，比如随机点名，随机红包等等。今天给大家实现如何随机点名，请看下面所有代码。">
-<meta property="og:updated_time" content="2017-02-20T15:08:48.236Z">
+<meta property="og:description" content="JavaScript中有一个call和apply方法，其作用基本相同，但也有略微的区别。
+1、方法定义call方法:">
+<meta property="og:updated_time" content="2017-02-22T15:57:37.099Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js实现随机点名">
-<meta name="twitter:description" content="现实生活中用到随机的场景有很多，是非常常见的，比如随机点名，随机红包等等。今天给大家实现如何随机点名，请看下面所有代码。">
+<meta name="twitter:title" content="JS中的call()和apply()方法">
+<meta name="twitter:description" content="JavaScript中有一个call和apply方法，其作用基本相同，但也有略微的区别。
+1、方法定义call方法:">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +61,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>js实现随机点名 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>JS中的call()和apply()方法 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +261,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-js实现随机点名" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JS中的call()和apply()方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/20/js实现随机点名/" class="article-date">
-      <time datetime="2017-02-20T14:47:13.000Z" itemprop="datePublished">2017-02-20</time>
+      <a href="/2017/01/05/JS中的call()和apply()方法.html/" class="article-date">
+      <time datetime="2017-01-05T13:26:47.000Z" itemprop="datePublished">2017-01-05</time>
 </a>
 
 
@@ -277,7 +280,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      js实现随机点名
+      JS中的call()和apply()方法
     </h1>
   
 
@@ -288,7 +291,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随机点名/">随机点名</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apply/">apply</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/call/">call</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -298,7 +301,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>现实生活中用到随机的场景有很多，是非常常见的，比如随机点名，随机红包等等。今天给大家实现如何随机点名，请看下面所有代码。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;黄小齐博客之随机点名&lt;/title&gt;</div><div class="line">        &lt;style&gt;</div><div class="line">        #p1&#123;</div><div class="line">            position: absolute;</div><div class="line">            width: 300px;</div><div class="line">            height: 200px;</div><div class="line">            border:5px solid #eee;</div><div class="line">            top: 20px;</div><div class="line">            left:10px;</div><div class="line">            font-size: 88px;</div><div class="line">            font-weight: bold;</div><div class="line">            font-family: &quot;微软雅黑&quot;;</div><div class="line">            line-height: 200px;</div><div class="line">            text-align: center;</div><div class="line">        &#125;</div><div class="line">        &lt;/style&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;p id=&quot;p1&quot;&gt;&lt;/p&gt;</div><div class="line">        &lt;input type=&quot;button&quot; value=&quot;开始点名&quot; id=&quot;btn2&quot;&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        var btn2 = document.getElementById(&apos;btn2&apos;);</div><div class="line">        btn2.onclick = function  () &#123;</div><div class="line">            clearInterval(timer);</div><div class="line">            var aName = [&apos;张三&apos;,&apos;李四&apos;,&apos;王五&apos;,&apos;刘六&apos;,&apos;小明&apos;,&apos;小张&apos;,&apos;小孙&apos;,&apos;李雷&apos;,&apos;韩梅梅&apos;];</div><div class="line">            var timer = null;</div><div class="line">            var oP1 = document.getElementById(&apos;p1&apos;);</div><div class="line">            var ran = 18+parseInt(Math.random()*9);</div><div class="line">            var n = 0;</div><div class="line">            timer = setInterval(function  () &#123;</div><div class="line">                oP1.innerHTML = aName[n%9];</div><div class="line">                n++;</div><div class="line">                if(n&gt;ran)&#123;</div><div class="line">                    clearInterval(timer);</div><div class="line">                &#125;</div><div class="line">            &#125;,50)</div><div class="line">        &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+        <p>JavaScript中有一个call和apply方法，其作用基本相同，但也有略微的区别。</p>
+<h5 id="1、方法定义"><a href="#1、方法定义" class="headerlink" title="1、方法定义"></a>1、方法定义</h5><p>call方法:<br><a id="more"></a><br>语法：call([thisObj[,arg1[, arg2[,   [,.argN]]]]])<br>定义：调用一个对象的一个方法，以另一个对象替换当前对象。<br>说明：</p>
+<p>call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。<br>如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。</p>
+<p>apply方法：</p>
+<p>语法：apply([thisObj[,argArray]])</p>
+<p>定义：应用某一对象的一个方法，用另一个对象替换当前对象。</p>
+<p>说明：</p>
+<p>如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。</p>
+<p>如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。</p>
+<h5 id="2、常用实例"><a href="#2、常用实例" class="headerlink" title="2、常用实例"></a>2、常用实例</h5><p>a<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function add(a, b) &#123;</div><div class="line">    alert(a + b);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function sub(a, b) &#123;</div><div class="line">    alert(a - b);</div><div class="line">&#125;</div><div class="line"></div><div class="line">add.call(sub, 3, 1);</div></pre></td></tr></table></figure></p>
+<p> 这个例子中的意思就是用 add 来替换 sub，add.call(sub,3,1) == add(3,1) ，所以运行结果为：alert(4); // 注意：js 中的函数其实是对象，函数名是对 Function 对象的引用。</p>
+<p>b<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function Animal() &#123;</div><div class="line">    this.name = &quot;Animal&quot;;</div><div class="line">    this.showName = function() &#123;</div><div class="line">        alert(this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function Cat() &#123;</div><div class="line">    this.name = &quot;Cat&quot;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var animal = new Animal();</div><div class="line">var cat = new Cat();</div><div class="line"></div><div class="line">//通过call或apply方法，将原本属于Animal对象的showName()方法交给对象cat来使用了。</div><div class="line">//输入结果为&quot;Cat&quot;</div><div class="line">animal.showName.call(cat, &quot;,&quot;);</div><div class="line">//animal.showName.apply(cat,[]);</div></pre></td></tr></table></figure></p>
+<p>c实现继承<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function Animal(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">    this.showName = function() &#123;</div><div class="line">        alert(this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function Cat(name) &#123;</div><div class="line">    Animal.call(this, name);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var cat = new Cat(&quot;Black Cat&quot;);</div><div class="line">cat.showName();</div></pre></td></tr></table></figure></p>
+<p> Animal.call(this) 的意思就是使用 Animal对象代替this对象，那么 Cat中不就有Animal的所有属性和方法了吗，Cat对象就能够直接调用Animal的方法以及属性了.</p>
+<p>d多重继承<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function Class10() &#123;</div><div class="line">    this.showSub = function(a, b) &#123;</div><div class="line">        alert(a - b);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function Class11() &#123;</div><div class="line">    this.showAdd = function(a, b) &#123;</div><div class="line">        alert(a + b);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function Class2() &#123;</div><div class="line">    Class10.call(this);</div><div class="line">    Class11.call(this);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p> 很简单，使用两个 call 就实现多重继承了 当然，js的继承还有其他方法，例如使用原型链，这个不属于本文的范畴，只是在此说明call 的用法。说了call ，当然还有 apply，这两个方法基本上是一个意思，区别在于 call 的第二个参数可以是任意类型，而apply的第二个参数必须是数组，也可以是arguments 还有 callee，caller..</p>
 
       
     </div>
@@ -307,13 +325,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/20/js实现随机点名/">js实现随机点名</a></p>
+        <p><span>本文标题:</span><a href="/2017/01/05/JS中的call()和apply()方法.html/">JS中的call()和apply()方法</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
-        <p><span>发布时间:</span>2017-02-20, 22:47:13</p>
-        <p><span>最后更新:</span>2017-02-20, 23:08:48</p>
+        <p><span>发布时间:</span>2017-01-05, 21:26:47</p>
+        <p><span>最后更新:</span>2017-02-22, 23:57:37</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/20/js实现随机点名/" title="js实现随机点名">http://www.xiaoqi888.cn/2017/02/20/js实现随机点名/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/20/js实现随机点名/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/01/05/JS中的call()和apply()方法.html/" title="JS中的call()和apply()方法">http://www.xiaoqi888.cn/2017/01/05/JS中的call()和apply()方法.html/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/01/05/JS中的call()和apply()方法.html/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -326,15 +344,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/20/JS构造函数方法与原型prototype上的方法/">
-                    JS构造函数方法与原型prototype上的方法
+                <a href="/2017/01/06/JavaScript 闭包到底是什么.html/">
+                    JavaScript 闭包到底是什么
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/19/基于angualr.js实现的触摸滑动动画/">
-                    基于angualr.js实现的触摸滑动动画
+                <a href="/2017/01/03/谈谈JavaScript的prototype.html/">
+                    谈谈JavaScript的prototype
                 </a>
             </div>
         
@@ -346,7 +364,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、方法定义"><span class="toc-number">1.</span> <span class="toc-text">1、方法定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、常用实例"><span class="toc-number">2.</span> <span class="toc-text">2、常用实例</span></a></li></ol>
         
     </div>
     <style>
@@ -382,7 +400,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"js实现随机点名　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"JS中的call()和apply()方法　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -402,7 +420,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/20/JS构造函数方法与原型prototype上的方法/" title="上一篇: JS构造函数方法与原型prototype上的方法">
+            <a href="/2017/01/06/JavaScript 闭包到底是什么.html/" title="上一篇: JavaScript 闭包到底是什么">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -410,13 +428,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/19/基于angualr.js实现的触摸滑动动画/" title="下一篇: 基于angualr.js实现的触摸滑动动画">
+            <a href="/2017/01/03/谈谈JavaScript的prototype.html/" title="下一篇: 谈谈JavaScript的prototype">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/省市区三级联动/">省市区三级城市联动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/JS构造函数方法与原型prototype上的方法/">JS构造函数方法与原型prototype上的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/js实现随机点名/">js实现随机点名</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/19/基于angualr.js实现的触摸滑动动画/">基于angualr.js实现的触摸滑动动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/17/Web安全与防御措施/">Web安全与防御措施</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/javascript DOM的操作，更新，遍历，添加/">javascript DOM的操作，更新，遍历，添加</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS/">js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/倒计时的三种写法/">倒计时的三种写法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/详谈一下闭包是什么/">详谈一下闭包是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/13/表单取消监听数据变化/">表单取消监听数据变化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/12/JavaScript-原型、原型链/">JavaScript-原型、原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/10/上下移动的无缝滚动/">上下移动的无缝滚动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/Javascript 面向对象编程（一）：封装/">Javascript 面向对象编程（一）：封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/Web前端的学习路线,你真的知道吗/">Web前端的学习路线,你真的知道吗</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/07/Ajax的url请求中为何要加随机数/">Ajax的url请求中为何要加随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/06/关于css的一些知识小总结/">关于css的一些知识小总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/06/jquery 处理 CheckBox复选框/">jquery 处理 CheckBox复选框</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/JavaScript运算符使用误区/">JavaScript运算符使用误区</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/去掉谷歌浏览器获取焦点时默认的input/">去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/元素设置padding或margin的问题/">元素设置width:100%之后再设置padding或margin的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/JavaScript知识简单总结/">JavaScript知识简单总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq6/">JavaScript实现冒泡排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq5/">了解模块化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq4/">CSS初始化代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq3/">Git 常用命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq2/">Javascript日期类型的巧用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq1/">深入理解JavaScript—event（事件对象）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/24/hello-world/">理解 Javascript回调函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/23/超详细的移动端html5头标签head介绍/">超详细的移动端html5头标签head介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/06/JavaScript 闭包到底是什么/">JavaScript 闭包到底是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/05/JS中的call()和apply()方法/">JS中的call()和apply()方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/03/谈谈JavaScript的prototype/">谈谈JavaScript的prototype</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/JavaScript 误区/">JavaScript 误区</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/避免常见的6种HTML5错误用法总结/">避免常见的6种HTML5错误用法</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/省市区三级联动.html/">省市区三级城市联动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/JS构造函数方法与原型prototype上的方法.html/">JS构造函数方法与原型prototype上的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/js实现随机点名.html/">js实现随机点名</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/19/基于angualr.js实现的触摸滑动动画.html/">基于angualr.js实现的触摸滑动动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/17/Web安全与防御措施.html/">Web安全与防御措施</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/javascript DOM的操作，更新，遍历，添加.html/">javascript DOM的操作，更新，遍历，添加</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS.html/">js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/倒计时的三种写法.html/">倒计时的三种写法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/详谈一下闭包是什么.html/">详谈一下闭包是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/13/表单取消监听数据变化.html/">表单取消监听数据变化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/12/JavaScript-原型、原型链.html/">JavaScript-原型、原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/10/上下移动的无缝滚动.html/">上下移动的无缝滚动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/Javascript 面向对象编程（一）：封装.html/">Javascript 面向对象编程（一）：封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/Web前端的学习路线,你真的知道吗.html/">Web前端的学习路线,你真的知道吗</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/07/Ajax的url请求中为何要加随机数.html/">Ajax的url请求中为何要加随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/06/关于css的一些知识小总结.html/">关于css的一些知识小总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/06/jquery 处理 CheckBox复选框.html/">jquery 处理 CheckBox复选框</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/JavaScript运算符使用误区.html/">JavaScript运算符使用误区</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/去掉谷歌浏览器获取焦点时默认的input.html/">去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/元素设置padding或margin的问题.html/">元素设置width:100%之后再设置padding或margin的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/JavaScript知识简单总结.html/">JavaScript知识简单总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq6.html/">JavaScript实现冒泡排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq5.html/">了解模块化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq4.html/">CSS初始化代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq3.html/">Git 常用命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq2.html/">Javascript日期类型的巧用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq1.html/">深入理解JavaScript—event（事件对象）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/24/hello-world.html/">理解 Javascript回调函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/23/超详细的移动端html5头标签head介绍.html/">超详细的移动端html5头标签head介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/06/JavaScript 闭包到底是什么.html/">JavaScript 闭包到底是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/05/JS中的call()和apply()方法.html/">JS中的call()和apply()方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/03/谈谈JavaScript的prototype.html/">谈谈JavaScript的prototype</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/JavaScript 误区.html/">JavaScript 误区</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/避免常见的6种HTML5错误用法总结.html/">避免常见的6种HTML5错误用法</a></li></ul>
 
 
 

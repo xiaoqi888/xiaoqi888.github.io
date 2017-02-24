@@ -17,16 +17,16 @@
 
 
 
-<meta name="description" content="这个主要用到是angular-touch.js中封装好的ng-swipe-left,ng-swipe-right，向左或向右的触摸事件。结合CSS3的transition实现的动画。ng-class为切换写好的动画的className.">
+<meta name="description" content="1.设置表单提交标志符   isSent=0 表示还没有提交，   isSent=1 表示表单正在提交，禁止重复提交">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于angualr.js实现的触摸滑动动画">
-<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/19/基于angualr.js实现的触摸滑动动画.html/index.html">
+<meta property="og:title" content="防止表单重复提交">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/24/102.html/index.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="这个主要用到是angular-touch.js中封装好的ng-swipe-left,ng-swipe-right，向左或向右的触摸事件。结合CSS3的transition实现的动画。ng-class为切换写好的动画的className.">
-<meta property="og:updated_time" content="2017-02-19T07:24:07.241Z">
+<meta property="og:description" content="1.设置表单提交标志符   isSent=0 表示还没有提交，   isSent=1 表示表单正在提交，禁止重复提交">
+<meta property="og:updated_time" content="2017-02-24T05:16:06.461Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于angualr.js实现的触摸滑动动画">
-<meta name="twitter:description" content="这个主要用到是angular-touch.js中封装好的ng-swipe-left,ng-swipe-right，向左或向右的触摸事件。结合CSS3的transition实现的动画。ng-class为切换写好的动画的className.">
+<meta name="twitter:title" content="防止表单重复提交">
+<meta name="twitter:description" content="1.设置表单提交标志符   isSent=0 表示还没有提交，   isSent=1 表示表单正在提交，禁止重复提交">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>基于angualr.js实现的触摸滑动动画 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>防止表单重复提交 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-基于angualr.js实现的触摸滑动动画" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-102" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/19/基于angualr.js实现的触摸滑动动画.html/" class="article-date">
-      <time datetime="2017-02-19T07:20:24.000Z" itemprop="datePublished">2017-02-19</time>
+      <a href="/2017/02/24/102.html/" class="article-date">
+      <time datetime="2017-02-24T05:11:36.584Z" itemprop="datePublished">2017-02-24</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      基于angualr.js实现的触摸滑动动画
+      防止表单重复提交
     </h1>
   
 
@@ -288,7 +288,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画/">动画</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/提交/">提交</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/表单/">表单</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -298,7 +298,41 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>这个主要用到是angular-touch.js中封装好的ng-swipe-left,ng-swipe-right，向左或向右的触摸事件。结合CSS3的transition实现的动画。ng-class为切换写好的动画的className.<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;  </div><div class="line">&lt;html ng-app=&quot;myapp&quot;&gt;  </div><div class="line">    &lt;head&gt;  </div><div class="line">        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;  </div><div class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0&quot;&gt;  </div><div class="line">        &lt;title&gt;基于angualr.js实现的触摸滑动动画&lt;/title&gt;  </div><div class="line">        &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;angular.min.js&quot;&gt;&lt;/script&gt;  </div><div class="line">        &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;angular-touch.min.js&quot;&gt;&lt;/script&gt;  </div><div class="line">        &lt;style type=&quot;text/css&quot;&gt;  </div><div class="line">            *&#123;</div><div class="line">            	margin:0px;padding:0px;</div><div class="line">            &#125;  </div><div class="line">            .box&#123;</div><div class="line">            	position:relative;</div><div class="line">            	left:0px;</div><div class="line">            	margin:10px 0px;</div><div class="line">            	width:100%;</div><div class="line">            	height:100px;</div><div class="line">            	background:red;</div><div class="line">            	transition:all .5s;</div><div class="line">            &#125;  </div><div class="line">            .swipeleft&#123;</div><div class="line">            	left:-100%;</div><div class="line">            &#125;  </div><div class="line">        &lt;/style&gt;  </div><div class="line">        &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;  </div><div class="line">            angular.module(&quot;myapp&quot;,[&quot;ngTouch&quot;]).controller(&quot;Controller&quot;,[function()&#123;  </div><div class="line">                var self = this;  </div><div class="line">                self.swipeLeft = function()&#123;  </div><div class="line">                    return (self.className = &quot;swipeleft&quot;);  </div><div class="line">                &#125;  </div><div class="line">            &#125;]);  </div><div class="line">        &lt;/script&gt;  </div><div class="line">    &lt;/head&gt;  </div><div class="line">    &lt;body&gt;  </div><div class="line">        &lt;ul&gt;  </div><div class="line">            &lt;li ng-controller=&quot;Controller as con&quot; class=&quot;box box1&quot; ng-swipe-left=&quot;con.swipeLeft()&quot; ng-class=&quot;con.className&quot;&gt;&lt;/li&gt;  </div><div class="line">            &lt;li ng-controller=&quot;Controller as con&quot; class=&quot;box box2&quot; ng-swipe-left=&quot;con.swipeLeft()&quot; ng-class=&quot;con.className&quot;&gt;&lt;/li&gt;  </div><div class="line">            &lt;li ng-controller=&quot;Controller as con&quot; class=&quot;box box3&quot; ng-swipe-left=&quot;con.swipeLeft()&quot; ng-class=&quot;con.className&quot;&gt;&lt;/li&gt;  </div><div class="line">            &lt;li ng-controller=&quot;Controller as con&quot; class=&quot;box box4&quot; ng-swipe-left=&quot;con.swipeLeft()&quot; ng-class=&quot;con.className&quot;&gt;&lt;/li&gt;  </div><div class="line">        &lt;/ul&gt;  </div><div class="line">    &lt;/body&gt;  </div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+        <p>1.设置表单提交标志符<br>   isSent=0 表示还没有提交，<br>   isSent=1 表示表单正在提交，禁止重复提交<br><a id="more"></a></p>
+<ol>
+<li><p>ajax提交模式禁止异步提交<br> 增加参数 async: false</p>
+<pre><code>&lt;!DOCTYPE html&gt;  
+&lt;html&gt;  
+&lt;head&gt;  
+&lt;title&gt;防止表单重复提交&lt;/title&gt;  
+&lt;script src=&quot;http://libs.baidu.com/jquery/1.8.3/jquery.min.js&quot;&gt;&lt;/script&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+ &lt;a href=&quot;javascript:;&quot;&gt;aaa&lt;/a&gt;  
+ &lt;script&gt;  
+ //防止表单重复提交  
+     var isSent=0;  
+     $(&apos;a&apos;).click(function(){  
+     if(isSent!=0){  
+         return;  
+     }  
+     $.ajax({  
+         type: &apos;GET&apos;,  
+         url: &quot;http://localhost/test.php&quot;,  
+         cache:false,  
+         async: false, //禁止异步提交  
+         success: function (){  
+             console.log(&apos;aaa&apos;);  
+         }  
+     });  
+     isSent=0;  
+     });  
+ &lt;/script&gt;  
+
+&lt;/body&gt;  
+&lt;/html&gt;
+</code></pre></li>
+</ol>
 
       
     </div>
@@ -307,13 +341,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/19/基于angualr.js实现的触摸滑动动画.html/">基于angualr.js实现的触摸滑动动画</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/24/102.html/">防止表单重复提交</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
-        <p><span>发布时间:</span>2017-02-19, 15:20:24</p>
-        <p><span>最后更新:</span>2017-02-19, 15:24:07</p>
+        <p><span>发布时间:</span>2017-02-24, 13:11:36</p>
+        <p><span>最后更新:</span>2017-02-24, 13:16:06</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/19/基于angualr.js实现的触摸滑动动画.html/" title="基于angualr.js实现的触摸滑动动画">http://www.xiaoqi888.cn/2017/02/19/基于angualr.js实现的触摸滑动动画.html/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/19/基于angualr.js实现的触摸滑动动画.html/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/24/102.html/" title="防止表单重复提交">http://www.xiaoqi888.cn/2017/02/24/102.html/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/24/102.html/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -325,16 +359,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/20/js实现随机点名.html/">
-                    js实现随机点名
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/17/Web安全与防御措施.html/">
-                    Web安全与防御措施
+                <a href="/2017/02/23/101.html/">
+                    使用hexo搭建个人博客
                 </a>
             </div>
         
@@ -382,7 +410,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"基于angualr.js实现的触摸滑动动画　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"防止表单重复提交　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -402,15 +430,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/20/js实现随机点名.html/" title="上一篇: js实现随机点名">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/17/Web安全与防御措施.html/" title="下一篇: Web安全与防御措施">
+            <a href="/2017/02/23/101.html/" title="下一篇: 使用hexo搭建个人博客">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -17,16 +17,16 @@
 
 
 
-<meta name="description" content="非常个性的拖拽，可以实现两个模块之间的小圆球互相移动，复制全部代码试试吧。如果喜欢记得保存书签收藏哦！">
+<meta name="description" content="获取节点一、document1.querySelectorAll">
 <meta property="og:type" content="article">
-<meta property="og:title" content="不错的HTML5拖拽小案例">
-<meta property="og:url" content="http://www.xiaoqi888.cn/2017/02/26/103.html/index.html">
+<meta property="og:title" content="JavaScript的一些基本知识--DOM操作">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/03/02/104.html/index.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="非常个性的拖拽，可以实现两个模块之间的小圆球互相移动，复制全部代码试试吧。如果喜欢记得保存书签收藏哦！">
-<meta property="og:updated_time" content="2017-02-26T14:53:52.035Z">
+<meta property="og:description" content="获取节点一、document1.querySelectorAll">
+<meta property="og:updated_time" content="2017-03-02T15:14:28.756Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不错的HTML5拖拽小案例">
-<meta name="twitter:description" content="非常个性的拖拽，可以实现两个模块之间的小圆球互相移动，复制全部代码试试吧。如果喜欢记得保存书签收藏哦！">
+<meta name="twitter:title" content="JavaScript的一些基本知识--DOM操作">
+<meta name="twitter:description" content="获取节点一、document1.querySelectorAll">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>不错的HTML5拖拽小案例 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>JavaScript的一些基本知识--DOM操作 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-103" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-104" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/26/103.html/" class="article-date">
-      <time datetime="2017-02-26T14:46:15.481Z" itemprop="datePublished">2017-02-26</time>
+      <a href="/2017/03/02/104.html/" class="article-date">
+      <time datetime="2017-03-02T15:10:17.488Z" itemprop="datePublished">2017-03-02</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      不错的HTML5拖拽小案例
+      JavaScript的一些基本知识--DOM操作
     </h1>
   
 
@@ -288,7 +288,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/拖拽/">拖拽</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -298,7 +298,57 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>非常个性的拖拽，可以实现两个模块之间的小圆球互相移动，复制全部代码试试吧。如果喜欢记得保存书签收藏哦！<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line"> &lt;head&gt;</div><div class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">  &lt;title&gt;拖拽案例&lt;/title&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">	.one&#123;</div><div class="line">		width: 400px;</div><div class="line">		height: 400px;</div><div class="line">		border: solid 1px #000;</div><div class="line">	&#125;</div><div class="line">	.one div &#123;</div><div class="line">		width: 98px;</div><div class="line">		height: 98px;</div><div class="line">		border: solid 1px #000;</div><div class="line">		border-radius: 50%;</div><div class="line">		float: left;</div><div class="line">		text-align: center;</div><div class="line">		line-height: 98px;</div><div class="line">		background: pink;</div><div class="line">	&#125;</div><div class="line">	.two&#123;</div><div class="line">		width: 400px;</div><div class="line">		height: 400px;</div><div class="line">		border: solid 1px #000;</div><div class="line">		position: absolute;</div><div class="line">		top: 200px;</div><div class="line">		right: 100px;</div><div class="line">	&#125;</div><div class="line">	.two div &#123;</div><div class="line">		width: 98px;</div><div class="line">		height: 98px;</div><div class="line">		border: solid 1px #000;</div><div class="line">		border-radius: 50%;</div><div class="line">		float: left;</div><div class="line">		text-align: center;</div><div class="line">		line-height: 98px;</div><div class="line">		background: pink;</div><div class="line">	&#125;</div><div class="line">  &lt;/style&gt;</div><div class="line"> &lt;/head&gt;</div><div class="line"> &lt;body&gt;</div><div class="line">  &lt;div class = &apos;one&apos;&gt;</div><div class="line">	&lt;div draggable = &quot;true&quot;&gt;1&lt;/div&gt;</div><div class="line">	&lt;div draggable = &quot;true&quot;&gt;2&lt;/div&gt;</div><div class="line">	&lt;div draggable = &quot;true&quot;&gt;3&lt;/div&gt;</div><div class="line">	&lt;div draggable = &quot;true&quot;&gt;4&lt;/div&gt;</div><div class="line">	&lt;div draggable = &quot;true&quot;&gt;5&lt;/div&gt;</div><div class="line">	&lt;div draggable = &quot;true&quot;&gt;6&lt;/div&gt;</div><div class="line">	&lt;div draggable = &quot;true&quot;&gt;7&lt;/div&gt;</div><div class="line">	&lt;div draggable = &quot;true&quot;&gt;8&lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div class = &apos;two&apos;&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line"> &lt;/body&gt;</div><div class="line"> &lt;script&gt;</div><div class="line">	//获取所有one里面的小盒子分别绑定拖拽事件</div><div class="line">	var boxs = document.querySelectorAll(&quot;.one div&quot;);</div><div class="line">	var one = document.querySelector(&quot;.one&quot;);</div><div class="line">	//目标元素</div><div class="line">	var two = document.querySelector(&quot;.two&quot;);</div><div class="line">	//临时的盒子，用于存放当前拖拽的元素</div><div class="line">	var temp = null; </div><div class="line">	for(var i = 0;i&lt;boxs.length;i++)&#123;</div><div class="line">		boxs[i].ondragstart = function()&#123;</div><div class="line">			temp = this;</div><div class="line">			console.log(temp);</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		//拖拽结束，清空temp</div><div class="line">		boxs[i].ondragend = function()&#123;</div><div class="line">			temp = null;</div><div class="line">			console.log(temp);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	//目标元素拖拽事件</div><div class="line">	two.ondragover = function(e)&#123;</div><div class="line">		//阻止拖拽默认行为</div><div class="line">		e.preventDefault();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	two.ondrop = function()&#123;</div><div class="line">		this.appendChild(temp);</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	//目标元素拖拽事件</div><div class="line">	one.ondragover = function(e)&#123;</div><div class="line">		//阻止拖拽默认行为</div><div class="line">		e.preventDefault();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	one.ondrop = function()&#123;</div><div class="line">		this.appendChild(temp);</div><div class="line">		</div><div class="line">	&#125;</div><div class="line"> &lt;/script&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+        <h5 id="获取节点"><a href="#获取节点" class="headerlink" title="获取节点"></a>获取节点</h5><h6 id="一、document"><a href="#一、document" class="headerlink" title="一、document"></a>一、document</h6><p>1.querySelectorAll<br><a id="more"></a><br>根据CSS里面的选择器来获取一组元素(获取的是数组)<br>用法：document.querySelectorAll(“选择器”);<br>选择器可以是后代选择器，群组选择器，nth-child(1)等等<br>获取的数组不会随着dom的操作发生变化而变化</p>
+<p>2.querySelector</p>
+<p>获取querySelectorAll获取到的第一个元素<br>用法：document.querySelector(“选择器”);</p>
+<p>3.通过元素ID获取节点</p>
+<p>用法：document.getElementById(“元素ID”);</p>
+<p>4.通过类名获取节点</p>
+<p>用法：document.getElementsByClassName(“元素类名”);<br>通过类名获取节点(获取的是动态数组)<br>动态数组会跟随dom操作发生变化之后做出相应的变化</p>
+<p>5.通过元素标签名获取节点</p>
+<p>用法：document.getElementsByTagName(“元素标签名”);<br>通过元素标签名获取的也是动态数组</p>
+<p>6.通过name属性来获取节点</p>
+<p>用法：document.getElementsByName(“name值”);<br>通过name属性获取的也是动态数组</p>
+<h6 id="二、节点指针"><a href="#二、节点指针" class="headerlink" title="二、节点指针"></a>二、节点指针</h6><p>1.获取元素的首个子节点</p>
+<p>用法：父节点.firstChild;</p>
+<p>2.获取元素的最后一个子节点</p>
+<p>用法：父节点.lastChild;</p>
+<p>3.获取元素的子节点列表</p>
+<p>用法：父节点.childNodes;</p>
+<p>4.获取已知节点的前一个节点</p>
+<p>用法：兄弟节点.previousSibling;</p>
+<p>5.获取已知节点的后一个节点</p>
+<p>用法：父节点.nextSibling;</p>
+<p>6.获取已知节点的父节点</p>
+<p>用法：父节点.parentNode;</p>
+<h5 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h5><h6 id="一、创建节点"><a href="#一、创建节点" class="headerlink" title="一、创建节点"></a>一、创建节点</h6><p>1.创建属性节点</p>
+<p>用法：document.createAttribute(“创建的元素属性”);</p>
+<p>2.创建文本节点</p>
+<p>用法：document.createTextNode(“创建的文本内容”);</p>
+<p>3.创建元素节点</p>
+<p>用法：document.createElement(“创建的元素标签名”);</p>
+<h6 id="二、删除节点"><a href="#二、删除节点" class="headerlink" title="二、删除节点"></a>二、删除节点</h6><p>删除指定的节点<br>用法：removeChild(要删除的节点名);</p>
+<h6 id="三、替换节点"><a href="#三、替换节点" class="headerlink" title="三、替换节点"></a>三、替换节点</h6><p>将某个子节点替换为另一个<br>用法：replaceChild(新节点, 原节点);</p>
+<h6 id="四、插入节点"><a href="#四、插入节点" class="headerlink" title="四、插入节点"></a>四、插入节点</h6><p>1.向节点的子节点列表的末尾添加新的子节点</p>
+<p>用法：appendChild(所添加的新节点);</p>
+<p>2.在已知的子节点前插入一个新的子节点</p>
+<p>用法：insertBefore(新节点, 原节点)</p>
+<h6 id="五、复制节点"><a href="#五、复制节点" class="headerlink" title="五、复制节点"></a>五、复制节点</h6><p>复制节点标签<br>用法：cloneNode(bool);<br>哪个节点调用就复制哪个，true代表深复制，会复制子节点树，false代表浅复制，只复制本身</p>
+<h5 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h5><h6 id="一、获取属性"><a href="#一、获取属性" class="headerlink" title="一、获取属性"></a>一、获取属性</h6><p>获取元素节点中指定属性的属性值<br>用法：元素节点.getAttribute(元素属性名);</p>
+<h6 id="二、设置属性"><a href="#二、设置属性" class="headerlink" title="二、设置属性"></a>二、设置属性</h6><p>创建或改变元素节点的属性<br>用法：元素节点.setAttribute(属性名, 属性值);</p>
+<h6 id="三、删除属性"><a href="#三、删除属性" class="headerlink" title="三、删除属性"></a>三、删除属性</h6><p>删除元素中的指定属性<br>用法：元素节点.removeAttribute(属性名);</p>
+<h5 id="文本操作"><a href="#文本操作" class="headerlink" title="文本操作"></a>文本操作</h5><p>1.从指定的位置插入字符串</p>
+<p>用法：insertData(offset, string);</p>
+<p>2.从指定的位置起删除一些字符</p>
+<p>用法：deleteData(offset, count);</p>
+<p>3.将字符串插入到文本尾部</p>
+<p>用法：appendData(string);</p>
+<p>4.从指定的位置起将文本节点分成两个节点</p>
+<p>用法：splitData(offset);</p>
+<p>5.从指定的位置起将一些字符用其他字符串代替</p>
+<p>用法：replaceData(offset, count, string);</p>
+<p>6.从指定的位置起返回一些节点</p>
+<p>用法：substringData(offset, count); </p>
 
       
     </div>
@@ -307,13 +357,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/26/103.html/">不错的HTML5拖拽小案例</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/02/104.html/">JavaScript的一些基本知识--DOM操作</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
-        <p><span>发布时间:</span>2017-02-26, 22:46:15</p>
-        <p><span>最后更新:</span>2017-02-26, 22:53:52</p>
+        <p><span>发布时间:</span>2017-03-02, 23:10:17</p>
+        <p><span>最后更新:</span>2017-03-02, 23:14:28</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/26/103.html/" title="不错的HTML5拖拽小案例">http://www.xiaoqi888.cn/2017/02/26/103.html/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/02/26/103.html/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/02/104.html/" title="JavaScript的一些基本知识--DOM操作">http://www.xiaoqi888.cn/2017/03/02/104.html/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/03/02/104.html/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -325,16 +375,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/02/104.html/">
-                    JavaScript的一些基本知识--DOM操作
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/24/102.html/">
-                    防止表单重复提交
+                <a href="/2017/02/26/103.html/">
+                    不错的HTML5拖拽小案例
                 </a>
             </div>
         
@@ -346,7 +390,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#获取节点"><span class="toc-number">1.</span> <span class="toc-text">获取节点</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#一、document"><span class="toc-number">1.1.</span> <span class="toc-text">一、document</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#二、节点指针"><span class="toc-number">1.2.</span> <span class="toc-text">二、节点指针</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#节点操作"><span class="toc-number">2.</span> <span class="toc-text">节点操作</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#一、创建节点"><span class="toc-number">2.1.</span> <span class="toc-text">一、创建节点</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#二、删除节点"><span class="toc-number">2.2.</span> <span class="toc-text">二、删除节点</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#三、替换节点"><span class="toc-number">2.3.</span> <span class="toc-text">三、替换节点</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#四、插入节点"><span class="toc-number">2.4.</span> <span class="toc-text">四、插入节点</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#五、复制节点"><span class="toc-number">2.5.</span> <span class="toc-text">五、复制节点</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#节点属性"><span class="toc-number">3.</span> <span class="toc-text">节点属性</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#一、获取属性"><span class="toc-number">3.1.</span> <span class="toc-text">一、获取属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#二、设置属性"><span class="toc-number">3.2.</span> <span class="toc-text">二、设置属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#三、删除属性"><span class="toc-number">3.3.</span> <span class="toc-text">三、删除属性</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#文本操作"><span class="toc-number">4.</span> <span class="toc-text">文本操作</span></a></li></ol>
         
     </div>
     <style>
@@ -382,7 +426,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"不错的HTML5拖拽小案例　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"JavaScript的一些基本知识--DOM操作　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -402,15 +446,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/02/104.html/" title="上一篇: JavaScript的一些基本知识--DOM操作">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/24/102.html/" title="下一篇: 防止表单重复提交">
+            <a href="/2017/02/26/103.html/" title="下一篇: 不错的HTML5拖拽小案例">
                 <i class="fa fa-angle-right"></i>
             </a>
         

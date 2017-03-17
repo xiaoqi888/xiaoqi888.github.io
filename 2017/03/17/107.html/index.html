@@ -17,15 +17,16 @@
 
 
 
-<meta name="description" content="黄小齐前端博客—热爱web前端开发、移动web开发，乐于分享web前端开发技术。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:url" content="http://www.xiaoqi888.cn/archives/2017/03/index.html">
+<meta name="description" content="1、事件的三个阶段：捕获、目标、冒泡（低版本的IE不支持捕获阶段）2、传统、IE、W3C的绑定、解绑等事件略有不同3、addEventListener()的第三个参数的值：false (冒泡执行) ， true (捕获执行)，默认为false">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js事件模型、代理及委托">
+<meta property="og:url" content="http://www.xiaoqi888.cn/2017/03/17/107.html/index.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="黄小齐前端博客—热爱web前端开发、移动web开发，乐于分享web前端开发技术。">
+<meta property="og:description" content="1、事件的三个阶段：捕获、目标、冒泡（低版本的IE不支持捕获阶段）2、传统、IE、W3C的绑定、解绑等事件略有不同3、addEventListener()的第三个参数的值：false (冒泡执行) ， true (捕获执行)，默认为false">
+<meta property="og:updated_time" content="2017-03-17T16:16:21.186Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta name="twitter:description" content="黄小齐前端博客—热爱web前端开发、移动web开发，乐于分享web前端开发技术。">
+<meta name="twitter:title" content="js事件模型、代理及委托">
+<meta name="twitter:description" content="1、事件的三个阶段：捕获、目标、冒泡（低版本的IE不支持捕获阶段）2、传统、IE、W3C的绑定、解绑等事件略有不同3、addEventListener()的第三个参数的值：false (冒泡执行) ， true (捕获执行)，默认为false">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2017/3 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>js事件模型、代理及委托 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,8 +68,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -261,155 +262,183 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-107" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/03/17/107.html/" class="archive-article-date">
-      <time datetime="2017-03-17T02:06:23.000Z" itemprop="datePublished">03-17</time>
+    <div class="article-meta">
+      <a href="/2017/03/17/107.html/" class="article-date">
+      <time datetime="2017-03-17T02:06:23.000Z" itemprop="datePublished">2017-03-17</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/17/107.html/">js事件模型、代理及委托</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js事件模型、代理及委托
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代理委托/">代理委托</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>1、事件的三个阶段：捕获、目标、冒泡（低版本的IE不支持捕获阶段）<br>2、传统、IE、W3C的绑定、解绑等事件略有不同<br>3、addEventListener()的第三个参数的值：false (冒泡执行) ， true (捕获执行)，默认为false<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">function Event()&#123;</div><div class="line">	this.addHander = function(ele,type,fn)&#123;</div><div class="line">		if(document.addEventListener)&#123;//ie9、ff、sa、op、ch</div><div class="line">			ele.addEventListener(type,fn,false)</div><div class="line">		&#125;else if(document.attachEvent)&#123;//ie、op</div><div class="line">			ele.attachEvent(&apos;on&apos;+type,fn)</div><div class="line">		&#125;else&#123;//传统</div><div class="line">			ele[&apos;on&apos;+type] = fn;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">  	this.delHander = function(ele,type,fn)&#123;</div><div class="line">		if(document.removeEventListener)&#123;</div><div class="line">			ele.removeEventListener(type,fn,false)</div><div class="line">		&#125;else if(document.detachEvent)&#123;</div><div class="line">			ele.detachEvent(&apos;on&apos;+type,fn)</div><div class="line">		&#125;else&#123;</div><div class="line">			ele[&apos;on&apos;+type] = null;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	this.getEvent = function(event)&#123;</div><div class="line">		return event ? event:window.event;</div><div class="line">	&#125;</div><div class="line">	this.getTarget = function(event)&#123;</div><div class="line">		return event.target || event.srcElement;</div><div class="line">	&#125;</div><div class="line">	this.preventDefault = function(event)&#123;</div><div class="line">		if(event.preventDefault)&#123;</div><div class="line">			event.preventDefault();</div><div class="line">		&#125;else&#123;</div><div class="line">			event.returnValue = false;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	this.stopPropagation = function(event)&#123;</div><div class="line">		if(event.stopPropagation)&#123;</div><div class="line">			event.stopPropagation()</div><div class="line">		&#125;else&#123;</div><div class="line">			event.cancelBubble = false;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/03/05/106.html/" class="archive-article-date">
-      <time datetime="2017-03-05T12:24:51.181Z" itemprop="datePublished">03-05</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/05/106.html/">说说JSON和JSONP，原来ajax引用这个来实现跨域访问的</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSONP/">JSONP</a></li></ul>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/03/17/107.html/">js事件模型、代理及委托</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
+        <p><span>发布时间:</span>2017-03-17, 10:06:23</p>
+        <p><span>最后更新:</span>2017-03-18, 00:16:21</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/17/107.html/" title="js事件模型、代理及委托">http://www.xiaoqi888.cn/2017/03/17/107.html/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.xiaoqi888.cn/2017/03/17/107.html/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/05/106.html/">
+                    说说JSON和JSONP，原来ajax引用这个来实现跨域访问的
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/03/03/105.html/" class="archive-article-date">
-      <time datetime="2017-03-03T13:35:16.000Z" itemprop="datePublished">03-03</time>
-</a>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/03/105.html/">关于jquery中html()、text()、val()的区别</a>
-    </h1>
-  
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"js事件模型、代理及委托　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
-        <div class="article-info info-on-archive">
-          
+    
+</div>
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jquery/">Jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/text/">text</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/val/">val</a></li></ul>
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/17/107.html/" data-title="js事件模型、代理及委托" data-url="http://www.xiaoqi888.cn/2017/03/17/107.html/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"xiaoqi888"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/05/106.html/" title="下一篇: 说说JSON和JSONP，原来ajax引用这个来实现跨域访问的">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/03/02/104.html/" class="archive-article-date">
-      <time datetime="2017-03-02T15:10:17.488Z" itemprop="datePublished">03-02</time>
-</a>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/107.html/">js事件模型、代理及委托</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/106.html/">说说JSON和JSONP，原来ajax引用这个来实现跨域访问的</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/105.html/">关于jquery中html()、text()、val()的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/104.html/">JavaScript的一些基本知识--DOM操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/103.html/">不错的HTML5拖拽小案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/24/102.html/">防止表单重复提交</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/23/101.html/">使用hexo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/23/100.html/">JSON的数据格式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/省市区三级联动.html/">省市区三级城市联动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/JS构造函数方法与原型prototype上的方法.html/">JS构造函数方法与原型prototype上的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/js实现随机点名.html/">js实现随机点名</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/19/基于angualr.js实现的触摸滑动动画.html/">基于angualr.js实现的触摸滑动动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/17/Web安全与防御措施.html/">Web安全与防御措施</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/javascript DOM的操作，更新，遍历，添加.html/">javascript DOM的操作，更新，遍历，添加</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS.html/">js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/倒计时的三种写法.html/">倒计时的三种写法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/详谈一下闭包是什么.html/">详谈一下闭包是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/13/表单取消监听数据变化.html/">表单取消监听数据变化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/12/JavaScript-原型、原型链.html/">JavaScript-原型、原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/10/上下移动的无缝滚动.html/">上下移动的无缝滚动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/Javascript 面向对象编程（一）：封装.html/">Javascript 面向对象编程（一）：封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/Web前端的学习路线,你真的知道吗.html/">Web前端的学习路线,你真的知道吗</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/07/Ajax的url请求中为何要加随机数.html/">Ajax的url请求中为何要加随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/06/关于css的一些知识小总结.html/">关于css的一些知识小总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/06/jquery 处理 CheckBox复选框.html/">jquery 处理 CheckBox复选框</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/JavaScript运算符使用误区.html/">JavaScript运算符使用误区</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/去掉谷歌浏览器获取焦点时默认的input.html/">去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/元素设置padding或margin的问题.html/">元素设置width:100%之后再设置padding或margin的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/JavaScript知识简单总结.html/">JavaScript知识简单总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq6.html/">JavaScript实现冒泡排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq5.html/">了解模块化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq4.html/">CSS初始化代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq3.html/">Git 常用命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq2.html/">Javascript日期类型的巧用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq1.html/">深入理解JavaScript—event（事件对象）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/24/hello-world.html/">理解 Javascript回调函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/23/超详细的移动端html5头标签head介绍.html/">超详细的移动端html5头标签head介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/06/JavaScript 闭包到底是什么.html/">JavaScript 闭包到底是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/05/JS中的call()和apply()方法.html/">JS中的call()和apply()方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/03/谈谈JavaScript的prototype.html/">谈谈JavaScript的prototype</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/JavaScript 误区.html/">JavaScript 误区</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/避免常见的6种HTML5错误用法总结.html/">避免常见的6种HTML5错误用法</a></li></ul>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/02/104.html/">JavaScript的一些基本知识--DOM操作</a>
-    </h1>
-  
 
-        <div class="article-info info-on-archive">
-          
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

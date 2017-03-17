@@ -2,6 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+  <url>
+    <loc>http://www.xiaoqi888.cn/2017/03/17/107.html/</loc>
+    <lastmod>2017-03-17T16:16:21.186Z</lastmod>
+    <data>
+        <display>
+        <title>js事件模型、代理及委托</title>
+        <pubTime>2017-03-17T02:06:23.000Z</pubTime>
+        
+        <tag>JavaScript </tag>
+         
+        <tag>代理委托 </tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://www.xiaoqi888.cn/2017/03/05/106.html/</loc>
@@ -283,9 +302,9 @@
         
         <tag>JavaScript </tag>
          
-        <tag>构造函数 </tag>
-         
         <tag>原型 </tag>
+         
+        <tag>构造函数 </tag>
          
          
            

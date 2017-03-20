@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="xiaoqi" />
+
+<meta name="keywords" content="黄小齐,黄小齐前端博客,前端开发,分享前端技术,web前端开发博客,xiaoqi888,技术博客,blog">
+
+
+
+<meta name="description" content="以 &amp;lt; script&amp;gt;开头，以结尾,老式的浏览器中需要加上language，如： &amp;lt; script language = “JavaScript” /script&amp;gt; 表示该脚本是JavaScript，也可以写上其他脚本的名字。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript知识简单总结">
+<meta property="og:url" content="http://m.xiaoqi888.cn/undefined/JavaScript知识简单总结.html/index.html">
+<meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
+<meta property="og:description" content="以 &amp;lt; script&amp;gt;开头，以结尾,老式的浏览器中需要加上language，如： &amp;lt; script language = “JavaScript” /script&amp;gt; 表示该脚本是JavaScript，也可以写上其他脚本的名字。">
+<meta property="og:updated_time" content="2017-02-03T06:18:52.667Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript知识简单总结">
+<meta name="twitter:description" content="以 &amp;lt; script&amp;gt;开头，以结尾,老式的浏览器中需要加上language，如： &amp;lt; script language = “JavaScript” /script&amp;gt; 表示该脚本是JavaScript，也可以写上其他脚本的名字。">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="黄小齐前端博客—热爱WEB前端开发,分享前端技术" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>JavaScript知识简单总结 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">xiaoqi</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">当你的才华还撑不起你的野心时，那你就应该静下心来学习。</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/guestbook/">留言板</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="#" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="#" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CheckBox/">CheckBox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSONP/">JSONP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jquery/">Jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web安全/">Web安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apply/">apply</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call/">call</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/head/">head</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/input/">input</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/padding/">padding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/text/">text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/textarea/">textarea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/val/">val</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三级联动/">三级联动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人博客/">个人博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代理委托/">代理委托</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/倒计时/">倒计时</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型/">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型链/">原型链</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/域名/">域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习路线/">学习路线</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/封装/">封装</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/当前时间/">当前时间</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拖拽/">拖拽</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/提交/">提交</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据格式/">数据格式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无缝滚动/">无缝滚动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构造函数/">构造函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/监听/">监听</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/表单/">表单</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/运算符/">运算符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遍历/">遍历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/防御/">防御</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随机数/">随机数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随机点名/">随机点名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.qdabc.cn">前端abc</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.xiaoqi888.cn">小齐资源网</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.58dazhe.com">淘宝优惠券</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.97sesez.com">论文代写</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">xiaoqi</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">xiaoqi</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">当你的才华还撑不起你的野心时，那你就应该静下心来学习。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/guestbook/">留言板</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="#" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="#" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-JavaScript知识简单总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/undefined/JavaScript知识简单总结.html/" class="article-date">
+      <time datetime="2017-02-03T05:10:33.000Z" itemprop="datePublished">2017-02-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript知识简单总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li>以 &lt; script&gt;开头，以结尾,老式的浏览器中需要加上language，如： &lt; script language = “JavaScript” /script&gt; 表示该脚本是JavaScript，<br>也可以写上其他脚本的名字。<a id="more"></a></li>
+<li>JavaScript语句只要放在不同的行就可以执行，但更好的方式是，在每一条语句后加上分号结尾，<br>document.write();向页面上输出内容。<br>document.write(“hello!”);<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 在屏幕中输出加粗的hello</div><div class="line">&lt;script&gt;</div><div class="line">    document.write(&quot;&lt;strong&gt;hello &lt;/strong&gt;&quot;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>3.变量<br>用 var+变量名 声明一个变量 可以不考虑变量的类型。所有类型都用var来声明。</p>
+<ol>
+<li>变量区分大小写 </li>
+<li>用\表示转义字符 </li>
+<li>不使用var声明的变量当做全局变量，用var声明的变量拥有特定的作用域。 </li>
+<li>推荐使用下划线分割变量名中的单词，用驼峰格式命名方法名，这样可以方便的区分变量和方法。 </li>
+<li>JavaScript是一种弱类型的语言，即变量的使用不需要声明，而且变量的类型在使用时可以改变。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var age=&quot;thirty&quot;;   //字符串型</div><div class="line">age = 30;           //数值型</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>常用的类型有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = 16; //数字 </div><div class="line">var b = 16.123; //浮点型 </div><div class="line">var falg = true; //布尔型 </div><div class="line">var s = “hello”//字符串型</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//字符串的相加运算</div><div class="line">&lt;script&gt;</div><div class="line">    var a = &quot;abc&quot;;</div><div class="line">    a += &apos;d&apos;;</div><div class="line">    document.write(a);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">结果是abcd。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//html中将多个空格当成一个来处理</div><div class="line">&lt;script&gt;</div><div class="line">    var s = &apos;hello   &apos;;</div><div class="line">    s += &apos;   world&apos;;</div><div class="line">    document.write(s);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">结果是: hello world</div></pre></td></tr></table></figure>
+<p>4.运算 </p>
+<p>常见的运算符在JavaScript中都有，例如：<br>加减乘除： +-*\ %<br>自加自减：++ –<br>加法：+= -=<br>逻辑： &amp;&amp; || ？： ！<br>判断： ==（类似于C语言）<br>字符串比较大小： &gt; &lt; == (小写字母大于大写字母)</p>
+<p>5.注释<br>和C语言一样用//或/<em> </em>/ 表示 </p>
+<p>6.判断<br>与C语言基本相同</p>
+<p>建议每一条if语句都加上{}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//不加括号时，else属于较近的if</div><div class="line">&lt;script&gt;</div><div class="line">    var s = &apos;hello&apos;;</div><div class="line">    if (s == &apos;hello&apos;)</div><div class="line">        if(s == &apos;world&apos;)</div><div class="line">            document.write(&apos;world&apos;);</div><div class="line">            else</div><div class="line">            document.write(s);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>7.循环<br>和c语言一样<br>for(;;)<br>while()<br>do while()</p>
+<p>8.函数<br>function fun_name(形参){函数体}<br>函数也被当成是一种类型，有时可以像变量一样使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//定义一个函数</div><div class="line">function add(a,b)&#123;</div><div class="line">    return a+b;</div><div class="line">&#125;</div><div class="line">//使用函数</div><div class="line">alert(&apos;加:&apos;+add(1,2))</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//将函数类似于变量的用法</div><div class="line">function add(a,b)&#123;</div><div class="line">    return a+b;</div><div class="line">&#125;</div><div class="line">function cal(x,y,z)&#123;</div><div class="line">    return x(y,z);</div><div class="line">&#125;</div><div class="line">//将函数作为参数</div><div class="line">alert(cal(add,1,2));</div></pre></td></tr></table></figure>
+<p>9.数组<br>数组可以使用以下方法建立：<br>1 var a = new Array();<br>2 var b = new Array(10);<br>3 var c = new Array(1,2,”三”,true,5.5); //自动加上下标<br>4 var d = [6,7,8,9,10];</p>
+<p>数组的特点：<br>1，数组中的元素使用时才会被创建，即使创建了a[1]和a[10]，中间的元素依然是空。<br>2，数组的长度a.length为最大的下标加1，不管中间的元素是否存在。<br>3，数组的长度是可以人为修改的。修改后不属于长度内的元素会被清除。<br>4，数组的元素可以是不同的类型<br>5，数组的元素也可以是数组</p>
+<p>关联数组：数组的下标用特定的名称来表示，不一定是数组，类似于 Java中的键值对，但是不推荐使用，因为对象可以更好的完成同样的效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = new Array();</div><div class="line">a[1] = 10;</div><div class="line">a[10] = 20;</div><div class="line">document.write(a[9]+&quot;&lt;br/&gt;&quot;);</div><div class="line">document.write(a.length);</div></pre></td></tr></table></figure>
+<p>在这里会输出：<br>undefined<br>11<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//人为改变数组长度，等同于截取数组中的一段</div><div class="line">var a = new Array(1,2,3,4,5);</div><div class="line">document.write(a.length+&quot;&lt;br/&gt;&quot;);</div><div class="line">a.length = 3;</div><div class="line">document.write(a+&quot;&lt;br/&gt;&quot;);</div><div class="line">a.length = 5;</div><div class="line">document.write(a);</div></pre></td></tr></table></figure></p>
+<p>结果如下：<br>5<br>1,2,3<br>1,2,3,,</p>
+<p>join(“&amp;”) 表示认为的改变输出时元素的分隔符如：</p>
+<p>document.write(a.join(“%”));<br>会输出 1%2%3</p>
+<p>10.对象</p>
+<p>属性和方法的集合</p>
+<p>声明：<br>var o = new Object();<br>var cidr = {x:2,y:0,radius:2};</p>
+<p>对象的元素是在使用时添加进类中的，第一次使用时就会自动为该类创建这个成员</p>
+<p>删除属性：<br>delete book.name;<br>book.name=null;</p>
+<p>遍历属性：<br>for(var x in book ){<br>x是成员的名字，用法类似于数组的下标<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var book = new Object();</div><div class="line">book.name = &apos;百年孤独&apos;;</div><div class="line">book.about = &#123;name:&apos;马尔克斯&apos;,price:100&#125;;</div><div class="line">document.write(book.name+&apos;&lt;br/&gt;&apos;);</div><div class="line">document.write(book.about.name);</div></pre></td></tr></table></figure></p>
+<p>结果：<br>百年孤独<br>马尔克斯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var book = new Object();</div><div class="line">book.name = &apos;百年孤独&apos;;</div><div class="line">book.about = &#123;name:&apos;马尔克斯&apos;,price:100&#125;;</div><div class="line">//遍历</div><div class="line">for (var x in book )&#123;</div><div class="line">    document.write(book[x]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/undefined/JavaScript知识简单总结.html/">JavaScript知识简单总结</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">xiaoqi</a></p>
+        <p><span>发布时间:</span>2017-02-03, 13:10:33</p>
+        <p><span>最后更新:</span>2017-02-03, 14:18:52</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/undefined/JavaScript知识简单总结.html/" title="JavaScript知识简单总结">http://m.xiaoqi888.cn/undefined/JavaScript知识简单总结.html/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://m.xiaoqi888.cn/undefined/JavaScript知识简单总结.html/　　作者: xiaoqi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/undefined/元素设置padding或margin的问题.html/">
+                    元素设置width:100%之后再设置padding或margin的问题
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/undefined/xq6.html/">
+                    JavaScript实现冒泡排序
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"JavaScript知识简单总结　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="undefined/JavaScript知识简单总结.html/" data-title="JavaScript知识简单总结" data-url="http://m.xiaoqi888.cn/undefined/JavaScript知识简单总结.html/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"xiaoqi888"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/undefined/元素设置padding或margin的问题.html/" title="上一篇: 元素设置width:100%之后再设置padding或margin的问题">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/undefined/xq6.html/" title="下一篇: JavaScript实现冒泡排序">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/undefined/网站改版说明.html/">记录一下博客已更换域名</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/107.html/">js事件模型、代理及委托</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/106.html/">说说JSON和JSONP，原来ajax引用这个来实现跨域访问的</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/105.html/">关于jquery中html()、text()、val()的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/104.html/">JavaScript的一些基本知识--DOM操作</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/103.html/">不错的HTML5拖拽小案例</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/102.html/">防止表单重复提交</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/101.html/">使用hexo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/100.html/">JSON的数据格式</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/省市区三级联动.html/">省市区三级城市联动</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/JS构造函数方法与原型prototype上的方法.html/">JS构造函数方法与原型prototype上的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/js实现随机点名.html/">js实现随机点名</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/基于angualr.js实现的触摸滑动动画.html/">基于angualr.js实现的触摸滑动动画</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/Web安全与防御措施.html/">Web安全与防御措施</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/javascript DOM的操作，更新，遍历，添加.html/">javascript DOM的操作，更新，遍历，添加</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS.html/">js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/倒计时的三种写法.html/">倒计时的三种写法</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/详谈一下闭包是什么.html/">详谈一下闭包是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/表单取消监听数据变化.html/">表单取消监听数据变化</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/JavaScript-原型、原型链.html/">JavaScript-原型、原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/上下移动的无缝滚动.html/">上下移动的无缝滚动</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/Javascript 面向对象编程（一）：封装.html/">Javascript 面向对象编程（一）：封装</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/Web前端的学习路线,你真的知道吗.html/">Web前端的学习路线,你真的知道吗</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/Ajax的url请求中为何要加随机数.html/">Ajax的url请求中为何要加随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/关于css的一些知识小总结.html/">关于css的一些知识小总结</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/jquery 处理 CheckBox复选框.html/">jquery 处理 CheckBox复选框</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/JavaScript运算符使用误区.html/">JavaScript运算符使用误区</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/去掉谷歌浏览器获取焦点时默认的input.html/">去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/元素设置padding或margin的问题.html/">元素设置width:100%之后再设置padding或margin的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/JavaScript知识简单总结.html/">JavaScript知识简单总结</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/xq6.html/">JavaScript实现冒泡排序</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/xq5.html/">了解模块化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/xq4.html/">CSS初始化代码</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/xq3.html/">Git 常用命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/xq2.html/">Javascript日期类型的巧用</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/xq1.html/">深入理解JavaScript—event（事件对象）</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/hello-world.html/">理解 Javascript回调函数</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/超详细的移动端html5头标签head介绍.html/">超详细的移动端html5头标签head介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/JavaScript 闭包到底是什么.html/">JavaScript 闭包到底是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/JS中的call()和apply()方法.html/">JS中的call()和apply()方法</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/谈谈JavaScript的prototype.html/">谈谈JavaScript的prototype</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/JavaScript 误区.html/">JavaScript 误区</a></li><li class="post-list-item"><a class="post-list-link" href="/undefined/避免常见的6种HTML5错误用法总结.html/">避免常见的6种HTML5错误用法</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 xiaoqi  <a href="http://www.miitbeian.gov.cn/" target="_blank">豫ICP备16041185号</a>
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+  </div>
+</body>
+</html>

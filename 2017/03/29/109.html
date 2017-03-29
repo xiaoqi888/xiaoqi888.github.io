@@ -17,15 +17,16 @@
 
 
 
-<meta name="description" content="黄小齐前端博客—热爱web前端开发、移动web开发，乐于分享web前端开发技术。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:url" content="http://m.xiaoqi888.cn/tags/Jquery/index.html">
+<meta name="description" content="Javascript:网页可见区域宽： document.body.clientWidth网页可见区域高： document.body.clientHeight网页可见区域宽： document.body.offsetWidth (包括边线的宽)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS,Jquery获取各种屏幕的宽度和高度">
+<meta property="og:url" content="http://m.xiaoqi888.cn/2017/03/29/109.html">
 <meta property="og:site_name" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta property="og:description" content="黄小齐前端博客—热爱web前端开发、移动web开发，乐于分享web前端开发技术。">
+<meta property="og:description" content="Javascript:网页可见区域宽： document.body.clientWidth网页可见区域高： document.body.clientHeight网页可见区域宽： document.body.offsetWidth (包括边线的宽)">
+<meta property="og:updated_time" content="2017-03-29T15:32:04.858Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="黄小齐前端博客—热爱WEB前端开发,分享前端技术">
-<meta name="twitter:description" content="黄小齐前端博客—热爱web前端开发、移动web开发，乐于分享web前端开发技术。">
+<meta name="twitter:title" content="JS,Jquery获取各种屏幕的宽度和高度">
+<meta name="twitter:description" content="Javascript:网页可见区域宽： document.body.clientWidth网页可见区域高： document.body.clientHeight网页可见区域宽： document.body.offsetWidth (包括边线的宽)">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: Jquery | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
+<title>JS,Jquery获取各种屏幕的宽度和高度 | 黄小齐前端博客—热爱WEB前端开发,分享前端技术</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,9 +68,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -267,122 +268,183 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-109" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/03/29/109.html" class="archive-article-date">
-      <time datetime="2017-03-29T15:29:18.861Z" itemprop="datePublished">03-29</time>
+    <div class="article-meta">
+      <a href="/2017/03/29/109.html" class="article-date">
+      <time datetime="2017-03-29T15:29:18.861Z" itemprop="datePublished">2017-03-29</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/29/109.html">JS,Jquery获取各种屏幕的宽度和高度</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS,Jquery获取各种屏幕的宽度和高度
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jquery/">Jquery</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h5 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript:"></a>Javascript:</h5><p>网页可见区域宽： document.body.clientWidth<br>网页可见区域高： document.body.clientHeight<br>网页可见区域宽： document.body.offsetWidth (包括边线的宽)<br><a id="more"></a><br>网页可见区域高： document.body.offsetHeight (包括边线的高)<br>网页正文全文宽： document.body.scrollWidth<br>网页正文全文高： document.body.scrollHeight<br>网页被卷去的高： document.body.scrollTop<br>网页被卷去的左： document.body.scrollLeft<br>网页正文部分上： window.screenTop<br>网页正文部分左： window.screenLeft<br>屏幕分辨率的高： window.screen.height<br>屏幕分辨率的宽： window.screen.width<br>屏幕可用工作区高度： window.screen.availHeight<br>屏幕可用工作区宽度： window.screen.availWidth</p>
+<h5 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery:"></a>JQuery:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function()&#123;</div><div class="line">	alert($(window).height()); //浏览器当前窗口可视区域高度</div><div class="line">	alert($(document).height()); //浏览器当前窗口文档的高度</div><div class="line">	alert($(document.body).height());//浏览器当前窗口文档body的高度</div><div class="line">	alert($(document.body).outerHeight(true));//浏览器当前窗口文档body的总高度 包括border padding margin</div><div class="line"></div><div class="line">	alert($(window).width()); //浏览器当前窗口可视区域宽度</div><div class="line">	alert($(document).width());//浏览器当前窗口文档对象宽度</div><div class="line">	alert($(document.body).width());//浏览器当前窗口文档body的宽度</div><div class="line">	alert($(document.body).outerWidth(true));//浏览器当前窗口文档body的总宽度 包括border padding margin</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/03/03/105.html" class="archive-article-date">
-      <time datetime="2017-03-03T13:35:16.000Z" itemprop="datePublished">03-03</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/03/105.html">关于jquery中html()、text()、val()的区别</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jquery/">Jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/text/">text</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/val/">val</a></li></ul>
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2017/03/29/109.html">JS,Jquery获取各种屏幕的宽度和高度</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">xiaoqi</a></p>
+        <p><span>Created:</span>2017-03-29, 23:29:18</p>
+        <p><span>Updated:</span>2017-03-29, 23:32:04</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2017/03/29/109.html" title="JS,Jquery获取各种屏幕的宽度和高度">http://m.xiaoqi888.cn/2017/03/29/109.html</a>
+            <span class="copy-path" data-clipboard-text="From http://m.xiaoqi888.cn/2017/03/29/109.html　　By xiaoqi" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/21/108.html">
+                    onmouseenter和onmuseover的区别
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/02/06/jquery 处理 CheckBox复选框.html" class="archive-article-date">
-      <time datetime="2017-02-06T02:03:47.000Z" itemprop="datePublished">02-06</time>
-</a>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Javascript"><span class="toc-number">1.</span> <span class="toc-text">Javascript:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JQuery"><span class="toc-number">2.</span> <span class="toc-text">JQuery:</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
 
 
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/jquery 处理 CheckBox复选框.html">jquery 处理 CheckBox复选框</a>
-    </h1>
-  
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"JS,Jquery获取各种屏幕的宽度和高度　| 黄小齐前端博客—热爱WEB前端开发,分享前端技术　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
-        <div class="article-info info-on-archive">
-          
+    
+</div>
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CheckBox/">CheckBox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jquery/">Jquery</a></li></ul>
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/29/109.html" data-title="JS,Jquery获取各种屏幕的宽度和高度" data-url="http://m.xiaoqi888.cn/2017/03/29/109.html"></div>
+    <script>
+        var duoshuoQuery = {short_name:"xiaoqi888"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/21/108.html" title="Next: onmouseenter和onmuseover的区别">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/29/109.html">JS,Jquery获取各种屏幕的宽度和高度</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/108.html">onmouseenter和onmuseover的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/20/网站改版说明.html">记录一下博客已更换域名</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/107.html">js事件模型、代理及委托</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/106.html">说说JSON和JSONP，原来ajax引用这个来实现跨域访问的</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/105.html">关于jquery中html()、text()、val()的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/104.html">JavaScript的一些基本知识--DOM操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/103.html">不错的HTML5拖拽小案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/24/102.html">防止表单重复提交</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/23/101.html">使用hexo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/23/100.html">JSON的数据格式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/省市区三级联动.html">省市区三级城市联动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/JS构造函数方法与原型prototype上的方法.html">JS构造函数方法与原型prototype上的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/js实现随机点名.html">js实现随机点名</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/19/基于angualr.js实现的触摸滑动动画.html">基于angualr.js实现的触摸滑动动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/17/Web安全与防御措施.html">Web安全与防御措施</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/javascript DOM的操作，更新，遍历，添加.html">javascript DOM的操作，更新，遍历，添加</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS.html">js中怎么获取系统当前时间 格式 yyyy-MM-dd HHMMSS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/倒计时的三种写法.html">倒计时的三种写法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/详谈一下闭包是什么.html">详谈一下闭包是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/13/表单取消监听数据变化.html">表单取消监听数据变化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/12/JavaScript-原型、原型链.html">JavaScript-原型、原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/10/上下移动的无缝滚动.html">上下移动的无缝滚动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/Javascript 面向对象编程（一）：封装.html">Javascript 面向对象编程（一）：封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/Web前端的学习路线,你真的知道吗.html">Web前端的学习路线,你真的知道吗</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/07/Ajax的url请求中为何要加随机数.html">Ajax的url请求中为何要加随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/06/关于css的一些知识小总结.html">关于css的一些知识小总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/06/jquery 处理 CheckBox复选框.html">jquery 处理 CheckBox复选框</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/JavaScript运算符使用误区.html">JavaScript运算符使用误区</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/去掉谷歌浏览器获取焦点时默认的input.html">去掉谷歌浏览器获取焦点时默认的input、textarea的边框和背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/元素设置padding或margin的问题.html">元素设置width:100%之后再设置padding或margin的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/JavaScript知识简单总结.html">JavaScript知识简单总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq6.html">JavaScript实现冒泡排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq5.html">了解模块化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq4.html">CSS初始化代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/xq3.html">Git 常用命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq2.html">Javascript日期类型的巧用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/xq1.html">深入理解JavaScript—event（事件对象）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/24/hello-world.html">理解 Javascript回调函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/23/超详细的移动端html5头标签head介绍.html">超详细的移动端html5头标签head介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/06/JavaScript 闭包到底是什么.html">JavaScript 闭包到底是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/05/JS中的call()和apply()方法.html">JS中的call()和apply()方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/03/谈谈JavaScript的prototype.html">谈谈JavaScript的prototype</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/JavaScript 误区.html">JavaScript 误区</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/避免常见的6种HTML5错误用法总结.html">避免常见的6种HTML5错误用法</a></li></ul>
 
-    
 
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
